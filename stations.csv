@@ -36,7 +36,7 @@ Hod HaSharon - Sokolov,32.170004,34.902012,node/3982765958,Israel Railways
 Holon - Wolfson,32.035314,34.759691,node/3978658306,Israel Railways
 Holon Junction,32.037040,34.776415,node/3978658307,Israel Railways
 Hutzot Hamifratz,32.809401,35.054417,node/2930618412,Israel Railways
-Jerusalem - Yitzhak Navon,31.788154,35.203000,node/7144868421,Israel Railways
+Jerusalem - Yitzhak Navon,31.788113,35.202766,node/7144868421,Israel Railways
 Jerusalem Malcha,31.747754,35.188215,node/2930682106,Israel Railways
 Karmiel,32.923917,35.297136,node/2942466195,Israel Railways
 Kfar Chabad,31.992896,34.853323,node/461613375,Israel Railways
@@ -58,7 +58,7 @@ Netivot,31.410749,34.571711,node/3982823163,Israel Railways
 Ofakim,31.321510,34.634230,node/3988591607,Israel Railways
 Pa'atai Modi'in,31.893120,34.960698,node/2931455068,Israel Railways
 Petah Tikva Segula,32.111889,34.901032,node/2930682113,Israel Railways
-Petah Tikva–Kiryat Aryeh,32.106326,34.862754,node/2930682112,Israel Railways
+Petah Tikva–Kiryat Aryeh,32.106250,34.862836,node/2930682112,Israel Railways
 Ra'anana South,32.172654,34.886603,node/5705790741,Israel Railways
 Ra'anana West,32.179983,34.850838,node/11264520000,Israel Railways
 Ramla,31.929221,34.876728,node/4060304995,Israel Railways
@@ -79,15 +79,24 @@ Yokneam – Kfar Yehoshua,32.681041,35.125769,node/4440447731,Israel Railways
 A-Sahal,31.811178,35.232793,node/1464782846,Jerusalem Light Rail
 Ammunition Hill,31.799161,35.232061,node/891017311,Jerusalem Light Rail
 Beit Hanina,31.819751,35.229074,node/1467060695,Jerusalem Light Rail
+Betsal'el Bazak,31.766798,35.196542,node/14110228510,Jerusalem Light Rail
+Binyene Ha'Uma ICC,31.787868,35.203568,node/14110954538,Jerusalem Light Rail
+Central Station,31.788462,35.202549,node/890816142,Jerusalem Light Rail
 City Hall,31.779681,35.223858,node/1803044365,Jerusalem Light Rail
 Damascus Gate,31.782483,35.227839,node/1405968969,Jerusalem Light Rail
 Denya Square,31.780610,35.188318,node/891041025,Jerusalem Light Rail
 Giv'at HaMivtar,31.805482,35.234274,node/1107348918,Jerusalem Light Rail
+Giv'at Mordekhay,31.761222,35.199875,node/14110805877,Jerusalem Light Rail
+Giv'at Ram,31.780759,35.197841,node/14110785641,Jerusalem Light Rail
+Gonenim,31.752234,35.198912,node/14110759300,Jerusalem Light Rail
+Government Complex,31.784838,35.200678,node/14110866504,Jerusalem Light Rail
+Ha'Ayal,31.752869,35.188020,node/14110791431,Jerusalem Light Rail
 HaDavidka,31.784567,35.215194,node/890816085,Jerusalem Light Rail
 HaMifletset Playground,31.761991,35.171602,node/12629201403,Jerusalem Light Rail
 HaTurim,31.787918,35.206782,node/890816122,Jerusalem Light Rail
 Hadassah Ein Kerem,31.764716,35.147660,node/12629197350,Jerusalem Light Rail
 HeHaluts,31.782791,35.191693,node/1467060666,Jerusalem Light Rail
+Hebrew Park,31.772226,35.196095,node/14110785637,Jerusalem Light Rail
 Hel Ha'Avir,31.828952,35.238403,node/1464782839,Jerusalem Light Rail
 Henrietta Szold – East,31.759825,35.167907,node/10952058061,Jerusalem Light Rail
 Jaffa – Center,31.782857,35.218358,node/890816082,Jerusalem Light Rail
@@ -95,13 +104,17 @@ Kiryat HaYovel – West,31.766954,35.174436,node/12629175601,Jerusalem Light Rai
 Kiryat Menahem,31.760021,35.164132,node/12629201406,Jerusalem Light Rail
 Kiryat Moshe,31.786227,35.198164,node/890816167,Jerusalem Light Rail
 Mahane Yehuda,31.786009,35.211417,node/890816109,Jerusalem Light Rail
+Malha Sports Complex,31.751946,35.192620,node/14110791430,Jerusalem Light Rail
+Manahat (Malha),31.749311,35.185319,node/14106312634,Jerusalem Light Rail
 Mazal Kashat,31.837281,35.234155,node/12629110575,Jerusalem Light Rail
 Medical School,31.764169,35.151241,node/12629197348,Jerusalem Light Rail
 Moshe Dayan – North,31.833442,35.234685,node/12629134304,Jerusalem Light Rail
 Mount Herzl,31.770848,35.181573,node/890816223,Jerusalem Light Rail
 Neve Ya'akov – North,31.840979,35.240224,node/12629134302,Jerusalem Light Rail
 Ora Junction,31.757025,35.159988,node/12629197346,Jerusalem Light Rail
+Pat Jct,31.756338,35.198128,node/14110823308,Jerusalem Light Rail
 Pisgat Ze'ev – Center,31.823750,35.237624,node/1464782840,Jerusalem Light Rail
+Safra University Campus,31.777247,35.195324,node/14110785639,Jerusalem Light Rail
 Sayeret Dukhifat,31.826101,35.240221,node/1464782855,Jerusalem Light Rail
 Shim'on HaTsadik,31.793043,35.226334,node/891711983,Jerusalem Light Rail
 Shivtei Israel,31.786537,35.227126,node/890816042,Jerusalem Light Rail
@@ -132,6 +145,7 @@ HeAmal,32.005874,34.748987,node/11125350011,Tel Aviv Light Rail
 Isakov,32.042144,34.757077,node/11125454973,Tel Aviv Light Rail
 Jabotinsky,32.021706,34.743220,node/11133645857,Tel Aviv Light Rail
 Kaf Tet BeNovember,32.010832,34.751488,node/11125350016,Tel Aviv Light Rail
+Kiryat Aryeh light rail station,32.106402,34.862673,node/11125457549,Tel Aviv Light Rail
 Krol,32.091905,34.877512,node/11124762409,Tel Aviv Light Rail
 Mahrozet,32.033575,34.751653,node/11125454967,Tel Aviv Light Rail
 Petah Tikva CBS,32.094649,34.886393,node/11124762408,Tel Aviv Light Rail

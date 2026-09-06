@@ -9,23 +9,12 @@ These are in `stations.csv`. Delete any that are not actually open.
 | Station | OSM | Coords | Why flagged |
 |---|---|---|---|
 
-## Excluded as not-yet-open (11)
+## Excluded as not-yet-open (0)
 
 These are **not** in `stations.csv`. Add them back if any have opened.
 
 | Station | OSM | Coords | Why excluded |
 |---|---|---|---|
-| Betsal'el Bazak | `node/14110228510` | 31.76680, 35.19654 | only served by a line that is not open: Jerusalem Light Rail Yellow Line (under construction) |
-| Giv'at Mordekhay | `node/14110805877` | 31.76122, 35.19988 | only served by a line that is not open: Jerusalem Light Rail Yellow Line (under construction) |
-| Giv'at Ram | `node/14110785641` | 31.78076, 35.19784 | only served by a line that is not open: Jerusalem Light Rail Yellow Line (under construction) |
-| Gonenim | `node/14110759300` | 31.75223, 35.19891 | only served by a line that is not open: Jerusalem Light Rail Yellow Line (under construction) |
-| Government Complex | `node/14110866504` | 31.78484, 35.20068 | only served by a line that is not open: Jerusalem Light Rail Yellow Line (under construction) |
-| Ha'Ayal | `node/14110791431` | 31.75287, 35.18802 | only served by a line that is not open: Jerusalem Light Rail Yellow Line (under construction) |
-| Hebrew Park | `node/14110785637` | 31.77223, 35.19610 | only served by a line that is not open: Jerusalem Light Rail Yellow Line (under construction) |
-| Malha Sports Complex | `node/14110791430` | 31.75195, 35.19262 | only served by a line that is not open: Jerusalem Light Rail Yellow Line (under construction) |
-| Manahat (Malha) | `node/14106312634` | 31.74931, 35.18532 | only served by a line that is not open: Jerusalem Light Rail Yellow Line (under construction) |
-| Pat Jct | `node/14110823308` | 31.75634, 35.19813 | only served by a line that is not open: Jerusalem Light Rail Yellow Line (under construction) |
-| Safra University Campus | `node/14110785639` | 31.77725, 35.19532 | only served by a line that is not open: Jerusalem Light Rail Yellow Line (under construction) |
 
 ## Filtered out before merging (3)
 

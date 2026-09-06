@@ -67,7 +67,9 @@ check(all(s["name"].strip() for s in loaded), "no blank names")
 oob = [s for s in loaded if not (29.4 <= s["lat"] <= 33.4 and 34.2 <= s["lng"] <= 35.9)]
 check(not oob, f"all points inside Israel's bounds ({len(oob)} outside)")
 
-# 5. No two distinct stations closer than 120 m (the merge threshold).
+# 5. No two stations of the same mode family closer than the 60 m merge threshold.
+#    Cross-family pairs are expected: a train station and the light rail stop at its
+#    entrance are distinct stations that legitimately sit metres apart.
 def hav(a, b):
     r = 6371000.0
     p1, p2 = math.radians(a[0]), math.radians(b[0])
@@ -75,16 +77,29 @@ def hav(a, b):
          + math.cos(p1) * math.cos(p2) * math.sin(math.radians(b[1] - a[1]) / 2) ** 2)
     return 2 * r * math.asin(math.sqrt(h))
 
-close = []
-pts = [(s["name"], (s["lat"], s["lng"])) for s in loaded]
+FAMILY = {"Israel Railways": "train", "Carmelit": "funicular"}
+by_id = {r["id"]: r for r in rows}
+pts = [(s["name"], (s["lat"], s["lng"]),
+        FAMILY.get(by_id[s["id"]]["system"], "light_rail")) for s in loaded]
+close, interchange = [], []
 for i in range(len(pts)):
     for j in range(i + 1, len(pts)):
         d = hav(pts[i][1], pts[j][1])
-        if d < 120:
-            close.append((d, pts[i][0], pts[j][0]))
-check(not close, f"no unmerged near-duplicates within 120 m ({len(close)} found)")
+        if d >= 150:
+            continue
+        if pts[i][2] == pts[j][2]:
+            if d < 60:
+                close.append((d, pts[i][0], pts[j][0]))
+        else:
+            interchange.append((d, pts[i][0], pts[j][0]))
+check(not close, f"no unmerged same-mode duplicates within 60 m ({len(close)} found)")
 for d, a, b in close[:5]:
     print(f"    {d:.0f}m  {a} <-> {b}")
+if interchange:
+    print(f"  [note] {len(interchange)} cross-system interchange pair(s) under 150 m, "
+          "kept separate by design:")
+    for d, a, b in sorted(interchange):
+        print(f"    {d:5.0f}m  {a}  <->  {b}")
 
 for status, msg in notes + failures:
     print(f"  [{status}] {msg}")

@@ -42,23 +42,52 @@ out body;
 """
 
 # --- Tuning -----------------------------------------------------------------
-# Nearest-neighbour distances in this dataset are sharply bimodal: 108 elements
-# have a neighbour under 50 m (per-direction platform pairs), then nothing at all
-# between 50 m and 250 m, then genuinely distinct stations. 120 m sits in the gap.
-MERGE_M = 120
+# Merge radius, applied only *within* a mode family (see family()). Measured over
+# every pair under 300 m: platform twins of one station are never more than 23 m
+# apart, while the closest genuinely distinct same-mode stations are Central Station
+# and Binyene Ha'Uma ICC at 115 m. 60 m sits safely between the two.
+#
+# Distance alone is not enough, because the closest pairs in the whole dataset are
+# different systems sharing an interchange - Central Station (light rail) is 42 m
+# from Jerusalem - Yitzhak Navon (heavy rail), and Kiryat Aryeh's light rail stop is
+# 23 m from the Petah Tikva-Kiryat Aryeh train station. Those are distinct stations
+# and must survive as separate rows, so merging never crosses a family boundary.
+MERGE_M = 60
 # Distance from a station to a route relation's stop node for it to count as served.
 SERVED_M = 150
 # Interchanges split across lines are mapped as "X" and "X - <line>" a few hundred
 # metres apart. Merge those by name, but only within this radius.
 NAME_MERGE_M = 600
 
-# Lines that exist in OSM but are not open to passengers.
+# Lines that exist in OSM but are not (fully) open to passengers.
+YELLOW = ("Jerusalem Light Rail Yellow Line - only the HaTurim to Manahat (Malha) "
+          "segment is open")
 CLOSED_ROUTES = [
-    ("L3", "Jerusalem Light Rail Yellow Line (under construction)"),
-    ("הצהוב", "Jerusalem Light Rail Yellow Line (under construction)"),
+    ("L3", YELLOW),
+    ("הצהוב", YELLOW),
     ("נופית", "Haifa–Nazareth 'Nofit' light rail (under construction)"),
     ("מטרונית", "Metronit BRT (excluded by request)"),
 ]
+
+# The Yellow Line opened in stages: as of August 2026 the HaTurim - Malha segment
+# carries passengers, while the northern continuation towards Ramot is still being
+# built. OSM happens to map only the open segment today, but pinning the open stops
+# by id means that stops added later for the unopened section stay excluded instead
+# of being swept in silently. HaTurim and Binyene Ha'Uma ICC are not listed here:
+# they are Red Line stops already, and merge into a single row.
+PARTIAL_OPEN = {
+    "node/14110866504": "Government Complex",
+    "node/14110785641": "Giv'at Ram",
+    "node/14110785639": "Safra University Campus",
+    "node/14110785637": "Hebrew Park",
+    "node/14110228510": "Betsal'el Bazak",
+    "node/14110805877": "Giv'at Mordekhay",
+    "node/14110823308": "Pat Jct",
+    "node/14110759300": "Gonenim",
+    "node/14110791430": "Malha Sports Complex",
+    "node/14110791431": "Ha'Ayal",
+    "node/14106312634": "Manahat (Malha)",
+}
 
 LIFECYCLE = ("construction:", "proposed:", "disused:", "abandoned:", "razed:",
              "demolished:", "removed:", "planned:")
@@ -144,9 +173,19 @@ def is_train(tags):
             or (tags.get("operator") or "").strip().lower() in IR_OPERATORS)
 
 
+def family(tags):
+    """Mode family. Merging only happens within one of these, so a train station is
+    never absorbed into the light rail stop outside its entrance."""
+    if tags.get("funicular") == "yes" or tags.get("station") == "funicular":
+        return "funicular"
+    if is_train(tags):
+        return "train"
+    return "light_rail"
+
+
 def confirm(elem, tags, srv_open, srv_closed, member_ids=()):
     """Classify a merged station as include / exclude / flag-for-review."""
-    if any(i in CONFIRMED_OPEN for i in member_ids):
+    if any(i in CONFIRMED_OPEN or i in PARTIAL_OPEN for i in member_ids):
         return "include", ""
     if is_train(tags):
         reasons = []
@@ -278,6 +317,8 @@ def main():
 
     for i in range(len(kept)):
         for j in range(i + 1, len(kept)):
+            if family(kept[i][1]) != family(kept[j][1]):
+                continue
             d = haversine(kept[i][2], kept[j][2])
             if d <= MERGE_M:
                 union(i, j)
@@ -328,7 +369,7 @@ def main():
             "lat": f"{lat:.6f}",
             "lng": f"{lng:.6f}",
             "id": osm_id,
-            "system": system_of(t, srv_open),
+            "system": system_of(t, srv_open + srv_closed),
         })
 
     # Hand-maintained additions (bus stops, corrections). Kept in a separate file

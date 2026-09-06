@@ -1,13 +1,13 @@
 # Israeli station list for Jet Lag: Hide and Seek
 
 A custom station list for the [JetLagHideAndSeek map generator](https://taibeled.github.io/JetLagHideAndSeek/),
-covering **144 open stations** in Israel:
+covering **158 open stations** in Israel:
 
 | System | Stations |
 |---|---:|
 | Israel Railways | 71 |
-| Jerusalem Light Rail (Red Line) | 34 |
-| Tel Aviv Light Rail (Red Line) | 33 |
+| Jerusalem Light Rail (Red Line + open Yellow Line segment) | 47 |
+| Tel Aviv Light Rail (Red Line) | 34 |
 | Carmelit (Haifa funicular) | 6 |
 
 Metronit is not included yet — see [Adding bus stops](#adding-bus-stops-later).
@@ -51,9 +51,13 @@ building sites and lines that are mapped before they open. The filters:
 - **Lifecycle tags.** Anything carrying `construction:`, `proposed:`, `disused:`,
   `abandoned:` and similar prefixes is dropped, as is anything named as a ruin.
 - **Light rail and funicular.** Confirmed by proximity to an *open* route relation.
-  This matters: OSM already maps the **Jerusalem Yellow Line (L3)** and the
-  **Haifa–Nazareth "Nofit" line**, neither of which has opened, and their stops
-  otherwise look identical to Red Line stops. 11 such stops are excluded.
+  This matters: OSM maps the **Haifa–Nazareth "Nofit" line**, which has not opened,
+  and its stops look identical to working ones.
+- **The Jerusalem Yellow Line (L3) opened in stages.** As of August 2026 the
+  HaTurim–Malha segment carries passengers while the northern continuation towards
+  Ramot is still being built. OSM currently maps only the open segment, but its 11
+  stops are pinned by id in `PARTIAL_OPEN` rather than the line being marked open
+  wholesale, so stops added later for the unopened section stay out until checked.
 - **Israel Railways.** Route relations for trains reference *ways*, not stop nodes,
   so proximity is useless there — the nearest route member can be 28 km away.
   Rail stations are confirmed by catalogue presence instead (a `wikidata` ref
@@ -67,14 +71,25 @@ confirmed open. `REVIEW.md` currently lists nothing outstanding.
 
 ### Duplicate handling
 
-One row per station, never one per platform. Nearest-neighbour distances in this
-dataset are sharply bimodal — 108 elements have a neighbour under 50 m, then
-nothing at all between 50 m and 250 m — so merging within 120 m is unambiguous.
-That collapses per-direction platform pairs (Jerusalem's 95 stop nodes become 34
-stations) and spelling variants mapped twice (`Abba Hillel` / `Aba Hilel Station`,
-0.4 m apart). Interchanges split across lines are also merged by name within 600 m,
-so `HaMifrats Central Station` and `HaMifrats Central Station - HaEmek Line` appear
-once. Merged stations use the centroid of their platforms.
+One row per station, never one per platform — but distance alone cannot decide this,
+because **the closest pairs in the whole dataset are not duplicates at all**. They
+are different systems sharing an interchange:
+
+| Distance | Pair | Same station? |
+|---:|---|---|
+| 0 m | `Abba Hillel` / `Aba Hilel Station` | yes — mapped twice |
+| 4 m | `Ben Gurion` / `Ben Gurion Light Rail Station` | yes — mapped twice |
+| 23 m | `Petah Tikva–Kiryat Aryeh` / `Kiryat Aryeh light rail station` | **no** — train + light rail |
+| 42 m | `Jerusalem - Yitzhak Navon` / `Central Station` | **no** — train + light rail |
+| 115 m | `Central Station` / `Binyene Ha'Uma ICC` | **no** — adjacent Red Line stops |
+
+So merging is scoped **by mode family** (train / light rail / funicular) and never
+crosses one. Within a family the threshold is 60 m: measured across every pair under
+300 m, platform twins of one station are never more than 23 m apart, and the closest
+distinct same-mode stations are 115 m apart. Interchanges split across lines within
+one family are additionally merged by name within 600 m, so `HaMifrats Central
+Station` and `HaMifrats Central Station - HaEmek Line` appear once. Merged stations
+use the centroid of their platforms.
 
 ## Adding bus stops later
 
@@ -110,3 +125,7 @@ no unmerged neighbours within 120 m.
 - Names are English (`name:en`) where OSM has them, Hebrew otherwise.
 - The `system` column is ignored by the importer — it is there so you can filter the
   list yourself.
+- Three interchanges appear as two rows because a train station and a light rail stop
+  share the site: Yitzhak Navon / Central Station, Yitzhak Navon / Binyene Ha'Uma ICC,
+  and Petah Tikva–Kiryat Aryeh / Kiryat Aryeh. `validate.py` lists them on every run.
+  Delete one of each pair if you would rather they were single hiding zones.
