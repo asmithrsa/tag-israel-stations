@@ -1,7 +1,7 @@
 # Israeli station list for Jet Lag: Hide and Seek
 
 A custom station list for the [JetLagHideAndSeek map generator](https://taibeled.github.io/JetLagHideAndSeek/),
-covering **180 open stations** in Israel:
+covering **185 open stations** in Israel:
 
 | System | Stations |
 |---|---:|
@@ -10,8 +10,22 @@ covering **180 open stations** in Israel:
 | Tel Aviv Light Rail (Red Line) | 33 |
 | Carmelit (Haifa funicular) | 6 |
 | Central bus stations | 27 |
+| Haifa Rakavlit (cable car) | 5 |
 
 Metronit is not included yet — see [Adding bus stops](#adding-bus-stops-later).
+
+### Haifa Rakavlit
+
+The רכבלית transit gondola (opened 2022) is pinned by OSM node id in `RAKAVLIT`,
+because OSM offers no reliable handle on it: two of its six stations carry neither
+the `operator` nor the `network` tag, and there is no route relation to follow. Four
+have no English name, so those are supplied in the same table. `generate.py` warns if
+an id stops resolving, so the pinning fails loudly rather than silently shrinking the
+list. Haifa's other cable car — the Stella Maris tourist tramway — is deliberately
+excluded.
+
+The `Merkazit HaMifrats` terminus is dropped as it sits 199 m from HaMifrats Central
+Station, leaving 5 of the 6.
 
 ### Central bus stations
 
@@ -31,9 +45,9 @@ also absorbs spelling variants (Acko/Akko, Kfar Saba/Sava, Tzfat/Safed). A quali
 platform name beats a vague station name — that is how the terminal mapped only as
 `Central bus station` is identified as **Kiryat Shmona**'s.
 
-**A central bus station within 400 m of a rail station is dropped**, not merged,
-since it is the same hiding zone. That removes 14, including Jerusalem, Be'er Sheva,
-Nahariya and both Haifa terminals. `REVIEW.md` lists every one. The 400 m cut sits in
+**A bus or cable car station within 400 m of a rail station is dropped**, not merged,
+since it is the same hiding zone. That removes 15, including Jerusalem, Be'er Sheva,
+Nahariya, both Haifa bus terminals and the Rakavlit's HaMifrats end. `REVIEW.md` lists every one. The 400 m cut sits in
 a clean gap in the data: collisions run up to 391 m (Lod's temporary terminal) and
 the next nearest is Tel Aviv New Central Bus Station at 523 m.
 

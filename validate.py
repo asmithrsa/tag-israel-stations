@@ -78,7 +78,7 @@ def hav(a, b):
     return 2 * r * math.asin(math.sqrt(h))
 
 FAMILY = {"Israel Railways": "train", "Carmelit": "funicular",
-          "Central Bus Station": "bus"}
+          "Central Bus Station": "bus", "Haifa Rakavlit": "bus"}
 by_id = {r["id"]: r for r in rows}
 pts = [(s["name"], (s["lat"], s["lng"]),
         FAMILY.get(by_id[s["id"]]["system"], "light_rail")) for s in loaded]
@@ -98,7 +98,7 @@ for i in range(len(pts)):
             interchange.append((d, pts[i][0], pts[j][0]))
 check(not close, f"no unmerged same-mode duplicates within 60 m ({len(close)} found)")
 check(not bus_near_rail,
-      f"no central bus station within 150 m of a rail station ({len(bus_near_rail)} found)")
+      f"no bus or cable car station within 150 m of a rail station ({len(bus_near_rail)} found)")
 for d, a, b in bus_near_rail[:5]:
     print(f"    {d:.0f}m  {a} <-> {b}")
 for d, a, b in close[:5]:

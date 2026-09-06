@@ -51,6 +51,11 @@ QUERY_BUS_NAMED = f"""[out:json][timeout:300];
 out center tags;
 """
 
+QUERY_CABLE = """[out:json][timeout:180];
+nwr["aerialway"="station"](32.75,34.95,32.82,35.06);
+out center tags;
+"""
+
 QUERY_ROUTE_NODES = f"""[out:json][timeout:600];
 {AREA}
 rel["type"="route"]["route"~"^(train|light_rail|tram|funicular|subway|monorail)$"](area.searchArea)->.r;
@@ -107,6 +112,23 @@ BUS_NAME_FIELDS = ("name", "name:en", "name:he", "official_name", "alt_name",
 # candidates within this radius folds those together.
 BUS_MERGE_M = 500
 NON_TRANSPORT = {"library", "post_office", "parking", "shelter", "bicycle_rental"}
+
+# The Rakavlit (רכבלית), Haifa's transit gondola, opened 2022. Pinned by id because
+# OSM offers no reliable handle on it: two of the six stations carry neither the
+# operator nor the network tag, and there is no route relation. Four have no English
+# name, so those are supplied here. generate.py warns if an id stops resolving.
+# Haifa's other cable car, the Stella Maris tourist tramway, is deliberately absent.
+RAKAVLIT = {
+    "node/2645430236": "Merkazit HaMifrats",
+    "node/7598996149": "Check Post",
+    "node/2645430233": "Dori",
+    "node/7598996148": "Technion Center",
+    "node/7598996146": "Technion Upper",
+    "node/2645430237": "University of Haifa",
+}
+# Modes that ride on top of the rail network rather than extending it. One of these
+# sitting on a rail station's site is the same hiding zone, so it is dropped.
+SUPPRESS_NEAR_RAIL = {"bus", "aerialway"}
 
 # Lines that exist in OSM but are not (fully) open to passengers.
 YELLOW = ("Jerusalem Light Rail Yellow Line - only the HaTurim to Manahat (Malha) "
@@ -203,8 +225,12 @@ def fetch(refresh: bool):
     named = HERE / "busname.json"
     if refresh or not named.exists():
         overpass(QUERY_BUS_NAMED, named)
+    cable = HERE / "cable.json"
+    if refresh or not cable.exists():
+        overpass(QUERY_CABLE, cable)
     return (json.loads(raw.read_text()), json.loads(nodes.read_text()),
-            json.loads(bus.read_text()), json.loads(named.read_text()))
+            json.loads(bus.read_text()), json.loads(named.read_text()),
+            json.loads(cable.read_text()))
 
 
 def coords(e):
@@ -323,6 +349,21 @@ def central_bus_stations(busdata, busnamed):
     return out
 
 
+def rakavlit_stations(cabledata):
+    """Haifa's Rakavlit gondola, matched against the pinned ids above."""
+    out = []
+    for e in cabledata["elements"]:
+        oid = f"{e['type']}/{e['id']}"
+        if oid not in RAKAVLIT or coords(e) is None:
+            continue
+        out.append((e, {"aerialway": "station", "name:en": RAKAVLIT[oid]}, coords(e)))
+    missing = set(RAKAVLIT) - {f"{e['type']}/{e['id']}" for e, _, _ in out}
+    if missing:
+        print(f"    WARNING: Rakavlit ids no longer in OSM: {sorted(missing)}")
+    print(f"  Haifa Rakavlit: {len(out)} of {len(RAKAVLIT)} stations found")
+    return out
+
+
 def is_train(tags):
     return (tags.get("train") == "yes"
             or tags.get("station") == "train"
@@ -334,6 +375,8 @@ def family(tags):
     never absorbed into the light rail stop outside its entrance."""
     if tags.get("amenity") == "bus_station":
         return "bus"
+    if tags.get("aerialway") == "station":
+        return "aerialway"
     if tags.get("funicular") == "yes" or tags.get("station") == "funicular":
         return "funicular"
     if is_train(tags):
@@ -348,7 +391,7 @@ def confirm(elem, tags, srv_open, srv_closed, member_ids=()):
         return "exclude", shut[0]
     if any(i in CONFIRMED_OPEN or i in PARTIAL_OPEN for i in member_ids):
         return "include", ""
-    if family(tags) == "bus":
+    if family(tags) in SUPPRESS_NEAR_RAIL:
         return "include", ""
     if is_train(tags):
         reasons = []
@@ -374,6 +417,8 @@ def system_of(tags, open_routes):
     """Human-readable system name for the CSV's `system` column."""
     if tags.get("amenity") == "bus_station":
         return "Central Bus Station"
+    if tags.get("aerialway") == "station":
+        return "Haifa Rakavlit"
     if tags.get("station") == "funicular" or tags.get("funicular") == "yes":
         return "Carmelit"
     op = (tags.get("operator") or "").strip().lower()
@@ -393,7 +438,7 @@ def system_of(tags, open_routes):
 def main():
     refresh = "--refresh" in sys.argv
     print("Building Israeli station list from OpenStreetMap")
-    data, routenodes, busdata, busnamed = fetch(refresh)
+    data, routenodes, busdata, busnamed, cabledata = fetch(refresh)
 
     elements = data["elements"]
     stations = [e for e in elements if e["type"] != "relation"]
@@ -449,6 +494,7 @@ def main():
     print(f"  rail stations: {len(kept)} kept, {len(dropped)} dropped pre-merge")
 
     kept.extend(central_bus_stations(busdata, busnamed))
+    kept.extend(rakavlit_stations(cabledata))
 
     # --- Which lines serve each element -------------------------------------
     for i, (e, t, pos) in enumerate(kept):
@@ -513,8 +559,8 @@ def main():
     candidates = []
     for a, b in itertools.combinations(reps, 2):
         (pa, fa), (pb, fb) = reps[a], reps[b]
-        if fa == fb or "bus" in (fa, fb):
-            continue  # bus stations are suppressed near rail, not merged into it
+        if fa == fb or fa in SUPPRESS_NEAR_RAIL or fb in SUPPRESS_NEAR_RAIL:
+            continue  # these are suppressed near rail, not merged into it
         d = haversine(pa, pb)
         if d <= CROSS_MERGE_M:
             candidates.append((d, a, b))
@@ -557,7 +603,7 @@ def main():
         pts = [kept[i][2] for i in m]
         mid[r] = (sum(p[0] for p in pts) / len(pts), sum(p[1] for p in pts) / len(pts))
     fam = {r: family(kept[rep[r]][1]) for r in clusters}
-    rail_clusters = [r for r in clusters if fam[r] != "bus"]
+    rail_clusters = [r for r in clusters if fam[r] not in SUPPRESS_NEAR_RAIL]
 
     rows, review = [], []
     for root, members in clusters.items():
@@ -565,9 +611,9 @@ def main():
         e, t, _, _, _ = kept[best]
         lat, lng = mid[root]
 
-        # A central bus station on a rail station's doorstep is the same hiding
-        # zone, so drop it instead of adding a near-duplicate point.
-        if fam[root] == "bus" and rail_clusters:
+        # A bus or cable car station on a rail station's doorstep is the same
+        # hiding zone, so drop it instead of adding a near-duplicate point.
+        if fam[root] in SUPPRESS_NEAR_RAIL and rail_clusters:
             near, d = min(((r, haversine(mid[root], mid[r])) for r in rail_clusters),
                           key=lambda x: x[1])
             if d <= BUS_RAIL_M:
@@ -649,10 +695,10 @@ def main():
     for r in sorted(incl, key=lambda x: x["name"]):
         lines.append(f"| {r['name']} | `{r['id']}` | {r['lat']:.5f}, {r['lng']:.5f} | {r['issue']} |")
     supp = [r for r in review if r["action"] == "suppressed"]
-    lines += ["", f"## Central bus stations suppressed as duplicates ({len(supp)})", "",
+    lines += ["", f"## Bus and cable car stations suppressed as duplicates ({len(supp)})", "",
               f"Within {BUS_RAIL_M} m of a station already in the list, so omitted "
               "to avoid two hiding zones on one site.", ""]
-    lines += ["| Bus station | OSM | Why |", "|---|---|---|"]
+    lines += ["| Station | OSM | Why |", "|---|---|---|"]
     for r in sorted(supp, key=lambda x: x["name"]):
         lines.append(f"| {r['name']} | `{r['id']}` | {r['issue']} |")
 
@@ -672,7 +718,7 @@ def main():
     lines.append("")
     (HERE / "REVIEW.md").write_text("\n".join(lines), encoding="utf-8")
     print(f"  wrote REVIEW.md: {len(incl)} to verify, {len(excl)} not-yet-open, "
-          f"{len(supp)} bus stations suppressed as duplicates")
+          f"{len(supp)} suppressed as duplicates of a rail station")
 
 
 if __name__ == "__main__":

@@ -9,11 +9,11 @@ These are in `stations.csv`. Delete any that are not actually open.
 | Station | OSM | Coords | Why flagged |
 |---|---|---|---|
 
-## Central bus stations suppressed as duplicates (14)
+## Bus and cable car stations suppressed as duplicates (15)
 
 Within 400 m of a station already in the list, so omitted to avoid two hiding zones on one site.
 
-| Bus station | OSM | Why |
+| Station | OSM | Why |
 |---|---|---|
 | "Hof HaCarmel" Central Bus Station | `way/89101876` | 173 m from Haifa-Hof HaCarmel (Raziel), which is already in the list - same hiding zone |
 | Acko central bus station | `way/74549036` | 354 m from Acre, which is already in the list - same hiding zone |
@@ -23,6 +23,7 @@ Within 400 m of a station already in the list, so omitted to avoid two hiding zo
 | HaMifrats Central Station - HaEmek Line | `way/603848032` | 46 m from HaMifrats Central Station, which is already in the list - same hiding zone |
 | Jerusalem Central Bus Station | `way/119441769` | 120 m from Jerusalem - Yitzhak Navon, which is already in the list - same hiding zone |
 | Karmi'el Central Bus Station | `node/3738656026` | 247 m from Karmiel, which is already in the list - same hiding zone |
+| Merkazit HaMifrats | `node/2645430236` | 199 m from HaMifrats Central Station, which is already in the list - same hiding zone |
 | Nahariya Central Bus Station | `way/96171292` | 144 m from Nahariya, which is already in the list - same hiding zone |
 | New temporary central bus station | `way/418128838` | 391 m from Lod, which is already in the list - same hiding zone |
 | Petach Tikva Central Bus Station | `node/528857680` | 26 m from Petah Tikva CBS, which is already in the list - same hiding zone |
