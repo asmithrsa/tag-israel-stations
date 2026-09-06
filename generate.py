@@ -9,6 +9,7 @@ Usage:  python3 generate.py [--refresh]
 from __future__ import annotations
 
 import csv
+import itertools
 import json
 import math
 import subprocess
@@ -58,6 +59,10 @@ SERVED_M = 150
 # Interchanges split across lines are mapped as "X" and "X - <line>" a few hundred
 # metres apart. Merge those by name, but only within this radius.
 NAME_MERGE_M = 600
+# A train station and the light rail stop serving its entrance are one hiding zone,
+# so they are merged despite being different mode families. Matching is nearest-first
+# and each station may take part in only one such merge - see the cross-family pass.
+CROSS_MERGE_M = 150
 
 # Lines that exist in OSM but are not (fully) open to passengers.
 YELLOW = ("Jerusalem Light Rail Yellow Line - only the HaTurim to Manahat (Malha) "
@@ -329,6 +334,36 @@ def main():
                 if ni and nj and (ni == nj or ni.startswith(nj + " -") or nj.startswith(ni + " -")):
                     union(i, j)
 
+    # Cross-family interchanges. Kept strictly pairwise: Yitzhak Navon absorbing
+    # Central Station (44 m) must not also drag in Binyene Ha'Uma ICC (81 m), which
+    # is a separate Red Line stop 115 m beyond Central Station. So candidates are
+    # matched nearest-first and each side may be claimed only once.
+    groups = {}
+    for i in range(len(kept)):
+        groups.setdefault(find(i), []).append(i)
+
+    def centroid(idxs):
+        return (sum(kept[i][2][0] for i in idxs) / len(idxs),
+                sum(kept[i][2][1] for i in idxs) / len(idxs))
+
+    reps = {r: (centroid(idx), family(kept[idx[0]][1])) for r, idx in groups.items()}
+    candidates = []
+    for a, b in itertools.combinations(reps, 2):
+        (pa, fa), (pb, fb) = reps[a], reps[b]
+        if fa == fb:
+            continue
+        d = haversine(pa, pb)
+        if d <= CROSS_MERGE_M:
+            candidates.append((d, a, b))
+    claimed = set()
+    for d, a, b in sorted(candidates):
+        if a in claimed or b in claimed:
+            continue
+        claimed.update((a, b))
+        na, nb = label(kept[groups[a][0]][1]), label(kept[groups[b][0]][1])
+        print(f"    interchange: {na} + {nb} ({d:.0f} m) -> one station")
+        union(a, b)
+
     clusters = {}
     for i in range(len(kept)):
         clusters.setdefault(find(i), []).append(i)
@@ -339,6 +374,7 @@ def main():
     rows, review = [], []
     for members in clusters.values():
         best = min(members, key=lambda i: (
+            0 if family(kept[i][1]) == "train" else 1,
             RANK.get(kept[i][1].get("railway"), 3),
             0 if kept[i][1].get("name:en") else 1,
             -len(kept[i][1]),

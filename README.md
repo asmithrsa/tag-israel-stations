@@ -1,13 +1,13 @@
 # Israeli station list for Jet Lag: Hide and Seek
 
 A custom station list for the [JetLagHideAndSeek map generator](https://taibeled.github.io/JetLagHideAndSeek/),
-covering **158 open stations** in Israel:
+covering **156 open stations** in Israel:
 
 | System | Stations |
 |---|---:|
 | Israel Railways | 71 |
-| Jerusalem Light Rail (Red Line + open Yellow Line segment) | 47 |
-| Tel Aviv Light Rail (Red Line) | 34 |
+| Jerusalem Light Rail (Red Line + open Yellow Line segment) | 46 |
+| Tel Aviv Light Rail (Red Line) | 33 |
 | Carmelit (Haifa funicular) | 6 |
 
 Metronit is not included yet — see [Adding bus stops](#adding-bus-stops-later).
@@ -83,13 +83,25 @@ are different systems sharing an interchange:
 | 42 m | `Jerusalem - Yitzhak Navon` / `Central Station` | **no** — train + light rail |
 | 115 m | `Central Station` / `Binyene Ha'Uma ICC` | **no** — adjacent Red Line stops |
 
-So merging is scoped **by mode family** (train / light rail / funicular) and never
-crosses one. Within a family the threshold is 60 m: measured across every pair under
-300 m, platform twins of one station are never more than 23 m apart, and the closest
-distinct same-mode stations are 115 m apart. Interchanges split across lines within
-one family are additionally merged by name within 600 m, so `HaMifrats Central
-Station` and `HaMifrats Central Station - HaEmek Line` appear once. Merged stations
-use the centroid of their platforms.
+So merging happens in three scoped passes rather than by one distance rule:
+
+1. **Within a mode family** (train / light rail / funicular), at 60 m. Measured
+   across every pair under 300 m, platform twins of one station are never more than
+   23 m apart and the closest distinct same-mode stations are 115 m apart, so 60 m
+   sits safely between them. This collapses per-direction platform pairs and
+   spelling variants mapped twice.
+2. **By name within a family**, at 600 m, for interchanges split across lines — so
+   `HaMifrats Central Station` and `HaMifrats Central Station - HaEmek Line` appear
+   once.
+3. **Across families**, at 150 m, so a train station and the light rail stop at its
+   entrance form one hiding zone. This pass is strictly pairwise: candidates are
+   matched nearest-first and each station may be claimed only once. That matters at
+   Yitzhak Navon, which is 44 m from `Central Station` and 81 m from
+   `Binyene Ha'Uma ICC`; merging both would chain two distinct Red Line stops
+   together, so only the nearer is absorbed. Merged interchanges take the heavy-rail
+   station's name.
+
+Merged stations use the centroid of their platforms.
 
 ## Adding bus stops later
 
@@ -125,7 +137,7 @@ no unmerged neighbours within 120 m.
 - Names are English (`name:en`) where OSM has them, Hebrew otherwise.
 - The `system` column is ignored by the importer — it is there so you can filter the
   list yourself.
-- Three interchanges appear as two rows because a train station and a light rail stop
-  share the site: Yitzhak Navon / Central Station, Yitzhak Navon / Binyene Ha'Uma ICC,
-  and Petah Tikva–Kiryat Aryeh / Kiryat Aryeh. `validate.py` lists them on every run.
-  Delete one of each pair if you would rather they were single hiding zones.
+- `Jerusalem - Yitzhak Navon` and `Petah Tikva–Kiryat Aryeh` each absorb the light
+  rail stop at their entrance, so each is one hiding zone. `Binyene Ha'Uma ICC`
+  stays separate 104 m away: it is a Red Line stop in its own right, not the stop
+  serving the railway station. `validate.py` lists any such remaining pair each run.
