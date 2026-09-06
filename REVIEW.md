@@ -31,14 +31,17 @@ Within 400 m of a station already in the list, so omitted to avoid two hiding zo
 | Sultan Suleiman Central Station | `node/1802987960` | 333 m from Damascus Gate, which is already in the list - same hiding zone |
 | Yavne Central Bus Station | `way/96006064` | 120 m from Yavne - West, which is already in the list - same hiding zone |
 
-## Excluded as not in service (2)
+## Excluded as not in service (5)
 
 Either not yet open, or closed. These are **not** in `stations.csv`; add them back if service resumes.
 
 | Station | OSM | Coords | Why excluded |
 |---|---|---|---|
 | Biblical Zoo | `node/2930682108` | 31.74483, 35.17811 | Biblical Zoo: Beit Shemesh-Jerusalem service ended; closed for years as of September 2026 |
+| Check Post | `node/7598996149` | 32.79014, 35.02781 | Check Post: Rakavlit station not in service as of September 2026 |
+| Dori | `node/2645430233` | 32.78223, 35.02935 | Dori: Rakavlit station not in service as of September 2026 |
 | Jerusalem Malcha | `node/2930682106` | 31.74775, 35.18821 | Jerusalem Malcha: Beit Shemesh-Jerusalem service ended; closed for years as of September 2026 |
+| Technion Upper | `node/7598996146` | 32.77304, 35.01762 | Technion Upper: Rakavlit station not in service as of September 2026 |
 
 ## Filtered out before merging (3)
 

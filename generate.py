@@ -122,7 +122,7 @@ RAKAVLIT = {
     "node/2645430236": "Merkazit HaMifrats",
     "node/7598996149": "Check Post",
     "node/2645430233": "Dori",
-    "node/7598996148": "Technion Center",
+    "node/7598996148": "Technion (Lower)",
     "node/7598996146": "Technion Upper",
     "node/2645430237": "University of Haifa",
 }
@@ -180,6 +180,14 @@ RECENT_NODE_ID = 13_000_000_000
 # data marks them - both carry wikidata refs and no lifecycle tag - so a service
 # change can only be recorded here.
 CLOSED_STATIONS = {
+    # Only three of the Rakavlit's six stations are in service: HaMifratz, Technion
+    # (Lower) and University of Haifa. OSM maps all six identically, with nothing to
+    # separate the built-but-unopened ones.
+    "node/7598996149": "Check Post: Rakavlit station not in service as of "
+                       "September 2026",
+    "node/2645430233": "Dori: Rakavlit station not in service as of September 2026",
+    "node/7598996146": "Technion Upper: Rakavlit station not in service as of "
+                       "September 2026",
     "node/2930682108": "Biblical Zoo: Beit Shemesh-Jerusalem service ended; closed "
                        "for years as of September 2026",
     "node/2930682106": "Jerusalem Malcha: Beit Shemesh-Jerusalem service ended; "

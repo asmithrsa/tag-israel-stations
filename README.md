@@ -1,7 +1,7 @@
 # Israeli station list for Jet Lag: Hide and Seek
 
 A custom station list for the [JetLagHideAndSeek map generator](https://taibeled.github.io/JetLagHideAndSeek/),
-covering **185 open stations** in Israel:
+covering **182 open stations** in Israel:
 
 | System | Stations |
 |---|---:|
@@ -10,7 +10,7 @@ covering **185 open stations** in Israel:
 | Tel Aviv Light Rail (Red Line) | 33 |
 | Carmelit (Haifa funicular) | 6 |
 | Central bus stations | 27 |
-| Haifa Rakavlit (cable car) | 5 |
+| Haifa Rakavlit (cable car) | 2 |
 
 Metronit is not included yet — see [Adding bus stops](#adding-bus-stops-later).
 
@@ -24,8 +24,17 @@ an id stops resolving, so the pinning fails loudly rather than silently shrinkin
 list. Haifa's other cable car — the Stella Maris tourist tramway — is deliberately
 excluded.
 
-The `Merkazit HaMifrats` terminus is dropped as it sits 199 m from HaMifrats Central
-Station, leaving 5 of the 6.
+Only three of its six stations are in service — **HaMifratz**, **Technion (Lower)**
+and **University of Haifa** — and OSM maps all six identically, with nothing to
+separate the built-but-unopened ones, so the other three are pinned in
+`CLOSED_STATIONS`. HaMifratz is then dropped as a duplicate, sitting 199 m from
+HaMifrats Central Station, which already covers that site. That leaves **2** rows;
+the third open station is present as `HaMifrats Central Station`.
+
+OSM names the lower Technion stop `תחנת טכניון מרכז` ("Technion Center"). It is the
+lower of the two — 2255 m along the line from the HaMifrats terminus against 2677 m
+for `טכניון עליון` ("Technion Upper"), on a line that climbs the whole way — so it is
+listed here as `Technion (Lower)`.
 
 ### Central bus stations
 
