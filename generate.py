@@ -154,6 +154,16 @@ RUIN_WORDS = ("שרידים", "ruins", "remains of", "former station", "old nabl
 # added to OSM before opening is the main way a closed station slips through.
 RECENT_NODE_ID = 13_000_000_000
 
+# Stations OSM still tags as open but which no longer see service. Nothing in the
+# data marks them - both carry wikidata refs and no lifecycle tag - so a service
+# change can only be recorded here.
+CLOSED_STATIONS = {
+    "node/2930682108": "Biblical Zoo: Beit Shemesh-Jerusalem service ended; closed "
+                       "for years as of September 2026",
+    "node/2930682106": "Jerusalem Malcha: Beit Shemesh-Jerusalem service ended; "
+                       "closed for years as of September 2026",
+}
+
 # Stations the heuristics above cannot confirm but that have been checked by hand.
 # Without this, every regeneration would flag them again.
 CONFIRMED_OPEN = {
@@ -333,6 +343,9 @@ def family(tags):
 
 def confirm(elem, tags, srv_open, srv_closed, member_ids=()):
     """Classify a merged station as include / exclude / flag-for-review."""
+    shut = [CLOSED_STATIONS[i] for i in member_ids if i in CLOSED_STATIONS]
+    if shut:
+        return "exclude", shut[0]
     if any(i in CONFIRMED_OPEN or i in PARTIAL_OPEN for i in member_ids):
         return "include", ""
     if family(tags) == "bus":
@@ -643,8 +656,9 @@ def main():
     for r in sorted(supp, key=lambda x: x["name"]):
         lines.append(f"| {r['name']} | `{r['id']}` | {r['issue']} |")
 
-    lines += ["", f"## Excluded as not-yet-open ({len(excl)})", "",
-              "These are **not** in `stations.csv`. Add them back if any have opened.", ""]
+    lines += ["", f"## Excluded as not in service ({len(excl)})", "",
+              "Either not yet open, or closed. These are **not** in `stations.csv`; "
+              "add them back if service resumes.", ""]
     lines += ["| Station | OSM | Coords | Why excluded |", "|---|---|---|---|"]
     for r in sorted(excl, key=lambda x: x["name"]):
         lines.append(f"| {r['name']} | `{r['id']}` | {r['lat']:.5f}, {r['lng']:.5f} | {r['issue']} |")

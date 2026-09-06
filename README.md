@@ -1,11 +1,11 @@
 # Israeli station list for Jet Lag: Hide and Seek
 
 A custom station list for the [JetLagHideAndSeek map generator](https://taibeled.github.io/JetLagHideAndSeek/),
-covering **182 open stations** in Israel:
+covering **180 open stations** in Israel:
 
 | System | Stations |
 |---|---:|
-| Israel Railways | 71 |
+| Israel Railways | 69 |
 | Jerusalem Light Rail (Red Line + open Yellow Line segment) | 45 |
 | Tel Aviv Light Rail (Red Line) | 33 |
 | Carmelit (Haifa funicular) | 6 |
@@ -88,6 +88,12 @@ building sites and lines that are mapped before they open. The filters:
   so proximity is useless there — the nearest route member can be 28 km away.
   Rail stations are confirmed by catalogue presence instead (a `wikidata` ref
   and/or an Israel Railways `operator` tag), which 67 of 74 carry.
+
+Some changes leave no trace in the data at all. `Biblical Zoo` and `Jerusalem Malcha`
+lost their service when the Beit Shemesh–Jerusalem section closed, but OSM still tags
+both as open, with `wikidata` refs and no lifecycle tag — no heuristic can catch
+that. They are pinned in `CLOSED_STATIONS` in `generate.py`; add a station there if
+its service ends. (`Bet Shemesh` itself stays: it is still served from the Lod side.)
 
 Stations that could not be confirmed either way are **kept** and listed in
 [`REVIEW.md`](REVIEW.md) rather than silently dropped. Once you have checked one by
