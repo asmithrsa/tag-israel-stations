@@ -1,0 +1,145 @@
+name,lat,lng,id,system
+Bney Zion Hospital,32.807572,34.990500,node/616484913,Carmelit
+Carmel Center,32.804678,34.987909,node/615947115,Carmelit
+Downtown,32.817490,34.999731,node/616484210,Carmelit
+HaNevi'im,32.812621,34.995043,node/3729320319,Carmelit
+Hadar – City Hall,32.814656,34.997311,node/4208581362,Carmelit
+Masada,32.809660,34.992383,node/616484212,Carmelit
+Acre,32.928190,35.083058,node/2930618415,Israel Railways
+Afula,32.621563,35.295226,node/4440444255,Israel Railways
+Ahihud,32.911726,35.173439,node/5082642028,Israel Railways
+Ashdod–Ad Halom–Metropol,31.773942,34.666238,node/2930618422,Israel Railways
+Ashkelon,31.675934,34.604492,node/2930618423,Israel Railways
+Atlit,32.692764,34.940222,node/3988544984,Israel Railways
+Bat Yam - Komemiyyut,32.000832,34.759347,node/2930618419,Israel Railways
+Bat Yam - Yoseftal,32.014611,34.761982,node/2930618418,Israel Railways
+Be'er Sheva Merkaz,31.243076,34.798384,node/2930618425,Israel Railways
+Be'er Ya'akov,31.932462,34.830571,node/4903319585,Israel Railways
+Beer Sheva North - University,31.261895,34.809396,node/621348196,Israel Railways
+Beit Shean,32.515005,35.488526,node/4440444254,Israel Railways
+Beit Yehoshua,32.262604,34.860233,node/2930618406,Israel Railways
+Ben Gurion Airport,32.000404,34.870480,node/3982712778,Israel Railways
+Bet Shemesh,31.757820,34.989365,node/3090784765,Israel Railways
+Biblical Zoo,31.744834,35.178112,node/2930682108,Israel Railways
+Binyamina,32.514553,34.949629,node/4590837775,Israel Railways
+Bnei Brak–Ramat HaHayal,32.102892,34.830550,node/3712563183,Israel Railways
+Caesarea-Pardes Hana,32.485261,34.954170,node/3703588164,Israel Railways
+Dimona,31.068923,35.011833,node/3130051677,Israel Railways
+HaMifrats Central Station,32.793350,35.035116,node/2930618411,Israel Railways
+Hadera East,32.443830,34.951318,node/4528124569,Israel Railways
+Hadera West,32.438380,34.899335,node/2906198781,Israel Railways
+Haifa Bat Galim,32.830340,34.981759,node/2930618410,Israel Railways
+Haifa Center HaShmona,32.822302,34.997363,node/429882321,Israel Railways
+Haifa-Hof HaCarmel (Raziel),32.793514,34.957457,node/2923878193,Israel Railways
+Herzelia,32.163981,34.817586,node/2914229359,Israel Railways
+Hod HaSharon - Sokolov,32.170004,34.902012,node/3982765958,Israel Railways
+Holon - Wolfson,32.035314,34.759691,node/3978658306,Israel Railways
+Holon Junction,32.037040,34.776415,node/3978658307,Israel Railways
+Hutzot Hamifratz,32.809401,35.054417,node/2930618412,Israel Railways
+Jerusalem - Yitzhak Navon,31.788154,35.203000,node/7144868421,Israel Railways
+Jerusalem Malcha,31.747754,35.188215,node/2930682106,Israel Railways
+Karmiel,32.923917,35.297136,node/2942466195,Israel Railways
+Kfar Chabad,31.992896,34.853323,node/461613375,Israel Railways
+Kfar Sava-Nordau (A.Kostyuk),32.167473,34.916798,node/3982780858,Israel Railways
+Kiryat Gat,31.603149,34.777927,node/2930618427,Israel Railways
+Kiryat Haim,32.824813,35.064274,node/2930618413,Israel Railways
+Kiryat Mal'akhi - Yoav,31.746914,34.822507,node/4127965809,Israel Railways
+Kiryat Motzkin,32.832957,35.069924,node/2930618414,Israel Railways
+Lehavim Rahat,31.369818,34.798165,node/5188605493,Israel Railways
+Lod,31.947643,34.878218,node/4590837774,Israel Railways
+Lod - Gane Aviv,31.967028,34.878680,node/3982698630,Israel Railways
+Mazkeret Batya,31.842142,34.856307,node/4127965810,Israel Railways
+Migdal HaEmek – Kfar Baruch,32.647207,35.209454,node/4440447730,Israel Railways
+Modi'in Center,31.901067,35.005752,node/2931455067,Israel Railways
+Nahariya,33.004949,35.098829,node/5202426525,Israel Railways
+Netanya,32.319954,34.869326,node/3703591031,Israel Railways
+Netanya Sapir,32.279674,34.865508,node/4482054540,Israel Railways
+Netivot,31.410749,34.571711,node/3982823163,Israel Railways
+Ofakim,31.321510,34.634230,node/3988591607,Israel Railways
+Pa'atai Modi'in,31.893120,34.960698,node/2931455068,Israel Railways
+Petah Tikva Segula,32.111889,34.901032,node/2930682113,Israel Railways
+Petah Tikva–Kiryat Aryeh,32.106326,34.862754,node/2930682112,Israel Railways
+Ra'anana South,32.172654,34.886603,node/5705790741,Israel Railways
+Ra'anana West,32.179983,34.850838,node/11264520000,Israel Railways
+Ramla,31.929221,34.876728,node/4060304995,Israel Railways
+Rechovot,31.909103,34.806908,node/3566973254,Israel Railways
+Rishon LeTsiyyon - Moshe Dayan,31.987700,34.757285,node/2930618420,Israel Railways
+Rishon LeTsiyyon HaRishonim,31.948854,34.803080,node/609582810,Israel Railways
+Rosh Ha'Ayin-North,32.120636,34.934463,node/2930682115,Israel Railways
+Sderot,31.515774,34.585427,node/4482230311,Israel Railways
+Shomron – Tayyiba,32.276337,34.996602,node/13626956323,Israel Railways
+Tel Aviv - HaHagana,32.054150,34.784802,node/3978658308,Israel Railways
+Tel Aviv Hashalom,32.073559,34.793164,node/2930618403,Israel Railways
+Tel Aviv Savidor Center,32.084244,34.798312,node/2930618402,Israel Railways
+Tel Aviv University,32.103706,34.804610,node/2930618401,Israel Railways
+Tira - Kokhav Ya'ir,32.229662,34.977013,node/13964778722,Israel Railways
+Yavne - East,31.861336,34.743891,node/3086081414,Israel Railways
+Yavne - West,31.891180,34.731222,node/2930618421,Israel Railways
+Yokneam – Kfar Yehoshua,32.681041,35.125769,node/4440447731,Israel Railways
+A-Sahal,31.811178,35.232793,node/1464782846,Jerusalem Light Rail
+Ammunition Hill,31.799161,35.232061,node/891017311,Jerusalem Light Rail
+Beit Hanina,31.819751,35.229074,node/1467060695,Jerusalem Light Rail
+City Hall,31.779681,35.223858,node/1803044365,Jerusalem Light Rail
+Damascus Gate,31.782483,35.227839,node/1405968969,Jerusalem Light Rail
+Denya Square,31.780610,35.188318,node/891041025,Jerusalem Light Rail
+Giv'at HaMivtar,31.805482,35.234274,node/1107348918,Jerusalem Light Rail
+HaDavidka,31.784567,35.215194,node/890816085,Jerusalem Light Rail
+HaMifletset Playground,31.761991,35.171602,node/12629201403,Jerusalem Light Rail
+HaTurim,31.787918,35.206782,node/890816122,Jerusalem Light Rail
+Hadassah Ein Kerem,31.764716,35.147660,node/12629197350,Jerusalem Light Rail
+HeHaluts,31.782791,35.191693,node/1467060666,Jerusalem Light Rail
+Hel Ha'Avir,31.828952,35.238403,node/1464782839,Jerusalem Light Rail
+Henrietta Szold – East,31.759825,35.167907,node/10952058061,Jerusalem Light Rail
+Jaffa – Center,31.782857,35.218358,node/890816082,Jerusalem Light Rail
+Kiryat HaYovel – West,31.766954,35.174436,node/12629175601,Jerusalem Light Rail
+Kiryat Menahem,31.760021,35.164132,node/12629201406,Jerusalem Light Rail
+Kiryat Moshe,31.786227,35.198164,node/890816167,Jerusalem Light Rail
+Mahane Yehuda,31.786009,35.211417,node/890816109,Jerusalem Light Rail
+Mazal Kashat,31.837281,35.234155,node/12629110575,Jerusalem Light Rail
+Medical School,31.764169,35.151241,node/12629197348,Jerusalem Light Rail
+Moshe Dayan – North,31.833442,35.234685,node/12629134304,Jerusalem Light Rail
+Mount Herzl,31.770848,35.181573,node/890816223,Jerusalem Light Rail
+Neve Ya'akov – North,31.840979,35.240224,node/12629134302,Jerusalem Light Rail
+Ora Junction,31.757025,35.159988,node/12629197346,Jerusalem Light Rail
+Pisgat Ze'ev – Center,31.823750,35.237624,node/1464782840,Jerusalem Light Rail
+Sayeret Dukhifat,31.826101,35.240221,node/1464782855,Jerusalem Light Rail
+Shim'on HaTsadik,31.793043,35.226334,node/891711983,Jerusalem Light Rail
+Shivtei Israel,31.786537,35.227126,node/890816042,Jerusalem Light Rail
+Shmaryahu Levin,31.768753,35.177670,node/12629146699,Jerusalem Light Rail
+Shu'afat,31.814352,35.229871,node/1464783365,Jerusalem Light Rail
+Yefe Nof,31.776952,35.185004,node/890816220,Jerusalem Light Rail
+Yekutiel Adam,31.819323,35.239303,node/1464782885,Jerusalem Light Rail
+Yitzhak Tabenkin,31.838114,35.237394,node/12629110577,Jerusalem Light Rail
+Aba Hilel Station,32.082853,34.802364,way/382072592,Tel Aviv Light Rail
+Aharonovich,32.092677,34.838133,way/397916864,Tel Aviv Light Rail
+Allenby,32.062705,34.774880,node/11124763767,Tel Aviv Light Rail
+Arlozoroff,32.081565,34.796508,node/11124786622,Tel Aviv Light Rail
+Balfour,32.017459,34.744727,node/11125350025,Tel Aviv Light Rail
+Beilinson,32.091457,34.866750,node/11124762412,Tel Aviv Light Rail
+Ben Gurion,32.090939,34.823398,node/11133775515,Tel Aviv Light Rail
+Bialik,32.086774,34.812049,node/11124798243,Tel Aviv Light Rail
+Binyamin,32.016413,34.748336,node/11125350024,Tel Aviv Light Rail
+Bloomfield Stadium,32.050258,34.758952,node/11132682253,Tel Aviv Light Rail
+Carlebach,32.065588,34.783100,way/365341966,Tel Aviv Light Rail
+Dankner,32.090954,34.872384,node/11124725529,Tel Aviv Light Rail
+Ehrlich,32.046069,34.758365,node/11125454976,Tel Aviv Light Rail
+Elifelet,32.058341,34.762770,node/11133645848,Tel Aviv Light Rail
+Em HaMoshavot Bridge,32.098879,34.846268,node/11125457547,Tel Aviv Light Rail
+HaAtzma'ut,32.028165,34.748973,node/11125454962,Tel Aviv Light Rail
+HaBesht,32.038722,34.755837,node/11125454970,Tel Aviv Light Rail
+HaKomemiyut,32.002259,34.746752,node/11125350010,Tel Aviv Light Rail
+HeAmal,32.005874,34.748987,node/11125350011,Tel Aviv Light Rail
+Isakov,32.042144,34.757077,node/11125454973,Tel Aviv Light Rail
+Jabotinsky,32.021706,34.743220,node/11133645857,Tel Aviv Light Rail
+Kaf Tet BeNovember,32.010832,34.751488,node/11125350016,Tel Aviv Light Rail
+Krol,32.091905,34.877512,node/11124762409,Tel Aviv Light Rail
+Mahrozet,32.033575,34.751653,node/11125454967,Tel Aviv Light Rail
+Petah Tikva CBS,32.094649,34.886393,node/11124762408,Tel Aviv Light Rail
+Pinsker,32.093735,34.882124,node/11124762405,Tel Aviv Light Rail
+Rothschild,32.026728,34.744466,node/11133645854,Tel Aviv Light Rail
+Shaham,32.091941,34.861398,node/11124725530,Tel Aviv Light Rail
+Shalma,32.054498,34.759521,node/11132682256,Tel Aviv Light Rail
+Shaul HaMelech,32.076918,34.792155,node/11124793538,Tel Aviv Light Rail
+Shenkar,32.092663,34.853305,node/11124725534,Tel Aviv Light Rail
+Yehudit,32.070364,34.788606,node/11124781758,Tel Aviv Light Rail
+Yoseftal,32.015390,34.752151,node/11125350021,Tel Aviv Light Rail
