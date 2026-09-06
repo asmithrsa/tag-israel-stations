@@ -43,7 +43,7 @@ the next nearest is Tel Aviv New Central Bus Station at 523 m.
    click **Raw**. Copy that URL. It looks like:
 
    ```
-   https://raw.githubusercontent.com/<you>/jetlag-israel-stations/main/stations.csv
+   https://raw.githubusercontent.com/asmithrsa/tag-israel-stations/main/stations.csv
    ```
 
 2. In the map generator, open the **Hiding Zone** sidebar, tick **Use custom
@@ -56,11 +56,12 @@ and Google Drive share links do not.
 
 ### Pushing to GitHub
 
+The repo lives at
+[github.com/asmithrsa/tag-israel-stations](https://github.com/asmithrsa/tag-israel-stations).
+To push further changes:
+
 ```bash
-gh repo create jetlag-israel-stations --public --source=. --push   # if you have gh
-# or, manually:
-git remote add origin https://github.com/<you>/jetlag-israel-stations.git
-git push -u origin main
+git push
 ```
 
 ## What counts as "open"
