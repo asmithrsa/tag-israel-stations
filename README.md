@@ -63,6 +63,20 @@ the next nearest is Tel Aviv New Central Bus Station at 523 m.
 2. In the map generator, open the **Hiding Zone** sidebar, tick **Use custom
    stations**, and paste the URL into *Import stations from URL*. Press **Import**.
 
+### After updating the list
+
+`raw.githubusercontent.com` serves this file with `cache-control: max-age=300`, and
+the site imports it with a plain `fetch()` that does no cache-busting. So for about
+five minutes after a push, re-importing gives you the **previous** version — new
+stations appear to be missing even though the file is correct.
+
+Force a fresh copy by appending any dummy query parameter, bumping the number each
+time you push:
+
+```
+https://raw.githubusercontent.com/asmithrsa/tag-israel-stations/main/stations.csv?v=2
+```
+
 The link must be a **raw** file URL. A normal GitHub page URL returns HTML, and the
 site fetches it directly from your browser with no proxy — so the host has to send
 `Access-Control-Allow-Origin: *`. `raw.githubusercontent.com` does; most file hosts
