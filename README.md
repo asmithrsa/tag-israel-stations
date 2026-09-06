@@ -60,7 +60,10 @@ building sites and lines that are mapped before they open. The filters:
   and/or an Israel Railways `operator` tag), which 67 of 74 carry.
 
 Stations that could not be confirmed either way are **kept** and listed in
-[`REVIEW.md`](REVIEW.md) rather than silently dropped.
+[`REVIEW.md`](REVIEW.md) rather than silently dropped. Once you have checked one by
+hand, add its OSM id to `CONFIRMED_OPEN` in `generate.py` so it is not flagged again
+— `Shomron – Tayyiba` and `Tira - Kokhav Ya'ir` are already recorded there as
+confirmed open. `REVIEW.md` currently lists nothing outstanding.
 
 ### Duplicate handling
 

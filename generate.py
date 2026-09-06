@@ -76,6 +76,13 @@ RUIN_WORDS = ("שרידים", "ruins", "remains of", "former station", "old nabl
 # added to OSM before opening is the main way a closed station slips through.
 RECENT_NODE_ID = 13_000_000_000
 
+# Stations the heuristics above cannot confirm but that have been checked by hand.
+# Without this, every regeneration would flag them again.
+CONFIRMED_OPEN = {
+    "node/13626956323": "Shomron - Tayyiba: confirmed open, September 2026",
+    "node/13964778722": "Tira - Kokhav Ya'ir: confirmed open, September 2026",
+}
+
 
 def haversine(a, b):
     r = 6371000.0
@@ -137,8 +144,10 @@ def is_train(tags):
             or (tags.get("operator") or "").strip().lower() in IR_OPERATORS)
 
 
-def confirm(elem, tags, srv_open, srv_closed):
+def confirm(elem, tags, srv_open, srv_closed, member_ids=()):
     """Classify a merged station as include / exclude / flag-for-review."""
+    if any(i in CONFIRMED_OPEN for i in member_ids):
+        return "include", ""
     if is_train(tags):
         reasons = []
         catalogued = (tags.get("wikidata")
@@ -305,7 +314,8 @@ def main():
         name = label(t)
         osm_id = f"{e['type']}/{e['id']}"
 
-        verdict, why = confirm(e, t, srv_open, srv_closed)
+        member_ids = [f"{kept[i][0]['type']}/{kept[i][0]['id']}" for i in members]
+        verdict, why = confirm(e, t, srv_open, srv_closed, member_ids)
         if verdict == "exclude":
             review.append({"name": name, "id": osm_id, "lat": lat, "lng": lng,
                            "issue": why, "action": "excluded"})
