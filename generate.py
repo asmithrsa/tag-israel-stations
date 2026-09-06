@@ -59,9 +59,11 @@ SERVED_M = 150
 # Interchanges split across lines are mapped as "X" and "X - <line>" a few hundred
 # metres apart. Merge those by name, but only within this radius.
 NAME_MERGE_M = 600
-# A train station and the light rail stop serving its entrance are one hiding zone,
-# so they are merged despite being different mode families. Matching is nearest-first
-# and each station may take part in only one such merge - see the cross-family pass.
+# A train station and the light rail stops serving it are one hiding zone, so they
+# merge despite being different mode families. A large station can be served by more
+# than one stop - Yitzhak Navon has Central Station 44 m one way and Binyene Ha'Uma
+# ICC 81 m the other - so the rail station acts as a hub and absorbs every light rail
+# stop within this radius.
 CROSS_MERGE_M = 150
 
 # Lines that exist in OSM but are not (fully) open to passengers.
@@ -334,10 +336,11 @@ def main():
                 if ni and nj and (ni == nj or ni.startswith(nj + " -") or nj.startswith(ni + " -")):
                     union(i, j)
 
-    # Cross-family interchanges. Kept strictly pairwise: Yitzhak Navon absorbing
-    # Central Station (44 m) must not also drag in Binyene Ha'Uma ICC (81 m), which
-    # is a separate Red Line stop 115 m beyond Central Station. So candidates are
-    # matched nearest-first and each side may be claimed only once.
+    # Cross-family interchanges, matched hub-and-spoke rather than by raw proximity.
+    # A rail station may absorb several light rail stops, since a big interchange is
+    # served from more than one side, but each light rail stop can be claimed only
+    # once - otherwise two rail stations near one stop would chain into a single
+    # cluster through it.
     groups = {}
     for i in range(len(kept)):
         groups.setdefault(find(i), []).append(i)
@@ -357,12 +360,20 @@ def main():
             candidates.append((d, a, b))
     claimed = set()
     for d, a, b in sorted(candidates):
-        if a in claimed or b in claimed:
-            continue
-        claimed.update((a, b))
-        na, nb = label(kept[groups[a][0]][1]), label(kept[groups[b][0]][1])
-        print(f"    interchange: {na} + {nb} ({d:.0f} m) -> one station")
-        union(a, b)
+        fa, fb = reps[a][1], reps[b][1]
+        if fa == "train" or fb == "train":
+            hub, spoke = (a, b) if fa == "train" else (b, a)
+            if spoke in claimed:
+                continue
+            claimed.add(spoke)
+        else:
+            if a in claimed or b in claimed:
+                continue
+            claimed.update((a, b))
+            hub, spoke = a, b
+        nh, ns = label(kept[groups[hub][0]][1]), label(kept[groups[spoke][0]][1])
+        print(f"    interchange: {nh} absorbs {ns} ({d:.0f} m)")
+        union(hub, spoke)
 
     clusters = {}
     for i in range(len(kept)):

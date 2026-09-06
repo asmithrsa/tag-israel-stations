@@ -1,12 +1,12 @@
 # Israeli station list for Jet Lag: Hide and Seek
 
 A custom station list for the [JetLagHideAndSeek map generator](https://taibeled.github.io/JetLagHideAndSeek/),
-covering **156 open stations** in Israel:
+covering **155 open stations** in Israel:
 
 | System | Stations |
 |---|---:|
 | Israel Railways | 71 |
-| Jerusalem Light Rail (Red Line + open Yellow Line segment) | 46 |
+| Jerusalem Light Rail (Red Line + open Yellow Line segment) | 45 |
 | Tel Aviv Light Rail (Red Line) | 33 |
 | Carmelit (Haifa funicular) | 6 |
 
@@ -93,13 +93,13 @@ So merging happens in three scoped passes rather than by one distance rule:
 2. **By name within a family**, at 600 m, for interchanges split across lines — so
    `HaMifrats Central Station` and `HaMifrats Central Station - HaEmek Line` appear
    once.
-3. **Across families**, at 150 m, so a train station and the light rail stop at its
-   entrance form one hiding zone. This pass is strictly pairwise: candidates are
-   matched nearest-first and each station may be claimed only once. That matters at
-   Yitzhak Navon, which is 44 m from `Central Station` and 81 m from
-   `Binyene Ha'Uma ICC`; merging both would chain two distinct Red Line stops
-   together, so only the nearer is absorbed. Merged interchanges take the heavy-rail
-   station's name.
+3. **Across families**, at 150 m, so a train station and the light rail stops
+   serving it form one hiding zone. Matched hub-and-spoke: a rail station absorbs
+   every light rail stop within range, because a large interchange is served from
+   more than one side — `Jerusalem - Yitzhak Navon` takes in both `Central Station`
+   (44 m) and `Binyene Ha'Uma ICC` (81 m). Each light rail stop can be claimed only
+   once, so two rail stations near one stop cannot chain together through it. Merged
+   interchanges take the heavy-rail station's name.
 
 Merged stations use the centroid of their platforms.
 
@@ -137,7 +137,7 @@ no unmerged neighbours within 120 m.
 - Names are English (`name:en`) where OSM has them, Hebrew otherwise.
 - The `system` column is ignored by the importer — it is there so you can filter the
   list yourself.
-- `Jerusalem - Yitzhak Navon` and `Petah Tikva–Kiryat Aryeh` each absorb the light
-  rail stop at their entrance, so each is one hiding zone. `Binyene Ha'Uma ICC`
-  stays separate 104 m away: it is a Red Line stop in its own right, not the stop
-  serving the railway station. `validate.py` lists any such remaining pair each run.
+- `Jerusalem - Yitzhak Navon` is one hiding zone covering the railway station and
+  both light rail stops around it (`Central Station`, `Binyene Ha'Uma ICC`), and
+  `Petah Tikva–Kiryat Aryeh` likewise absorbs its light rail stop. `validate.py`
+  reports any cross-system pair left within 150 m; there are currently none.
