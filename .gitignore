@@ -1,4 +1,6 @@
 raw.json
 routenodes.json
+bus.json
+busname.json
 *.ql
 __pycache__/

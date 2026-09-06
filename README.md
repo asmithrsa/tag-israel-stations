@@ -1,7 +1,7 @@
 # Israeli station list for Jet Lag: Hide and Seek
 
 A custom station list for the [JetLagHideAndSeek map generator](https://taibeled.github.io/JetLagHideAndSeek/),
-covering **155 open stations** in Israel:
+covering **182 open stations** in Israel:
 
 | System | Stations |
 |---|---:|
@@ -9,8 +9,33 @@ covering **155 open stations** in Israel:
 | Jerusalem Light Rail (Red Line + open Yellow Line segment) | 45 |
 | Tel Aviv Light Rail (Red Line) | 33 |
 | Carmelit (Haifa funicular) | 6 |
+| Central bus stations | 27 |
 
 Metronit is not included yet — see [Adding bus stops](#adding-bus-stops-later).
+
+### Central bus stations
+
+Israel's intercity terminals (*תחנה מרכזית*, **merkazit**) come from two OSM sources,
+because neither is complete on its own. `amenity=bus_station` is authoritative but
+misses several towns — Kiryat Shmona, Ness Ziona, Rosh Pina and Beit She'an have a
+central bus station mapped only as named platforms, or in Beit She'an's case only as
+a building. A name search fills those gaps, with two guards:
+
+- The name must contain a station word. Matching `מרכזית` alone catches
+  *HaSdera HaMerkazit*, which is a **boulevard**, not a station.
+- A platform-derived name must carry a place qualifier. 18 platforms across the
+  country are named simply `Central Station`, which identifies no town.
+
+Where both sources describe one station they are folded together within 500 m, which
+also absorbs spelling variants (Acko/Akko, Kfar Saba/Sava, Tzfat/Safed). A qualified
+platform name beats a vague station name — that is how the terminal mapped only as
+`Central bus station` is identified as **Kiryat Shmona**'s.
+
+**A central bus station within 400 m of a rail station is dropped**, not merged,
+since it is the same hiding zone. That removes 14, including Jerusalem, Be'er Sheva,
+Nahariya and both Haifa terminals. `REVIEW.md` lists every one. The 400 m cut sits in
+a clean gap in the data: collisions run up to 391 m (Lod's temporary terminal) and
+the next nearest is Tel Aviv New Central Bus Station at 523 m.
 
 ## Using it
 
@@ -114,7 +139,9 @@ Some Bus Stop,32.079000,34.774000,bus/1,Metronit
 ```
 
 `generate.py` merges that file into the output and skips any `id` already present,
-so your additions survive every regeneration. Only `name`, `lat` and `lng` are
+so your additions survive every regeneration. Note that entries added this way are
+**not** subject to the 400 m rail-proximity rule — that applies only to the central
+bus stations the script derives itself. Only `name`, `lat` and `lng` are
 required; `id` defaults to a coordinate string and `system` to `Custom`.
 
 ## Regenerating

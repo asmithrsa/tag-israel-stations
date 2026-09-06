@@ -77,15 +77,19 @@ def hav(a, b):
          + math.cos(p1) * math.cos(p2) * math.sin(math.radians(b[1] - a[1]) / 2) ** 2)
     return 2 * r * math.asin(math.sqrt(h))
 
-FAMILY = {"Israel Railways": "train", "Carmelit": "funicular"}
+FAMILY = {"Israel Railways": "train", "Carmelit": "funicular",
+          "Central Bus Station": "bus"}
 by_id = {r["id"]: r for r in rows}
 pts = [(s["name"], (s["lat"], s["lng"]),
         FAMILY.get(by_id[s["id"]]["system"], "light_rail")) for s in loaded]
-close, interchange = [], []
+close, interchange, bus_near_rail = [], [], []
 for i in range(len(pts)):
     for j in range(i + 1, len(pts)):
         d = hav(pts[i][1], pts[j][1])
         if d >= 150:
+            continue
+        if "bus" in (pts[i][2], pts[j][2]) and pts[i][2] != pts[j][2]:
+            bus_near_rail.append((d, pts[i][0], pts[j][0]))
             continue
         if pts[i][2] == pts[j][2]:
             if d < 60:
@@ -93,6 +97,10 @@ for i in range(len(pts)):
         else:
             interchange.append((d, pts[i][0], pts[j][0]))
 check(not close, f"no unmerged same-mode duplicates within 60 m ({len(close)} found)")
+check(not bus_near_rail,
+      f"no central bus station within 150 m of a rail station ({len(bus_near_rail)} found)")
+for d, a, b in bus_near_rail[:5]:
+    print(f"    {d:.0f}m  {a} <-> {b}")
 for d, a, b in close[:5]:
     print(f"    {d:.0f}m  {a} <-> {b}")
 if interchange:

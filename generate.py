@@ -12,6 +12,7 @@ import csv
 import itertools
 import json
 import math
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -33,6 +34,21 @@ nwr["railway"~"^(station|halt|tram_stop)$"](area.searchArea);
 out center tags;
 rel["type"="route"]["route"~"^(train|light_rail|tram|funicular|subway|monorail)$"](area.searchArea);
 out body;
+"""
+
+QUERY_BUS = f"""[out:json][timeout:300];
+{AREA}
+nwr["amenity"="bus_station"](area.searchArea);
+out center tags;
+"""
+
+QUERY_BUS_NAMED = f"""[out:json][timeout:300];
+{AREA}
+(
+  nwr["name"~"תחנה מרכזית|התחנה המרכזית|מרכזית"](area.searchArea);
+  nwr["name:he"~"תחנה מרכזית|התחנה המרכזית|מרכזית"](area.searchArea);
+);
+out center tags;
 """
 
 QUERY_ROUTE_NODES = f"""[out:json][timeout:600];
@@ -65,6 +81,32 @@ NAME_MERGE_M = 600
 # ICC 81 m the other - so the rail station acts as a hub and absorbs every light rail
 # stop within this radius.
 CROSS_MERGE_M = 150
+# A central bus station sharing a site with a rail station is the same hiding zone,
+# so it is dropped rather than merged. Distances to the nearest rail station fall
+# into two groups with a clean gap: collisions run up to 391 m (Lod's temporary
+# terminal), and the next nearest is Tel Aviv New Central Bus Station at 523 m.
+BUS_RAIL_M = 400
+
+# Israel's intercity bus terminals are "תחנה מרכזית" (merkazit). Matched on name
+# fields only: matching the whole tag set pulls in the individual platforms inside a
+# station, whose gtfs:stop_name repeats the station name.
+# Requires a station word, so that HaSdera HaMerkazit - "the central boulevard" -
+# and similar street names do not match.
+CENTRAL_BUS = re.compile(
+    r"\bcentral\s+(bus\s+)?(station|sttn|sta\.)\b|\bCBS\b|\bmerkazit\b|"
+    r"תחנה\s+מרכזית|התחנה\s+המרכזית|ת\.\s*מרכזית", re.I)
+# A bare "Central Station" gives no clue which town it serves - 18 platforms across
+# the country share that name - so a platform-derived name must carry a qualifier.
+GENERIC_BUS = re.compile(
+    r"^(the\s+)?(new\s+|old\s+)?central\s+(bus\s+)?(station|sttn)$|"
+    r"^(ה)?תחנה\s+(ה)?מרכזית$", re.I)
+BUS_NAME_FIELDS = ("name", "name:en", "name:he", "official_name", "alt_name",
+                   "int_name")
+# Platforms of one bus station spread out, and the same station is often mapped
+# under spelling variants (Acko/Akko, Kfar Saba/Sava, Tzfat/Safed). Merging bus
+# candidates within this radius folds those together.
+BUS_MERGE_M = 500
+NON_TRANSPORT = {"library", "post_office", "parking", "shelter", "bicycle_rental"}
 
 # Lines that exist in OSM but are not (fully) open to passengers.
 YELLOW = ("Jerusalem Light Rail Yellow Line - only the HaTurim to Manahat (Malha) "
@@ -141,12 +183,18 @@ def overpass(query: str, out: Path):
 
 
 def fetch(refresh: bool):
-    raw, nodes = HERE / "raw.json", HERE / "routenodes.json"
+    raw, nodes, bus = HERE / "raw.json", HERE / "routenodes.json", HERE / "bus.json"
     if refresh or not raw.exists():
         overpass(QUERY_STATIONS, raw)
     if refresh or not nodes.exists():
         overpass(QUERY_ROUTE_NODES, nodes)
-    return json.loads(raw.read_text()), json.loads(nodes.read_text())
+    if refresh or not bus.exists():
+        overpass(QUERY_BUS, bus)
+    named = HERE / "busname.json"
+    if refresh or not named.exists():
+        overpass(QUERY_BUS_NAMED, named)
+    return (json.loads(raw.read_text()), json.loads(nodes.read_text()),
+            json.loads(bus.read_text()), json.loads(named.read_text()))
 
 
 def coords(e):
@@ -174,6 +222,97 @@ def route_status(tags):
     return True, ""
 
 
+def bus_name(tags):
+    """The station's own name, dropping the '/platform detail' suffix OSM appends."""
+    raw = tags.get("name:en") or tags.get("name") or ""
+    base = raw.split("/")[0].strip()
+    base = re.sub(r"\s*\d+(st|nd|rd|th)\s+Floor$", "", base, flags=re.I)
+    # OSM appends the role of a particular platform to the station name.
+    base = re.sub(r"\s+(Platforms?|Alight|Boarding|Drop-off|Terminals?)$", "",
+                  base, flags=re.I)
+    return base.strip()
+
+
+def central_bus_stations(busdata, busnamed):
+    """Central bus stations, consolidated from two OSM sources.
+
+    amenity=bus_station is authoritative but incomplete: Kiryat Shmona, Ness Ziona,
+    Rosh Pina and Beit She'an have a central bus station mapped only as named
+    platforms. Those fill the gaps, but only when the name carries a place
+    qualifier. Where both sources describe one station they are folded together,
+    and a qualified platform name beats a vague station name - which is how the
+    bus station named only "Central bus station" is identified as Kiryat Shmona's.
+    """
+    def usable(e, t):
+        if t.get("amenity") in NON_TRANSPORT or t.get("landuse") == "construction":
+            return False
+        if any(k.startswith(LIFECYCLE) for k in t):
+            return False
+        return True
+
+    primary, secondary = [], []
+    for e in busdata["elements"]:
+        t, pos = e.get("tags", {}), coords(e)
+        if pos is None or t.get("amenity") != "bus_station" or not usable(e, t):
+            continue
+        if t.get("public_transport") == "platform" or t.get("highway") == "bus_stop":
+            continue
+        if CENTRAL_BUS.search(" ".join(t.get(k, "") for k in BUS_NAME_FIELDS)):
+            primary.append((e, t, pos, bus_name(t) or label(t)))
+
+    known = {(e["type"], e["id"]) for e, _, _, _ in primary}
+    for e in busnamed["elements"]:
+        t, pos = e.get("tags", {}), coords(e)
+        if pos is None or (e["type"], e["id"]) in known or not usable(e, t):
+            continue
+        name = bus_name(t)
+        transport = (t.get("amenity") == "bus_station"
+                     or t.get("public_transport") in ("station", "platform",
+                                                      "stop_position", "stop_area")
+                     or t.get("highway") == "bus_stop"
+                     # Beit She'an's terminal is mapped only as its building.
+                     or (t.get("building")
+                         and re.search(r"bus station|תחנה מרכזית", name, re.I)))
+        if not transport:
+            continue
+        if not name or not CENTRAL_BUS.search(name) or GENERIC_BUS.match(name):
+            continue
+        secondary.append((e, t, pos, name))
+
+    # Group primaries, then attach each secondary to the nearest group or start one.
+    groups = []
+    for item in primary:
+        for g in groups:
+            if haversine(item[2], g[0][2]) <= BUS_MERGE_M:
+                g.append(item)
+                break
+        else:
+            groups.append([item])
+    n_primary_groups = len(groups)
+    for item in secondary:
+        for g in groups:
+            if haversine(item[2], g[0][2]) <= BUS_MERGE_M:
+                g.append(item)
+                break
+        else:
+            groups.append([item])
+
+    out = []
+    for g in groups:
+        pts = [it[2] for it in g]
+        lat = sum(p[0] for p in pts) / len(pts)
+        lng = sum(p[1] for p in pts) / len(pts)
+        # Prefer a qualified name, then the most specific (longest) one.
+        name = min((it[3] for it in g),
+                   key=lambda n: (GENERIC_BUS.match(n) is not None, -len(n)))
+        src = next((it for it in g if it[0]["type"] != "relation"), g[0])
+        out.append((src[0], {"amenity": "bus_station", "name:en": name}, (lat, lng)))
+    print(f"  central bus stations: {len(out)} "
+          f"({n_primary_groups} from amenity=bus_station, "
+          f"{len(out) - n_primary_groups} more found by name only)")
+    return out
+
+
 def is_train(tags):
     return (tags.get("train") == "yes"
             or tags.get("station") == "train"
@@ -183,6 +322,8 @@ def is_train(tags):
 def family(tags):
     """Mode family. Merging only happens within one of these, so a train station is
     never absorbed into the light rail stop outside its entrance."""
+    if tags.get("amenity") == "bus_station":
+        return "bus"
     if tags.get("funicular") == "yes" or tags.get("station") == "funicular":
         return "funicular"
     if is_train(tags):
@@ -193,6 +334,8 @@ def family(tags):
 def confirm(elem, tags, srv_open, srv_closed, member_ids=()):
     """Classify a merged station as include / exclude / flag-for-review."""
     if any(i in CONFIRMED_OPEN or i in PARTIAL_OPEN for i in member_ids):
+        return "include", ""
+    if family(tags) == "bus":
         return "include", ""
     if is_train(tags):
         reasons = []
@@ -216,6 +359,8 @@ def confirm(elem, tags, srv_open, srv_closed, member_ids=()):
 
 def system_of(tags, open_routes):
     """Human-readable system name for the CSV's `system` column."""
+    if tags.get("amenity") == "bus_station":
+        return "Central Bus Station"
     if tags.get("station") == "funicular" or tags.get("funicular") == "yes":
         return "Carmelit"
     op = (tags.get("operator") or "").strip().lower()
@@ -235,7 +380,7 @@ def system_of(tags, open_routes):
 def main():
     refresh = "--refresh" in sys.argv
     print("Building Israeli station list from OpenStreetMap")
-    data, routenodes = fetch(refresh)
+    data, routenodes, busdata, busnamed = fetch(refresh)
 
     elements = data["elements"]
     stations = [e for e in elements if e["type"] != "relation"]
@@ -288,7 +433,9 @@ def main():
             dropped.append((e, t, "no passenger-rail mode tag"))
             continue
         kept.append((e, t, pos))
-    print(f"  stations: {len(kept)} kept, {len(dropped)} dropped pre-merge")
+    print(f"  rail stations: {len(kept)} kept, {len(dropped)} dropped pre-merge")
+
+    kept.extend(central_bus_stations(busdata, busnamed))
 
     # --- Which lines serve each element -------------------------------------
     for i, (e, t, pos) in enumerate(kept):
@@ -353,8 +500,8 @@ def main():
     candidates = []
     for a, b in itertools.combinations(reps, 2):
         (pa, fa), (pb, fb) = reps[a], reps[b]
-        if fa == fb:
-            continue
+        if fa == fb or "bus" in (fa, fb):
+            continue  # bus stations are suppressed near rail, not merged into it
         d = haversine(pa, pb)
         if d <= CROSS_MERGE_M:
             candidates.append((d, a, b))
@@ -382,18 +529,43 @@ def main():
 
     # --- Build rows ---------------------------------------------------------
     RANK = {"station": 0, "tram_stop": 1, "halt": 2}
-    rows, review = [], []
-    for members in clusters.values():
-        best = min(members, key=lambda i: (
+
+    def representative(members):
+        return min(members, key=lambda i: (
             0 if family(kept[i][1]) == "train" else 1,
             RANK.get(kept[i][1].get("railway"), 3),
             0 if kept[i][1].get("name:en") else 1,
             -len(kept[i][1]),
         ))
+
+    rep = {r: representative(m) for r, m in clusters.items()}
+    mid = {}
+    for r, m in clusters.items():
+        pts = [kept[i][2] for i in m]
+        mid[r] = (sum(p[0] for p in pts) / len(pts), sum(p[1] for p in pts) / len(pts))
+    fam = {r: family(kept[rep[r]][1]) for r in clusters}
+    rail_clusters = [r for r in clusters if fam[r] != "bus"]
+
+    rows, review = [], []
+    for root, members in clusters.items():
+        best = rep[root]
         e, t, _, _, _ = kept[best]
-        pts = [kept[i][2] for i in members]
-        lat = sum(p[0] for p in pts) / len(pts)
-        lng = sum(p[1] for p in pts) / len(pts)
+        lat, lng = mid[root]
+
+        # A central bus station on a rail station's doorstep is the same hiding
+        # zone, so drop it instead of adding a near-duplicate point.
+        if fam[root] == "bus" and rail_clusters:
+            near, d = min(((r, haversine(mid[root], mid[r])) for r in rail_clusters),
+                          key=lambda x: x[1])
+            if d <= BUS_RAIL_M:
+                review.append({
+                    "name": label(t), "id": f"{e['type']}/{e['id']}",
+                    "lat": lat, "lng": lng,
+                    "issue": f"{d:.0f} m from {label(kept[rep[near]][1])}, which is "
+                             "already in the list - same hiding zone",
+                    "action": "suppressed",
+                })
+                continue
 
         srv_open, srv_closed = [], []
         for i in members:
@@ -463,6 +635,14 @@ def main():
     lines += ["| Station | OSM | Coords | Why flagged |", "|---|---|---|---|"]
     for r in sorted(incl, key=lambda x: x["name"]):
         lines.append(f"| {r['name']} | `{r['id']}` | {r['lat']:.5f}, {r['lng']:.5f} | {r['issue']} |")
+    supp = [r for r in review if r["action"] == "suppressed"]
+    lines += ["", f"## Central bus stations suppressed as duplicates ({len(supp)})", "",
+              f"Within {BUS_RAIL_M} m of a station already in the list, so omitted "
+              "to avoid two hiding zones on one site.", ""]
+    lines += ["| Bus station | OSM | Why |", "|---|---|---|"]
+    for r in sorted(supp, key=lambda x: x["name"]):
+        lines.append(f"| {r['name']} | `{r['id']}` | {r['issue']} |")
+
     lines += ["", f"## Excluded as not-yet-open ({len(excl)})", "",
               "These are **not** in `stations.csv`. Add them back if any have opened.", ""]
     lines += ["| Station | OSM | Coords | Why excluded |", "|---|---|---|---|"]
@@ -477,7 +657,8 @@ def main():
         lines.append(f"- **{reason}** ({len(names)}): " + ", ".join(sorted(names)))
     lines.append("")
     (HERE / "REVIEW.md").write_text("\n".join(lines), encoding="utf-8")
-    print(f"  wrote REVIEW.md: {len(incl)} to verify, {len(excl)} excluded as unopened")
+    print(f"  wrote REVIEW.md: {len(incl)} to verify, {len(excl)} not-yet-open, "
+          f"{len(supp)} bus stations suppressed as duplicates")
 
 
 if __name__ == "__main__":
