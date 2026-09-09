@@ -152,7 +152,9 @@ METRONIT = {
     "node/1803062171": "Lin",                "node/1803062172": "Lin",
     "node/1803045703": "Police Headquarters", "node/5210715207": "Police Headquarters",
     "node/1803016988": "Hallisa",            "node/1803016991": "Hallisa",
-    "node/5210715246": "Kiryat Ata Junction", "node/5210715247": "Kiryat Ata Junction",
+    # OSM calls this צומת קרית אתא/מחלף מוטה גור; the Metronit calls it Mota Gur,
+    # after the interchange. Not to be confused with the Kiryat Ata stop below.
+    "node/5210715246": "Mota Gur",           "node/5210715247": "Mota Gur",
     "node/5210715274": "Ha'Atsma'ut",
     "node/5210715226": "Einstein",
     "node/5210715230": "Kiryat Ata",
