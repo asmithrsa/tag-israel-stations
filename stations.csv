@@ -1,9 +1,6 @@
 name,lat,lng,id,system
-Bney Zion Hospital,32.807572,34.990500,node/616484913,Carmelit
 Carmel Center,32.804678,34.987909,node/615947115,Carmelit
 Downtown,32.817490,34.999731,node/616484210,Carmelit
-HaNevi'im,32.812621,34.995043,node/3729320319,Carmelit
-Hadar – City Hall,32.814656,34.997311,node/4208581362,Carmelit
 Masada,32.809660,34.992383,node/616484212,Carmelit
 Afula Central Bus Station,32.608808,35.292334,way/525909024,Central Bus Station
 Arad central bus station,31.256174,35.211608,way/178883771,Central Bus Station
@@ -159,7 +156,6 @@ HaPalmach,32.850904,35.077556,node/5210715219,Metronit
 HaToren,32.829063,34.963327,node/1803086107,Metronit
 Hallisa,32.802880,35.008876,node/1803016988,Metronit
 Halutzei HaTa'asiya,32.815365,35.061577,node/5210715187,Metronit
-Kfar Samir,32.801707,34.959939,node/5210715232,Metronit
 Kiryat Ata,32.807268,35.117114,node/5210715230,Metronit
 Kiryat Haim,32.817898,35.077838,node/5210715250,Metronit
 Lin,32.824570,34.984253,node/1803062171,Metronit
