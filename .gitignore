@@ -10,3 +10,6 @@ ids.txt
 mnodes.txt
 *.ql
 __pycache__/
+.busmaps-key
+gtfs/
+*.zip
