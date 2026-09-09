@@ -162,6 +162,9 @@ METRONIT = {
     "node/5210715263": "Tsur Shalom",        "node/5210715264": "Tsur Shalom",
     "node/5210715256": "Tsahal",             "node/5210715257": "Tsahal",
     "node/1803086107": "HaToren",            "node/5210715236": "HaToren",
+    "node/5210715275": "Zevulun",            "node/5210715276": "Zevulun",
+    "node/5210715223": "Savyone Yam",        "node/5210715224": "Savyone Yam",
+    "node/5210715219": "HaPalmach",          "node/5210715220": "HaPalmach",
 }
 
 # Lines that exist in OSM but are not (fully) open to passengers.
