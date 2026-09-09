@@ -9,6 +9,14 @@ These are in `stations.csv`. Delete any that are not actually open.
 | Station | OSM | Coords | Why flagged |
 |---|---|---|---|
 
+## Omitted by choice (1)
+
+Open and in service, but deliberately left off the game map. Remove the id from `OMITTED` in `generate.py` to restore one.
+
+| Station | OSM | Why |
+|---|---|---|
+| Eilat Central Bus Station | `way/959704805` | Eilat: 168 km south of the nearest other station, too remote to be worth a hiding zone |
+
 ## Suppressed as duplicates (21)
 
 Within 400 m of a station already in the list, so omitted to avoid two hiding zones on one site.

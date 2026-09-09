@@ -1,7 +1,7 @@
 # Israeli station list for Jet Lag: Hide and Seek
 
 A custom station list for the [JetLagHideAndSeek map generator](https://taibeled.github.io/JetLagHideAndSeek/),
-covering **228 open stations** in Israel:
+covering **227 open stations** in Israel:
 
 | System | Stations |
 |---|---:|
@@ -9,7 +9,7 @@ covering **228 open stations** in Israel:
 | Jerusalem Light Rail (Red Line + open Yellow Line segment) | 45 |
 | Tel Aviv Light Rail (Red Line) | 33 |
 | Carmelit (Haifa funicular) | 6 |
-| Central bus stations | 27 |
+| Central bus stations | 26 |
 | Haifa Rakavlit (cable car) | 2 |
 | Metronit (Haifa BRT, transfer stations) | 22 |
 | Bus terminals | 24 |
@@ -176,6 +176,10 @@ lost their service when the Beit Shemesh–Jerusalem section closed, but OSM sti
 both as open, with `wikidata` refs and no lifecycle tag — no heuristic can catch
 that. They are pinned in `CLOSED_STATIONS` in `generate.py`; add a station there if
 its service ends. (`Bet Shemesh` itself stays: it is still served from the Lod side.)
+
+`OMITTED` in `generate.py` holds stations that are open and in service but
+deliberately left off the map — currently just Eilat, 168 km south of the nearest
+other station. `REVIEW.md` lists them; delete an id there to restore one.
 
 Stations that could not be confirmed either way are **kept** and listed in
 [`REVIEW.md`](REVIEW.md) rather than silently dropped. Once you have checked one by
