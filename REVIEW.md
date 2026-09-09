@@ -9,16 +9,6 @@ These are in `stations.csv`. Delete any that are not actually open.
 | Station | OSM | Coords | Why flagged |
 |---|---|---|---|
 
-## Dropped to thin closely-spaced stops (3)
-
-Open, but too close to a neighbour to be worth a separate hiding zone. Remove the id from `THINNED` in `generate.py` to restore one.
-
-| Station | OSM | Why |
-|---|---|---|
-| Bney Zion Hospital | `node/616484913` | dropped to thin out the Carmelit, whose six stations sit 291-413 m apart over a 1805 m line |
-| HaNevi'im | `node/3729320319` | dropped to thin out the Carmelit, whose six stations sit 291-413 m apart over a 1805 m line |
-| Hadar – City Hall | `node/4208581362` | dropped to thin out the Carmelit, whose six stations sit 291-413 m apart over a 1805 m line |
-
 ## Bus and cable car stations suppressed as duplicates (15)
 
 Within 400 m of a station already in the list, so omitted to avoid two hiding zones on one site.

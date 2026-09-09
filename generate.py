@@ -222,16 +222,6 @@ RUIN_WORDS = ("שרידים", "ruins", "remains of", "former station", "old nabl
 # added to OSM before opening is the main way a closed station slips through.
 RECENT_NODE_ID = 13_000_000_000
 
-# Open stations deliberately left out because they sit too close to a neighbour to
-# be worth a separate hiding zone. The Carmelit runs 1805 m end to end with six
-# stations 291-413 m apart, so every second one is dropped; Downtown and Carmel
-# Center are kept as the two termini.
-THINNED = {
-    "node/4208581362": "Hadar - City Hall",
-    "node/3729320319": "HaNevi'im",
-    "node/616484913": "Bney Zion Hospital",
-}
-
 # Stations OSM still tags as open but which no longer see service. Nothing in the
 # data marks them - both carry wikidata refs and no lifecycle tag - so a service
 # change can only be recorded here.
@@ -479,10 +469,6 @@ def family(tags):
 
 def confirm(elem, tags, srv_open, srv_closed, member_ids=()):
     """Classify a merged station as include / exclude / flag-for-review."""
-    thin = [THINNED[i] for i in member_ids if i in THINNED]
-    if thin:
-        return "thinned", ("dropped to thin out the Carmelit, whose six stations sit "
-                           "291-413 m apart over a 1805 m line")
     shut = [CLOSED_STATIONS[i] for i in member_ids if i in CLOSED_STATIONS]
     if shut:
         return "exclude", shut[0]
@@ -735,10 +721,6 @@ def main():
 
         member_ids = [f"{kept[i][0]['type']}/{kept[i][0]['id']}" for i in members]
         verdict, why = confirm(e, t, srv_open, srv_closed, member_ids)
-        if verdict == "thinned":
-            review.append({"name": name, "id": osm_id, "lat": lat, "lng": lng,
-                           "issue": why, "action": "thinned"})
-            continue
         if verdict == "exclude":
             review.append({"name": name, "id": osm_id, "lat": lat, "lng": lng,
                            "issue": why, "action": "excluded"})
@@ -798,14 +780,6 @@ def main():
     lines += ["| Station | OSM | Coords | Why flagged |", "|---|---|---|---|"]
     for r in sorted(incl, key=lambda x: x["name"]):
         lines.append(f"| {r['name']} | `{r['id']}` | {r['lat']:.5f}, {r['lng']:.5f} | {r['issue']} |")
-    thinned = [r for r in review if r["action"] == "thinned"]
-    lines += ["", f"## Dropped to thin closely-spaced stops ({len(thinned)})", "",
-              "Open, but too close to a neighbour to be worth a separate hiding "
-              "zone. Remove the id from `THINNED` in `generate.py` to restore one.", ""]
-    lines += ["| Station | OSM | Why |", "|---|---|---|"]
-    for r in sorted(thinned, key=lambda x: x["name"]):
-        lines.append(f"| {r['name']} | `{r['id']}` | {r['issue']} |")
-
     supp = [r for r in review if r["action"] == "suppressed"]
     lines += ["", f"## Bus and cable car stations suppressed as duplicates ({len(supp)})", "",
               f"Within {BUS_RAIL_M} m of a station already in the list, so omitted "
@@ -830,8 +804,7 @@ def main():
     lines.append("")
     (HERE / "REVIEW.md").write_text("\n".join(lines), encoding="utf-8")
     print(f"  wrote REVIEW.md: {len(incl)} to verify, {len(excl)} not-yet-open, "
-          f"{len(supp)} suppressed as duplicates of a rail station, "
-          f"{len(thinned)} thinned")
+          f"{len(supp)} suppressed as duplicates of a rail station")
 
 
 if __name__ == "__main__":

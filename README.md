@@ -1,14 +1,14 @@
 # Israeli station list for Jet Lag: Hide and Seek
 
 A custom station list for the [JetLagHideAndSeek map generator](https://taibeled.github.io/JetLagHideAndSeek/),
-covering **201 open stations** in Israel:
+covering **204 open stations** in Israel:
 
 | System | Stations |
 |---|---:|
 | Israel Railways | 69 |
 | Jerusalem Light Rail (Red Line + open Yellow Line segment) | 45 |
 | Tel Aviv Light Rail (Red Line) | 33 |
-| Carmelit (Haifa funicular) | 3 |
+| Carmelit (Haifa funicular) | 6 |
 | Central bus stations | 27 |
 | Haifa Rakavlit (cable car) | 2 |
 | Metronit (Haifa BRT, transfer stations) | 22 |
@@ -32,14 +32,6 @@ the likeliest to need correcting.
 Platforms are grouped by their pinned name rather than by distance: the two
 direction platforms of one station run up to 135 m apart (Police Headquarters), well
 beyond the 60 m merge radius used elsewhere.
-
-### Carmelit
-
-The funicular runs 1805 m end to end with six stations 291–413 m apart — too dense
-to be worth six separate hiding zones — so every second one is dropped, keeping
-`Downtown` and `Carmel Center` as the two termini. The three omitted stations are
-listed in `REVIEW.md` and pinned in `THINNED` in `generate.py`; delete an id there to
-restore one.
 
 ### Haifa Rakavlit
 
