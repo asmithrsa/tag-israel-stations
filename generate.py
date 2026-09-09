@@ -165,6 +165,8 @@ METRONIT = {
     "node/5210715275": "Zevulun",            "node/5210715276": "Zevulun",
     "node/5210715223": "Savyone Yam",        "node/5210715224": "Savyone Yam",
     "node/5210715219": "HaPalmach",          "node/5210715220": "HaPalmach",
+    "node/1803004883": "Grand Canyon",       "node/1803004884": "Grand Canyon",
+    "node/1803080475": "Congress Center",
 }
 
 # Lines that exist in OSM but are not (fully) open to passengers.
