@@ -1,7 +1,7 @@
 # Israeli station list for Jet Lag: Hide and Seek
 
 A custom station list for the [JetLagHideAndSeek map generator](https://taibeled.github.io/JetLagHideAndSeek/),
-covering **227 open stations** in Israel:
+covering **1,227 open stations** in Israel:
 
 | System | Stations |
 |---|---:|
@@ -13,6 +13,7 @@ covering **227 open stations** in Israel:
 | Haifa Rakavlit (cable car) | 2 |
 | Metronit (Haifa BRT, transfer stations) | 22 |
 | Bus terminals | 24 |
+| Bus stops (nationwide, all-day service) | 1,000 |
 
 ### Metronit
 
@@ -33,6 +34,35 @@ the likeliest to need correcting.
 Platforms are grouped by their pinned name rather than by distance: the two
 direction platforms of one station run up to 135 m apart (Police Headquarters), well
 beyond the 60 m merge radius used elsewhere.
+
+### Bus stops
+
+The 1,000 busiest well-served bus stops in the country, from the Ministry of
+Transport GTFS feed rather than OSM. `bus_stops.py` builds `bus-candidates.csv`;
+`generate.py` then places them. Full reasoning in
+[the spec](docs/superpowers/specs/2026-09-09-nationwide-bus-stops-design.md).
+
+A stop qualifies only if **one of its routes runs all day**: first departure by
+07:30, last no earlier than 21:30, and no gap over 30 minutes in between. That is
+deliberately strict — a route with 40 departures bunched into two rush peaks and a
+dead midday fails, which is the point. It removes half the network.
+
+Only ordinary buses count (`route_type=3`). The feed also carries rail, tram,
+funicular, **shared taxis** and **demand-response buses** (`route_type=715`) — the
+last being the advance-booking service to exclude. Note that these are *not*
+identifiable by name: no route in the feed is called הזמנה מראש, and nothing uses
+`pickup_type=2`. Route type is the only working signal. Leaving the other modes in
+also let train stations qualify on *train* frequency.
+
+Each stop is placed only if it is at least 250 m from every station already on the
+map, bus stops included, taken busiest-first so the better-served stop wins any
+contest for the same space. The funnel: **30,455** stops in the feed → **14,893**
+with all-day service → **4,505** after spacing → **1,000** kept by `BUS_STOP_CAP`,
+where the cutoff falls at 15 lines. Raise that constant and re-run `generate.py` to
+add more; `bus-candidates.csv` is committed so this needs no re-download.
+
+English names come from the feed's own `translations.txt` (13,339 of 14,893
+candidates); the rest keep their Hebrew names.
 
 ### Bus terminals
 
@@ -242,6 +272,8 @@ required; `id` defaults to a coordinate string and `system` to `Custom`.
 ```bash
 python3 generate.py --refresh   # re-query Overpass and rebuild
 python3 validate.py             # check the result against the app's import rules
+python3 bus_stops.py --refresh  # re-download the 223 MB GTFS and reselect bus stops
+python3 test_frequency.py       # unit-test the all-day frequency rule
 ```
 
 `validate.py` mirrors the rules in the app's `src/maps/api/importers.ts`: the

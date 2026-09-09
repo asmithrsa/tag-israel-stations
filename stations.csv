@@ -1,4 +1,1004 @@
 name,lat,lng,id,system
+Aba Hilel Silver/Nada,31.961905,34.899404,gtfs/15372,Bus Stop
+Abba Eban/Maskit,32.161958,34.808550,gtfs/14174,Bus Stop
+Abba Hillel Silver Junction/South Bound,31.674202,34.608852,gtfs/25697,Bus Stop
+Abba Hushi/Denya,32.769872,35.006868,gtfs/2071,Bus Stop
+Abba Hushi/Shvedya,32.766624,35.011775,gtfs/2072,Bus Stop
+Abba Hushi/Tamar Observatory,32.775442,35.001541,gtfs/3032,Bus Stop
+Abba Hushi/Zeid Observatory,32.772655,35.005877,gtfs/3308,Bus Stop
+Abu Hatzeira/HaKishon,32.097481,34.829067,gtfs/40637,Bus Stop
+Abu Hatzeira/HaRav Fetaya,32.095152,34.830981,gtfs/40638,Bus Stop
+Ad-Halom Junction/Road 4,31.765906,34.667305,gtfs/25688,Bus Stop
+Adanim junction South,32.128740,34.902796,gtfs/24483,Bus Stop
+Adorayim/Ramot David,31.616116,34.754342,gtfs/27177,Bus Stop
+Afek Park Junction,32.108532,34.962838,gtfs/16521,Bus Stop
+Afula Bypass Junction/Dorms,32.622273,35.289279,gtfs/5020,Bus Stop
+Afula Illit Intersection,32.629604,35.326367,gtfs/4791,Bus Stop
+Afula Municipality/HaBanim,32.606048,35.286753,gtfs/4549,Bus Stop
+Agan HaAyalot,31.869827,35.144016,gtfs/35613,Bus Stop
+Agriculture Faculty,31.905694,34.806199,gtfs/23193,Bus Stop
+Ahad Ha'Am/Samsonov,32.434361,34.920920,gtfs/1168,Bus Stop
+Aharon Katzir Boulevard/Mendes,32.053397,34.848048,gtfs/15908,Bus Stop
+Aharon Katzir Boulevard/Simcha Holtzberg,32.062570,34.846119,gtfs/15907,Bus Stop
+Aharonovich/HaRav Reines,32.087716,34.838781,gtfs/29370,Bus Stop
+Aharonovitz/Nafha,32.090489,34.838820,gtfs/14346,Bus Stop
+Ahi'ezer Synagogue/Yehuda HaNassi,32.051322,34.951638,gtfs/23445,Bus Stop
+Ahihud Junction,32.911913,35.167244,gtfs/19581,Bus Stop
+Ahim Junction,31.746814,34.769954,gtfs/25880,Bus Stop
+Ahuza/Ben Gurion,32.181195,34.871078,gtfs/24421,Bus Stop
+Ahuza/HaMeitar,32.184037,34.858228,gtfs/24250,Bus Stop
+Ahuza/HaMelakhim,32.183229,34.861866,gtfs/24252,Bus Stop
+Ahuza/HaRav Yitshak Nissim,32.177924,34.886744,gtfs/24390,Bus Stop
+Ahuza/Jabotinsky,32.180413,34.874610,gtfs/24424,Bus Stop
+Ahuza/Migdal,32.182592,34.864764,gtfs/24254,Bus Stop
+Ahuza/Rabotsky,32.178505,34.883219,gtfs/24428,Bus Stop
+Ahuza/Sokolov,32.181829,34.868255,gtfs/24420,Bus Stop
+Ahva Institution Intersection,32.933647,35.083400,gtfs/18780,Bus Stop
+Akko Central Station/HaArbaa Road,32.926115,35.078693,gtfs/20534,Bus Stop
+Akko Mall/Ben Ami,32.921184,35.092646,gtfs/6722,Bus Stop
+Akko Road/En Afek Junction,32.849634,35.093082,gtfs/2501,Bus Stop
+Akko Road/HaGefen,32.829962,35.080975,gtfs/2363,Bus Stop
+Al Maktab School/Ibrahim Nimr Hussein,32.808408,35.169137,gtfs/19553,Bus Stop
+Al Naque/Haim Pinto,31.076990,35.041055,gtfs/28866,Bus Stop
+Al-Quds/Al Makrizi,32.412093,35.047072,gtfs/1624,Bus Stop
+Ali'ash,31.782295,35.215537,gtfs/10588,Bus Stop
+Allon/Ofir,32.086541,34.979069,gtfs/41754,Bus Stop
+Almog Center/HaTsiyonut Road,32.106948,35.191788,gtfs/34546,Bus Stop
+Alon Junction,32.448997,34.960741,gtfs/1397,Bus Stop
+Alonim Junction,32.708841,35.143442,gtfs/17888,Bus Stop
+Alonim School/HaBanim,32.475707,34.975603,gtfs/1456,Bus Stop
+Alquds Square,32.855454,35.191989,gtfs/19314,Bus Stop
+Alquds/Muadh bn Jabal,32.855314,35.187872,gtfs/6004,Bus Stop
+Alterman/Herzog,32.082106,34.981003,gtfs/41751,Bus Stop
+Aluf Sade/HaYarden,32.058355,34.828604,gtfs/12837,Bus Stop
+Aluf Sade/Korazin,32.058559,34.815310,gtfs/13263,Bus Stop
+Aluf Sade/Road 4,32.057419,34.832771,gtfs/12884,Bus Stop
+Aluf Sade/Yitshak Rabin Road,32.059538,34.820244,gtfs/12815,Bus Stop
+Amal A,32.106728,34.967535,gtfs/16614,Bus Stop
+Amal/Hamelaha,32.106323,34.970417,gtfs/16615,Bus Stop
+Amirim Center/Ben Gurion,32.153179,34.842138,gtfs/29439,Bus Stop
+Amoraim Boulevard/Pumbedita,31.701438,34.970996,gtfs/48514,Bus Stop
+Anne Frank/Tishre,31.671933,34.585280,gtfs/25971,Bus Stop
+Arad Industrial Zone,31.249049,35.195233,gtfs/26784,Bus Stop
+Arad Junction,31.254748,35.208830,gtfs/26808,Bus Stop
+Arie Dushinsky/Yehuda Burla,32.932070,35.088477,gtfs/34156,Bus Stop
+Ariel Sharon Boulevard/HaShibolim,31.062726,35.030439,gtfs/28209,Bus Stop
+Ariel Sharon Road/HeHatsav,32.691136,35.310336,gtfs/18413,Bus Stop
+Ariel Sharon Road/Ma'ale Yits'hak,32.697455,35.314202,gtfs/21117,Bus Stop
+Ariel Sharon/Henri Malka,31.061752,35.027050,gtfs/28292,Bus Stop
+Arim Mall/Weizmann,32.176261,34.903576,gtfs/745,Bus Stop
+Ashdod Port Junction,31.827606,34.670755,gtfs/15990,Bus Stop
+Ashkelon Junction,31.659350,34.602004,gtfs/25699,Bus Stop
+Asif/HaTene,32.799532,34.989546,gtfs/2858,Bus Stop
+Atidim Terminal,32.113359,34.842539,gtfs/47772,Bus Stop
+Atzmon/Shomron,32.706863,35.320792,gtfs/4506,Bus Stop
+Avne Nezer B,31.934882,35.043443,gtfs/7501,Bus Stop
+Avne Nezer D,31.932986,35.040464,gtfs/7645,Bus Stop
+Avraham Ben Shoshan/Pinsker,32.925512,35.092170,gtfs/6721,Bus Stop
+Ayalon Mall/Mivtsa Kadesh,32.101244,34.827845,gtfs/13090,Bus Stop
+Azor/HaShiv'a Road,32.031576,34.793119,gtfs/21476,Bus Stop
+Azrieli Mall,31.899117,35.007414,gtfs/22252,Bus Stop
+Azrieli Mall Hod HaSharon/Ramatayim Road,32.143030,34.894369,gtfs/16650,Bus Stop
+Azrieli Mall/Menahem Begin Road,32.074584,34.790607,gtfs/13103,Bus Stop
+Baba Sali/Nadvorna,31.693438,35.111245,gtfs/7372,Bus Stop
+Balfuriya Intersection,32.628767,35.289758,gtfs/4725,Bus Stop
+Banana Beach,32.070602,34.763816,gtfs/44466,Bus Stop
+Bank HaPoalim/Lachish Boulevard,31.607959,34.773732,gtfs/12000,Bus Stop
+Bar Ilan Bridge/Road 4,32.067809,34.839840,gtfs/12963,Bus Stop
+Bar Ilan University,32.065377,34.845842,gtfs/25092,Bus Stop
+Bar Ilan/Shmu'el HaNavi,31.794822,35.217969,gtfs/8961,Bus Stop
+Bar Lev Boulevard/Zachs,31.790378,35.226730,gtfs/11576,Bus Stop
+Bar Yehuda/Gdud 21 Bridge,32.795491,35.022022,gtfs/2143,Bus Stop
+Bayit VaGan/HaRav Alfiyeh,31.765691,35.186023,gtfs/8975,Bus Stop
+Bedek Junction,32.018573,34.906064,gtfs/22094,Bus Stop
+Begin/Herzl,31.520915,34.593524,gtfs/39564,Bus Stop
+Beit Dagan Junction,32.004211,34.826325,gtfs/15679,Bus Stop
+Beit Dagan/Trumpeldor,32.005543,34.831520,gtfs/21798,Bus Stop
+Beit Ha'istadrut/Ben Gurion,31.661512,34.584896,gtfs/25839,Bus Stop
+Beit Hillel Boulevard/Abaye and Rava Boulevard,31.935553,35.046439,gtfs/36928,Bus Stop
+Beit Inbar/Kanfe Nesharim,31.787728,35.185498,gtfs/8757,Bus Stop
+Beit Loewenstein/Ahuza,32.184719,34.855067,gtfs/24239,Bus Stop
+Ben Ami Intersection,33.008172,35.120470,gtfs/17738,Bus Stop
+Ben Gurion Boulevard/HaNassi,32.058077,34.849641,gtfs/24208,Bus Stop
+Ben Gurion Road/Sheshet HaYamim Road,32.095915,34.821682,gtfs/13240,Bus Stop
+Ben Gurion University Sports Center,31.260958,34.805447,gtfs/26684,Bus Stop
+Ben Gurion/Ben Zvi,31.662000,34.571401,gtfs/25838,Bus Stop
+Ben Gurion/HaPardes,32.056036,34.851450,gtfs/15354,Bus Stop
+Ben Gurion/Homa VeMigdal,32.156765,34.842294,gtfs/29466,Bus Stop
+Ben Gurion/Katznelson,31.966323,34.789799,gtfs/21512,Bus Stop
+Ben Gurion/Ne'ot Ashkelon,31.661310,34.576455,gtfs/25840,Bus Stop
+Ben Gurion/Shlomo HaMelekh,32.053875,34.852848,gtfs/15898,Bus Stop
+Ben Tsvi Blvd/HaYahaloman Avraham,32.310926,34.855105,gtfs/303,Bus Stop
+Ben Tsvi Blvd/Simha Erlich,32.297873,34.853570,gtfs/280,Bus Stop
+Ben Tsvi Boulevard/Agam Kineret Boulevard,32.291134,34.853662,gtfs/35170,Bus Stop
+Ben Tsvi Boulevard/HaNegev,33.007105,35.107131,gtfs/19746,Bus Stop
+Ben Tsvi/Greenboim,32.293898,34.852491,gtfs/274,Bus Stop
+Ben Tsvi/Kfar Uriya,32.303419,34.854795,gtfs/15235,Bus Stop
+Ben Tsvi/Nahum,32.301071,34.854280,gtfs/283,Bus Stop
+Ben Yehuda/Shapira,31.647035,34.557863,gtfs/27459,Bus Stop
+Ben Zakai/HaRav Hirsch,32.080829,34.830948,gtfs/13976,Bus Stop
+Ben Zakai/Migdal Hamayim,32.048745,34.966145,gtfs/15499,Bus Stop
+Ben Zakai/Rabbi Akiva,32.048161,34.953708,gtfs/40044,Bus Stop
+Benny W.Reich /Adar,32.295088,34.871835,gtfs/617,Bus Stop
+Berekhya Junction,31.665272,34.606541,gtfs/25698,Bus Stop
+Bet Biram/Abba Hushi,32.778475,34.998081,gtfs/2055,Bus Stop
+Bet Dagan Junction,32.002455,34.820515,gtfs/21595,Bus Stop
+Bet Hataasiyah,32.804861,35.003338,gtfs/17318,Bus Stop
+Bet Hillel Blvd/City Exit,31.936611,35.037296,gtfs/7559,Bus Stop
+Bet Horon Interchange,31.874438,35.130145,gtfs/8468,Bus Stop
+Bet Horon Interchange,31.872495,35.132687,gtfs/7294,Bus Stop
+Bet Shamay Blvd/Bet Hilel Blvd,31.934442,35.050766,gtfs/8064,Bus Stop
+Bet She'arim Junction/Neve Ya'ar,32.703718,35.181847,gtfs/21298,Bus Stop
+Bet Yaakov Ahavat Hesed,31.696700,35.120329,gtfs/7398,Bus Stop
+Bet Yaakov Kindergartens,31.701427,35.115156,gtfs/7385,Bus Stop
+Bialik/Tuval,32.088275,34.804620,gtfs/12918,Bus Stop
+Big Shaar Ha-Ir,32.786913,35.029253,gtfs/48898,Bus Stop
+Bilu Junction,31.872097,34.819403,gtfs/15428,Bus Stop
+Binyamin Blvd/HaRav Tabib,32.315887,34.854722,gtfs/308,Bus Stop
+Binyamin Blvd/Tahkemoni,32.321473,34.856082,gtfs/321,Bus Stop
+Binyamin Blvd/Yerushalayim Blvd,32.323959,34.856728,gtfs/323,Bus Stop
+Biram Road/Internazional,32.775098,35.009924,gtfs/2069,Bus Stop
+Bne Brak Railway Station/Mivtsa Kadesh,32.103514,34.827868,gtfs/13088,Bus Stop
+Bne Brit,31.786142,34.647017,gtfs/26170,Bus Stop
+Bne Brit Boulevard/Yitshak HaNassi,31.799024,34.654841,gtfs/25548,Bus Stop
+Bne Brit/Ha'Orgim,31.809569,34.664104,gtfs/25918,Bus Stop
+Bne Brit/HaBosem,31.819635,34.669276,gtfs/25551,Bus Stop
+Cable Car/Ha'Aliya HaShniya,32.831159,34.970941,gtfs/2882,Bus Stop
+Camp 21 Junction,32.321476,34.924121,gtfs/14960,Bus Stop
+Cemetery,32.103306,34.958089,gtfs/16613,Bus Stop
+Cemetery,32.687106,35.233980,gtfs/4214,Bus Stop
+Cemetery/HaHaroshet,32.925622,35.324786,gtfs/18193,Bus Stop
+Cemetery/HaKomemiyut,32.002322,34.754480,gtfs/15694,Bus Stop
+Child & Adolescent Center/HaHistadrut,31.661021,34.562274,gtfs/27355,Bus Stop
+Churchill Blvd/Katzir,31.797859,35.238757,gtfs/9503,Bus Stop
+Cinema City/David Hakham Blvd,31.234776,34.800686,gtfs/26438,Bus Stop
+Cinema City/Moshe Dayan,31.981765,34.772339,gtfs/25405,Bus Stop
+Cinema City/Road 2,32.147632,34.803351,gtfs/14325,Bus Stop
+Cinematheque/Carlebach,32.070473,34.782559,gtfs/48080,Bus Stop
+Cinematheque/Hebron Road,31.770599,35.225503,gtfs/8948,Bus Stop
+City Center/Ort High School,32.654450,35.104706,gtfs/6895,Bus Stop
+City Hall,31.699809,35.125617,gtfs/7396,Bus Stop
+City Hall,33.011545,35.284609,gtfs/18034,Bus Stop
+City Hall/Yitzhack Rager,31.250113,34.798066,gtfs/27646,Bus Stop
+City Library/Yitzhak Rabin,32.613176,35.296586,gtfs/4957,Bus Stop
+City Market/David Hacham BLVD,31.238190,34.798108,gtfs/26659,Bus Stop
+City Market/Herzl Boulevard,31.926435,34.875318,gtfs/22085,Bus Stop
+Commercial Center B/Kibbutz Galuyot,31.806114,34.652167,gtfs/25922,Bus Stop
+Commercial Center/Golda,31.817331,35.195567,gtfs/10791,Bus Stop
+Commercial Center/Ha'Atsma'ut,32.030685,34.866523,gtfs/15856,Bus Stop
+Commercial Center/Ma'ale Yitshak Boulevard,32.716644,35.337651,gtfs/18429,Bus Stop
+Commercial Center/Weizmann,32.779802,35.516952,gtfs/5700,Bus Stop
+Commercial Center/Yitshak Rabin Boulevard,32.643761,35.092285,gtfs/20577,Bus Stop
+Country Center/Emek HaHula,31.896214,35.010847,gtfs/22165,Bus Stop
+Country Club/David Tuviyahu BLVD,31.256273,34.759125,gtfs/27814,Bus Stop
+Country Club/Yitzhak Rabin Avenue,32.615040,35.299350,gtfs/4530,Bus Stop
+Cultural center/Hativa Tesha,32.612233,35.287882,gtfs/4566,Bus Stop
+Dado Center/Yizrael,32.692988,35.317798,gtfs/4633,Bus Stop
+Daliya/HaGome,32.727514,35.332829,gtfs/18444,Bus Stop
+Daliya/Klil HaHoresh,32.729692,35.330813,gtfs/18443,Bus Stop
+Daliya/Koranit,32.728673,35.336570,gtfs/18437,Bus Stop
+Dam HaMaccabim/Tse'elon,31.908191,35.012721,gtfs/23071,Bus Stop
+Damesek Eli'ezer/HaRav Yitshak Nissim,32.073948,34.837568,gtfs/14030,Bus Stop
+Dani Operation Garden/He Be'Iyar,32.099021,34.975084,gtfs/16517,Bus Stop
+Darchei Raphael/Rabbi Gershonowitz,31.426759,34.587264,gtfs/27236,Bus Stop
+Darkhe Refa'el/Kehilat Ya'akov,31.428819,34.584355,gtfs/29221,Bus Stop
+David Ben Gurion BLVD/Eliyahu Nawi,31.250470,34.817906,gtfs/28231,Bus Stop
+David Ben Gurion BLVD/Ya'akov Gershfeld,31.252951,34.814632,gtfs/26848,Bus Stop
+David Ben Gurion BLVD/Yehoshua HaTsoref,31.258113,34.811784,gtfs/26872,Bus Stop
+David Buzaglo/Rafa'el Alnaqua,31.305739,34.627829,gtfs/27589,Bus Stop
+David HaMelekh Boulevard/Elfa'l,31.950690,34.886760,gtfs/22076,Bus Stop
+David HaMelekh Boulevard/Gelfenstein,32.500749,34.921172,gtfs/1176,Bus Stop
+David Remez/Ha'Arba'a Rd,32.930755,35.081439,gtfs/42193,Bus Stop
+David Remez/Hahan,31.767851,35.224646,gtfs/9412,Bus Stop
+David Remez/Yefe Nof,32.954985,35.497352,gtfs/18477,Bus Stop
+David Shimoni/College,32.439643,34.905295,gtfs/1644,Bus Stop
+David Shimoni/Klaz,32.438956,34.909169,gtfs/1097,Bus Stop
+David Tuviyahu BLVD./Sokolov,31.245292,34.788720,gtfs/9056,Bus Stop
+David Tuviyahu BLVD/Derech Metsada,31.252417,34.769507,gtfs/27822,Bus Stop
+David Tuviyahu BLVD/Sha'ul HaMelech,31.253387,34.765468,gtfs/27823,Bus Stop
+Derech Alexandroni/Mevo’ot,32.045211,34.865800,gtfs/15678,Bus Stop
+Derech Alexandroni/Ora Namir,32.040376,34.866678,gtfs/50468,Bus Stop
+Derech LaMerhav/HaMaaleh,32.474082,34.970408,gtfs/1432,Bus Stop
+Derech Ron Nahman/Gilo,32.101485,35.209607,gtfs/51253,Bus Stop
+Derekh Lamerhav/HaBotnim,32.472716,34.968035,gtfs/1417,Bus Stop
+Derekh Lamerhav/Hashmona'im,32.471815,34.959358,gtfs/1391,Bus Stop
+Derekh Lamerhav/Havakuk,32.472611,34.952711,gtfs/1324,Bus Stop
+Derekh Lamerhav/Shave Tsiyon,32.471492,34.962130,gtfs/1398,Bus Stop
+Dganya Road/Liber Ze'ev,32.299918,34.873394,gtfs/431,Bus Stop
+Dganya Road/Professor Yosef Klauzner,32.307437,34.874793,gtfs/438,Bus Stop
+Dganya/Perach,32.302783,34.873695,gtfs/24721,Bus Stop
+Dizengoff Square/Reines,32.078950,34.774950,gtfs/13565,Bus Stop
+Dizengoff/Ben Yehuda,32.096391,34.776059,gtfs/14472,Bus Stop
+Dolfin Junction/Rothschild Boulevard,32.827198,34.983474,gtfs/3812,Bus Stop
+Dormitories/HaNassi,32.962371,35.495752,gtfs/18434,Bus Stop
+Dov Yosef/Shabtai HaNegbi,31.739309,35.195288,gtfs/11738,Bus Stop
+Dror Interchange to North,32.256516,34.893387,gtfs/37110,Bus Stop
+Druck/Kehilot Ya'akov,31.813029,35.219342,gtfs/8693,Bus Stop
+Dvar Yerushalayim/Katzenelbogen,31.783625,35.174993,gtfs/8762,Bus Stop
+Dvora HaNevi'a/Raul Wallenberg,32.115126,34.840063,gtfs/13187,Bus Stop
+Education City/Namir Road,32.132818,34.796381,gtfs/29373,Bus Stop
+Eged Terminal/Peretz Center Mall,31.060742,35.019583,gtfs/12757,Bus Stop
+Eilat Central Bus Station,29.557507,34.953360,gtfs/49812,Bus Stop
+El-Al Junction,31.990742,34.907208,gtfs/24856,Bus Stop
+Ele Sinai/Katif,31.413362,34.575490,gtfs/39779,Bus Stop
+Electric Company/Yoseftal,31.939800,34.870650,gtfs/22080,Bus Stop
+Elhadif/Continental,32.792686,35.534658,gtfs/5714,Bus Stop
+Elhadif/Eilat,32.789659,35.539745,gtfs/5716,Bus Stop
+Eli Cohen/Yitshak Ben Tsvi,31.668214,34.572132,gtfs/25968,Bus Stop
+Elihav Center/Ahuza,32.179260,34.880640,gtfs/24427,Bus Stop
+Eliyahu HaNavi/Haggay HaNavi,31.700353,34.981827,gtfs/49455,Bus Stop
+Eliyahu HaNavi/Yehezkel HaNavi,31.700581,34.987492,gtfs/43814,Bus Stop
+Eliyahu HaNavi/Zekharya HaNavi,31.699824,34.978618,gtfs/50929,Bus Stop
+Emek HaCarmel,32.774524,35.043311,gtfs/48900,Bus Stop
+Emek Yezre'el College,32.652404,35.291738,gtfs/4678,Bus Stop
+Emek Yezre'el/Zin Creek,31.895698,35.016297,gtfs/22167,Bus Stop
+En HaTkhelet/Hartsit,31.252689,35.218604,gtfs/26830,Bus Stop
+Engel/Kanfe Nesharim,31.787712,35.192306,gtfs/8755,Bus Stop
+Eshkol Blvd/Sheshet HaYamim,31.800305,35.229602,gtfs/9644,Bus Stop
+Etan Junction,31.572821,34.758707,gtfs/26604,Bus Stop
+Etung Junction,32.482248,34.972655,gtfs/2549,Bus Stop
+Expo Tel Aviv/Rokach Boulevard,32.103834,34.809664,gtfs/13220,Bus Stop
+Ezra/Damesek Eli'ezer,32.076564,34.836184,gtfs/13339,Bus Stop
+Ezra/Nehemya,32.079563,34.838402,gtfs/29344,Bus Stop
+Faculty of Engineering/Klauzner,32.111325,34.807491,gtfs/13202,Bus Stop
+Fire Fighters/Hativa Tesha,32.615186,35.288793,gtfs/4598,Bus Stop
+Fourtek,32.781757,35.033709,gtfs/48906,Bus Stop
+Frankfurter/Rothschild,32.085701,34.881376,gtfs/16419,Bus Stop
+Fromachenko/Rimoni,32.961903,35.498795,gtfs/5243,Bus Stop
+G City/Moshe Dayan,31.983342,34.769206,gtfs/15817,Bus Stop
+G Mall/Weizman,32.170317,34.926680,gtfs/827,Bus Stop
+Galgale HaPlada/Yohanan HaSandlar,32.164474,34.808961,gtfs/14175,Bus Stop
+Galil Medical Center,33.007588,35.117857,gtfs/17735,Bus Stop
+Game Park/Mesilat Yosef,31.930294,35.044202,gtfs/8490,Bus Stop
+Gan Esther/Ben Zakai,32.047661,34.949904,gtfs/23430,Bus Stop
+Gan Ha'ir/HaHaroshet,32.921238,35.306517,gtfs/51615,Bus Stop
+Gan Havradim/Zussman,31.779799,35.201747,gtfs/9621,Bus Stop
+Gan Ha’Ir/HaGalil,32.787223,35.539636,gtfs/5266,Bus Stop
+Gan Yavne Intersection,31.783772,34.672409,gtfs/16147,Bus Stop
+Ganei Am junction/Ramatayim Road,32.151228,34.894821,gtfs/24505,Bus Stop
+Ganim Beach,32.776059,35.545393,gtfs/5672,Bus Stop
+Ganim Junction/HaRav Herzog,32.096908,34.899947,gtfs/25264,Bus Stop
+Ganot Hadar Junction,32.323954,34.898359,gtfs/14807,Bus Stop
+Ganot Interchange/Road 4,32.022045,34.824120,gtfs/21588,Bus Stop
+Ge'ula/Rabbi Akiva,32.801831,35.001544,gtfs/2445,Bus Stop
+Gedera Interchange to South,31.802698,34.764107,gtfs/16105,Bus Stop
+Geha Interchange/Jabotinsky,32.092385,34.848695,gtfs/24217,Bus Stop
+Geha Interchange/Jabotinsky Road,32.092621,34.843838,gtfs/14077,Bus Stop
+Gibore Israel Blvd/Ha'Omanut,32.277657,34.859914,gtfs/267,Bus Stop
+Gibore Israel Blvd/HaTrufa,32.282477,34.861469,gtfs/257,Bus Stop
+Gibore Israel Boulevard/HaBonim,32.279935,34.860652,gtfs/254,Bus Stop
+Gilo Terminus/HaMargalit,31.739311,35.181218,gtfs/10068,Bus Stop
+Giv'at Mordehai Junction/Beyth,31.767336,35.193158,gtfs/10446,Bus Stop
+Giv'at Shmu'el Interchange/Road 4,32.074823,34.843553,gtfs/13274,Bus Stop
+Giv'at Shmu'el/Pedestrian Bridge,32.082661,34.845048,gtfs/13215,Bus Stop
+Giv'at Ze'ev,31.856017,35.172863,gtfs/7910,Bus Stop
+Giv'at Ze'ev Junction,31.863243,35.172735,gtfs/8467,Bus Stop
+Giv'on Hayeshana/436,31.849701,35.171846,gtfs/8466,Bus Stop
+Givat HaMoreh Intersection,32.626136,35.320908,gtfs/4729,Bus Stop
+Givat Shaul/HaRav Aharon Kotler,31.791889,35.194251,gtfs/8706,Bus Stop
+Glilot Interchange/Namir Road,32.140196,34.800766,gtfs/29383,Bus Stop
+Golda Meir Boulevard/Yitshak Mirsky,31.822289,35.189471,gtfs/10792,Bus Stop
+Golda Meir/Chaim Herzog,32.085446,34.971537,gtfs/39177,Bus Stop
+Golda/Shlomo HaLevi,31.800300,35.208257,gtfs/8636,Bus Stop
+Golomb/Hatsalam Rahamim,31.754774,35.185858,gtfs/9894,Bus Stop
+Golomb/San Martin,31.756636,35.195429,gtfs/9564,Bus Stop
+Government Complex/HaTsiyonut Road,32.701016,35.310955,gtfs/4924,Bus Stop
+Grand Canyon/David Tuviyahu BLVD,31.250896,34.773608,gtfs/27820,Bus Stop
+Granot Junction/Gan Shmuel,32.447577,34.955859,gtfs/1365,Bus Stop
+Guy Beach,32.780739,35.544285,gtfs/5771,Bus Stop
+Ha'Aliya/Yigal Allon,31.755455,34.988560,gtfs/11032,Bus Stop
+Ha'Arazim/Ma'ale HaBanim,33.014453,35.286636,gtfs/6484,Bus Stop
+Ha'Atsma'ut Road/Sa'adia Hatukha,32.028117,34.889739,gtfs/15620,Bus Stop
+Ha'Atsma'ut Road/Yaacov Bar Simantov,32.028211,34.885309,gtfs/15617,Bus Stop
+Ha'Atsma'ut/Yerushalayim,32.027631,34.861910,gtfs/15619,Bus Stop
+Ha'Atsma'ut/Yerushalayim Blvd,32.102837,35.178064,gtfs/34465,Bus Stop
+Ha'Avot/HaNassi Weizmann,32.779549,35.510238,gtfs/5696,Bus Stop
+Ha'Emek Park,32.619971,35.310682,gtfs/5165,Bus Stop
+Ha'Oman/Bar'am,31.747300,35.212323,gtfs/37732,Bus Stop
+HaAmakim Fork/Elroi,32.722814,35.103219,gtfs/42806,Bus Stop
+HaAmakim Fork/Jalama,32.723751,35.099955,gtfs/2394,Bus Stop
+HaAmora'im Blvd/Zekharya HaNavi,31.704131,34.974608,gtfs/44262,Bus Stop
+HaAmoraim Boulevard/Rav Ashi,31.706743,34.970672,gtfs/44264,Bus Stop
+HaAmoraim Boulevard/Rav Hanina,31.703442,34.964960,gtfs/51387,Bus Stop
+HaAmoraim Boulevard/Talmud Yerushalmi,31.700205,34.974933,gtfs/47935,Bus Stop
+HaAtzmaut/HaHatzav,32.028839,34.864182,gtfs/15529,Bus Stop
+HaBanim Boulevard,32.684523,35.236545,gtfs/18004,Bus Stop
+HaBanim Boulevard/Nof Ha'Emek,32.673550,35.251242,gtfs/4780,Bus Stop
+HaBanim Boulevard/Tidhar,32.681993,35.238506,gtfs/19086,Bus Stop
+HaBanim/Wolfson,32.604311,35.283330,gtfs/4548,Bus Stop
+HaBankim Junction/Hevron Road,31.754138,35.220739,gtfs/8939,Bus Stop
+HaEmek Hospital,32.621325,35.313845,gtfs/4509,Bus Stop
+HaEmek Hospital Administration,32.623115,35.317425,gtfs/4511,Bus Stop
+HaGalil/HaBanim,32.793892,35.013933,gtfs/2130,Bus Stop
+HaGalil/HaBerekha,32.790141,35.018308,gtfs/2128,Bus Stop
+HaGalil/Mitspa,32.787491,35.020470,gtfs/2127,Bus Stop
+HaGalil/Netiv Hen,32.795600,35.010914,gtfs/2124,Bus Stop
+HaGalil/Panorama,32.784722,35.541232,gtfs/5268,Bus Stop
+HaGalil/Zion,32.791868,35.016542,gtfs/2129,Bus Stop
+HaGavish/HaMehkar,32.289026,34.863707,gtfs/591,Bus Stop
+HaGiborim/Herbert Samuel,32.436292,34.922659,gtfs/1184,Bus Stop
+HaHagana/Rutenberg,32.785647,34.962823,gtfs/1849,Bus Stop
+HaHaroshet/HaHashmal,32.923340,35.316008,gtfs/18158,Bus Stop
+HaHatsav/Yizre'el,32.690779,35.313680,gtfs/21115,Bus Stop
+HaHistadrut Blvd/Arye Shenkar,32.807594,35.063557,gtfs/3803,Bus Stop
+HaHistadrut/HaKrayot Junction,32.789389,35.030298,gtfs/2402,Bus Stop
+HaHistadrut/Ichilov,32.086035,34.885385,gtfs/15697,Bus Stop
+HaHistadrut/Refineries,32.799716,35.050186,gtfs/3852,Bus Stop
+HaHistadrut/Yehuda Halevi,31.658255,34.561199,gtfs/27340,Bus Stop
+HaHoze MiLublin/Admore Vizhnitz,31.696001,35.102315,gtfs/34966,Bus Stop
+HaKfr HaYarok Junction,32.132791,34.832617,gtfs/14354,Bus Stop
+HaKomemiyut/HaNevi'im,32.006855,34.741449,gtfs/23908,Bus Stop
+HaLe'om Parking/HaNassi HaShishi Blvd,31.783139,35.203037,gtfs/10515,Bus Stop
+HaLohamim/Tel Giborim,32.035855,34.766900,gtfs/24157,Bus Stop
+HaMaccabim Road/Eli Cohen,31.984633,34.810740,gtfs/25107,Bus Stop
+HaMaccabim Road/Freiman,31.977527,34.808252,gtfs/22964,Bus Stop
+HaMaccabim Road/HaTsiyonut Boulevard,31.981526,34.809642,gtfs/16824,Bus Stop
+HaMasger/HaTa’asiya,32.066996,34.786971,gtfs/29322,Bus Stop
+HaMasger/Israel Tal,32.063805,34.785694,gtfs/13322,Bus Stop
+HaMateh HaArtzi/Clermont Ganneau,31.796675,35.232040,gtfs/9914,Bus Stop
+HaMehkar/Aba Hilel Silver,31.964181,34.900830,gtfs/38393,Bus Stop
+HaMesila/Geula,32.475110,34.951681,gtfs/2916,Bus Stop
+HaMetsil HaYehudi/Ron Nachman,32.103595,35.203172,gtfs/51617,Bus Stop
+HaMishna,31.780039,34.660266,gtfs/43374,Bus Stop
+HaNassi Ben Tsvi Blvd/HaGil'ad,33.005523,35.101838,gtfs/17629,Bus Stop
+HaNassi Ben Tsvi Blvd/HaZetim Road,33.008813,35.110688,gtfs/17721,Bus Stop
+HaNassi Weizmann Blvd/HaGiborim,32.509860,34.919840,gtfs/1155,Bus Stop
+HaNassi Weizmann/HaBanim,32.439335,34.920875,gtfs/1170,Bus Stop
+HaNassi Weizmann/HaMavreg,32.779867,35.500076,gtfs/5693,Bus Stop
+HaNassi Weizmann/Lavochkin,32.438454,34.924815,gtfs/1197,Bus Stop
+HaNassi Weizmann/Yehuda Halevi,32.440531,34.917197,gtfs/17271,Bus Stop
+HaNassi/Gratball,31.948030,34.892672,gtfs/22074,Bus Stop
+HaNassi/Panorama Center,32.807383,34.986857,gtfs/2883,Bus Stop
+HaNevi'im/HaRav Kook,31.783673,35.221369,gtfs/10519,Bus Stop
+HaPalmach Boulevard/Hativat Carmeli,31.804043,34.661080,gtfs/25597,Bus Stop
+HaPikud Junction/al-A'mara,32.694042,35.287550,gtfs/18235,Bus Stop
+HaPisga/Torah Ve'Avoda,31.766926,35.183562,gtfs/8768,Bus Stop
+HaPrahim,31.784925,34.650162,gtfs/26114,Bus Stop
+HaRakevet/Bne Brak,32.060522,34.781999,gtfs/13019,Bus Stop
+HaRakevet/Salomon,32.062285,34.780040,gtfs/14370,Bus Stop
+HaRav Bezalel Zolti,31.810445,35.215754,gtfs/8697,Bus Stop
+HaRav Bezalel Zolti/Rabbi Shlomo Zalman Druk,31.812757,35.214906,gtfs/8696,Bus Stop
+HaRav Frank/Meshulam Rath,31.763319,35.187287,gtfs/10449,Bus Stop
+HaRav Gershonowitz/Hal HaYam,31.424452,34.584197,gtfs/27230,Bus Stop
+HaRav Herzog Boulevard/Nahar HaYarden Boulevard,31.736614,34.993204,gtfs/10990,Bus Stop
+HaRav Kahaneman/Citroen Plants,32.078104,34.842242,gtfs/13341,Bus Stop
+HaRav Kahanman/Ezra,32.082993,34.840811,gtfs/14332,Bus Stop
+HaRav Kahanman/Rabbi Akiva,32.085320,34.839710,gtfs/13287,Bus Stop
+HaRav Kook/Jabotinsky,33.015356,35.281995,gtfs/18015,Bus Stop
+HaRav Maimon/Moriya,32.345629,34.860975,gtfs/385,Bus Stop
+HaRav Moshe Malka/Jabotinskt Road,32.091817,34.869383,gtfs/23363,Bus Stop
+HaRav Pardes/HaRav Panijel,31.841686,35.245680,gtfs/9661,Bus Stop
+HaRav Pardes/Zuckerman,31.844559,35.243012,gtfs/7320,Bus Stop
+HaRav Shach/Jabotinsky Road,32.091777,34.835285,gtfs/29354,Bus Stop
+HaRav Shalom Shabazi/Ba'al Mlekhet Shlomo,32.088442,34.951297,gtfs/16534,Bus Stop
+HaRav Shalom Shabazi/Ha'Atsma'ut,32.097436,34.942780,gtfs/16535,Bus Stop
+HaRav Shalom Shabazi/HaRav Shlomo Madar Alley,32.089956,34.949032,gtfs/23711,Bus Stop
+HaRav Shalom Shabazi/Nelly Sachs,32.084515,34.965352,gtfs/39180,Bus Stop
+HaRav Shalom Shabazi/Shlomo HaMelekh,32.095665,34.944432,gtfs/16536,Bus Stop
+HaRav Shalom Shabazi/Shlomo Ma'uda,32.093034,34.946340,gtfs/23287,Bus Stop
+HaRotem/Hahartsit,31.789500,34.652352,gtfs/25882,Bus Stop
+HaRozmarin/Tunnels Road,31.731880,35.203916,gtfs/8935,Bus Stop
+HaSadna/Pierre Koenig,31.750180,35.213997,gtfs/11612,Bus Stop
+HaShalom Road/Yits'hak Shamir Road,32.443946,34.894357,gtfs/43656,Bus Stop
+HaShalom/Bar Ilan,32.453232,34.901124,gtfs/3589,Bus Stop
+HaShiv'a Road/Hamahtesh,32.028910,34.796876,gtfs/24738,Bus Stop
+HaShiv'a Road/Hamelaha,32.021775,34.805471,gtfs/15564,Bus Stop
+HaShiv'a Road/Herzl,32.024392,34.802399,gtfs/21475,Bus Stop
+HaShiv'a Road/Kaplan,32.017652,34.808867,gtfs/24850,Bus Stop
+HaShiv'a/HaHistadrut,32.967607,35.504622,gtfs/18549,Bus Stop
+HaShomrim Junction,32.709455,35.137655,gtfs/18793,Bus Stop
+HaShunit/Yorde Yam,32.160705,34.796409,gtfs/14365,Bus Stop
+HaSira Junction South,32.159868,34.810438,gtfs/29401,Bus Stop
+HaTayasim Road/Rabbi Akiva,31.304786,34.625185,gtfs/27598,Bus Stop
+HaTohen/Granit,32.486134,34.950884,gtfs/44669,Bus Stop
+HaTsiyonut Road/Masada,32.105309,35.194993,gtfs/34631,Bus Stop
+HaTsiyonut Road/Mivtsa Hiram,32.108308,35.186293,gtfs/34632,Bus Stop
+HaTsiyonut Road/Mivtsa Uvda,32.108255,35.183558,gtfs/34630,Bus Stop
+HaTsiyonut/HaHativot,32.698895,35.309957,gtfs/21092,Bus Stop
+HaYarkon/Ben Gurion Boulevard,32.084191,34.769531,gtfs/44471,Bus Stop
+HaYarkon/Trumpeldor,32.075360,34.766633,gtfs/44468,Bus Stop
+HaYovel Gas Station/Moshe Dayan,32.001204,34.763280,gtfs/23972,Bus Stop
+HaZahav Mall/David Saharov,31.989251,34.774917,gtfs/977,Bus Stop
+Habima/Rothschild Blvd,32.071428,34.778882,gtfs/13575,Bus Stop
+Hadasa Ne'urim Youth Village,32.382190,34.865862,gtfs/14693,Bus Stop
+Hadera East Junction,32.447225,34.943832,gtfs/1257,Bus Stop
+Haharoshet/Ha'Asakim,32.924555,35.320324,gtfs/6611,Bus Stop
+Haharoshet/Ha'Emek,32.922152,35.303773,gtfs/18121,Bus Stop
+Haharoshet/Hamelaha,32.921724,35.310818,gtfs/18141,Bus Stop
+Hahashmona'im/HaLevi'em,29.550604,34.934351,gtfs/12667,Bus Stop
+Haifa Road,32.806636,35.074020,gtfs/3916,Bus Stop
+Haifa Road/Bi'r al-Amir,32.692987,35.285166,gtfs/21289,Bus Stop
+Haifa Road/Zevulun,32.803703,35.075304,gtfs/1446,Bus Stop
+Haim Levanon/Klatzkin,32.119043,34.801869,gtfs/13054,Bus Stop
+Haim Weizmann/Herzl,32.957234,35.496737,gtfs/5240,Bus Stop
+Hakalanit/HaNurit,31.784433,34.654581,gtfs/25916,Bus Stop
+Hakalanit/HaTsiv'oni,31.787756,34.648860,gtfs/11931,Bus Stop
+Hakurat Al Asali A,32.504268,35.057424,gtfs/4093,Bus Stop
+Halamish/651,32.479941,34.948137,gtfs/16996,Bus Stop
+Halamish/Tarshish,32.483237,34.948257,gtfs/1284,Bus Stop
+Hama'abada/Hevron Road,31.764244,35.225329,gtfs/10335,Bus Stop
+Hame Tiberias,32.768733,35.548683,gtfs/5671,Bus Stop
+Hamelaha/Ha'Orgim,32.012784,34.797830,gtfs/24131,Bus Stop
+Handicapped Employment Center/Hamelaha,32.109440,34.967144,gtfs/16523,Bus Stop
+Hankin Road/Internazional,32.782159,35.009598,gtfs/2080,Bus Stop
+Hankin/Gutel Levin,32.784122,35.003877,gtfs/2620,Bus Stop
+Hannah Interchange/Camp 80,32.457376,34.984447,gtfs/1482,Bus Stop
+Hannah Szenes/Mivtsa Horev,31.799490,34.661020,gtfs/25594,Bus Stop
+Har Homa Terminal/Eliyahu Koren,31.719727,35.221274,gtfs/11448,Bus Stop
+Har Nof Terminal/Kanfei Nesharim,31.787190,35.180668,gtfs/9959,Bus Stop
+Har Tsiyon/Ma'ale HaShalom,31.770901,35.229972,gtfs/9690,Bus Stop
+Har'el/Yasmin,31.799962,35.148045,gtfs/11289,Bus Stop
+Har'el/Yitshak Nissim,31.804288,35.150668,gtfs/11534,Bus Stop
+Hartov Interchange,31.767298,34.997537,gtfs/11080,Bus Stop
+Hashmona'im North Junction,31.930966,35.026006,gtfs/7619,Bus Stop
+Hashmona'im/Rabin,31.894588,35.001862,gtfs/24711,Bus Stop
+Hativa Sheva Junction/Latrun,31.835052,34.978365,gtfs/8439,Bus Stop
+Hativat HaNegev Junction,31.256713,34.825294,gtfs/26871,Bus Stop
+Hativat Yiftah Boulevard/Avraham Mizrahi,31.949575,34.883254,gtfs/22078,Bus Stop
+Havakuk/Miryam HaNevia,32.079742,34.984337,gtfs/44079,Bus Stop
+Hay Tayeb/Brand,31.785651,35.172418,gtfs/8724,Bus Stop
+Hay Tayeb/Ibn Danan,31.783243,35.171828,gtfs/8723,Bus Stop
+Hay Tayeb/Rosenthal,31.788330,35.170991,gtfs/8725,Bus Stop
+Hayarkon River/Hayarden River,31.707350,35.000200,gtfs/8862,Bus Stop
+Hazon Ish/HaAdmor MiLubawitch,31.808694,35.219809,gtfs/8700,Bus Stop
+Hazon Yosef Park,31.694254,35.117298,gtfs/7404,Bus Stop
+He Be'Iyar/Mivtsa Dani,32.096624,34.974123,gtfs/16518,Bus Stop
+He Be'Iyar/Mivtsa Hiram,32.096859,34.971380,gtfs/16520,Bus Stop
+Hebron Road/Miriam HaHashmonait,31.760252,35.223893,gtfs/8949,Bus Stop
+Hebron Road/Zvi Noyman,31.746501,35.217018,gtfs/10465,Bus Stop
+Heil HaYam/HaAliyah HaShniya,32.830821,34.985302,gtfs/3611,Bus Stop
+Hel HaShiryon/Kibbutz Galuyot,32.048150,34.784520,gtfs/13178,Bus Stop
+Hemed Interchange,31.801002,35.124540,gtfs/41133,Bus Stop
+Hermelin College/HaMehkar,32.291133,34.864850,gtfs/621,Bus Stop
+Hertsliya Junction,32.164486,34.813124,gtfs/29450,Bus Stop
+Herzl Blvd/Dani Mass,31.928153,34.871598,gtfs/21368,Bus Stop
+Herzl Blvd/Iris Alley,31.312614,34.621553,gtfs/12405,Bus Stop
+Herzl Boulevard,31.307741,34.620138,gtfs/27595,Bus Stop
+Herzl Boulevard/Har Herzl,31.773916,35.182803,gtfs/8965,Bus Stop
+Herzl Boulevard/Shivat Zion,31.937407,34.866101,gtfs/21404,Bus Stop
+Herzl/Abarbanel,31.886730,34.814328,gtfs/15433,Bus Stop
+Herzl/Ben Ze'ev,31.969914,34.805183,gtfs/24666,Bus Stop
+Herzl/Brener,31.953067,34.895274,gtfs/23122,Bus Stop
+Herzl/En HaKore,31.966292,34.802650,gtfs/24757,Bus Stop
+Herzl/Ezra,31.890302,34.813029,gtfs/15434,Bus Stop
+Herzl/Hacarmel,31.962545,34.803188,gtfs/24768,Bus Stop
+Herzl/Kfar Bilu Intersection,31.877053,34.818597,gtfs/16093,Bus Stop
+Herzl/Kibbutz Galuyot,31.320462,34.619915,gtfs/27945,Bus Stop
+Herzl/Mintz,32.326819,34.862473,gtfs/358,Bus Stop
+Herzl/Ole HaGardom,32.325694,34.864841,gtfs/333,Bus Stop
+Herzl/Rotary,31.893195,34.812065,gtfs/15435,Bus Stop
+Herzl/Weizmann,31.897757,34.810693,gtfs/16062,Bus Stop
+Herzl/Ya'acobi Boulevard,31.883855,34.816138,gtfs/16092,Bus Stop
+Herzl/Yaacov Feinstein,31.880798,34.818052,gtfs/15430,Bus Stop
+Herzl/Yanovsky,31.958395,34.801979,gtfs/24756,Bus Stop
+Herzog/Sh.Ofir,32.083802,34.976185,gtfs/41811,Bus Stop
+Hevron Road/Dani'el Yanovski,31.756638,35.222520,gtfs/8940,Bus Stop
+Hevron Road/Giv'at HaMatos,31.739691,35.212459,gtfs/11562,Bus Stop
+Hevron Road/HaOman,31.744221,35.215463,gtfs/11715,Bus Stop
+Hevron Road/HaTnufa,31.749546,35.218554,gtfs/10477,Bus Stop
+Hevron/Netiv Gefen,31.260630,35.206924,gtfs/28242,Bus Stop
+Hillel Yaffe Hospital,32.451726,34.898129,gtfs/4134,Bus Stop
+Hillel Yaffe/Herbert Samuel,32.437756,34.917382,gtfs/1141,Bus Stop
+Hod Hasharon Center/Ramatayim Road,32.154639,34.894508,gtfs/24535,Bus Stop
+Holon Junction,32.037572,34.779659,gtfs/24763,Bus Stop
+Horev/Janusz Korczak,32.782125,34.989069,gtfs/1857,Bus Stop
+Hutsot HaMifratz Commercial Center,32.805789,35.056577,gtfs/2357,Bus Stop
+Hutsot Mall/Ben Gurion,31.660747,34.588385,gtfs/25700,Bus Stop
+IKEA/Gibore Israel Blvd,32.274579,34.858842,gtfs/203,Bus Stop
+Ibn Gabirol/ Jabotinsky,32.088740,34.782552,gtfs/45041,Bus Stop
+Ibraim Nimr Hussein/Al-Huwara,32.806543,35.171284,gtfs/20841,Bus Stop
+Idan HaNegev Interchange to the South,31.371602,34.792349,gtfs/27899,Bus Stop
+Igrot Moshe/Hazon Ish,31.808290,35.225149,gtfs/8806,Bus Stop
+Independence Square,32.609541,35.289217,gtfs/4854,Bus Stop
+Industrial Zone Tsrifin,31.964252,34.848336,gtfs/21472,Bus Stop
+Internazional/Ye'ari,32.777778,35.010094,gtfs/3986,Bus Stop
+Italian Hospital / HaMegenim,32.822102,34.989222,gtfs/36097,Bus Stop
+Jabotinsky Road/Dov Gruner,32.091763,34.828052,gtfs/13032,Bus Stop
+Jabotinsky Road/Hahashmona'im,32.084513,34.809591,gtfs/12916,Bus Stop
+Jabotinsky/Abu Hatzeira,32.092113,34.832382,gtfs/13227,Bus Stop
+Jabotinsky/Rothschild,32.090057,34.879875,gtfs/24279,Bus Stop
+Jat Terminal,32.396462,35.042492,gtfs/2969,Bus Stop
+Jericho Road/HaOfel Road,31.780728,35.238456,gtfs/8877,Bus Stop
+Jerusalem,31.794074,34.641693,gtfs/25930,Bus Stop
+Jerusalem Beach,32.073296,34.764793,gtfs/44465,Bus Stop
+Kafr Qasm Terminal,32.115993,34.988278,gtfs/51269,Bus Stop
+Kahaneman/HaRav Zonenfeld,32.080511,34.841412,gtfs/13037,Bus Stop
+Kaplan Hospital Intersection/Road 40,31.868289,34.816628,gtfs/15427,Bus Stop
+Kaplan/Ruppin,31.775575,35.204420,gtfs/9694,Bus Stop
+Karkur Junction,32.465400,34.994606,gtfs/4122,Bus Stop
+Katzenelbogen/HaKablan,31.787168,35.175009,gtfs/8715,Bus Stop
+Katzenelbogen/HaPla'a,31.784193,35.177902,gtfs/8712,Bus Stop
+Katzir/Clermont Ganneau,31.795655,35.234992,gtfs/8870,Bus Stop
+Katznelson/Kaplan Eliezer,31.967458,34.794870,gtfs/22343,Bus Stop
+Katznelson/Prof Nahum,31.967113,34.798252,gtfs/16809,Bus Stop
+Kdushat Levi/Shalom Rav,31.706367,35.120407,gtfs/7343,Bus Stop
+Kedma Terminal,32.129639,34.860132,gtfs/14256,Bus Stop
+Kehilot Ya'akov/Rabbi Yosef Tsvi Rimon,32.071240,34.838308,gtfs/14021,Bus Stop
+Kenyoter/Weizmann,31.929677,34.798887,gtfs/15612,Bus Stop
+Keren HaYesod/Ahad Ha'Am,31.773638,35.219473,gtfs/9429,Bus Stop
+Keren HaYesod/Haim Moshe Shapira,31.799697,34.642673,gtfs/25928,Bus Stop
+Keren HaYesod/Shalom Alekhem,31.772277,35.221793,gtfs/9712,Bus Stop
+Keren HaYesod/Yerushalayim Boulevard,31.796086,34.640258,gtfs/25929,Bus Stop
+Kesem Junction,32.120586,34.938787,gtfs/16004,Bus Stop
+Kfar Gid'on Intersection,32.643463,35.291047,gtfs/4744,Bus Stop
+Kfar Hitim Junction,32.797319,35.517925,gtfs/5707,Bus Stop
+Kfar Rut East Junction,31.914036,35.024658,gtfs/22111,Bus Stop
+Kfar Rut West Junction,31.912999,35.022216,gtfs/23076,Bus Stop
+Kfar Sava Industrial Zone,32.178298,34.926906,gtfs/24430,Bus Stop
+Kfar Shmar'yahu Junction,32.179450,34.815827,gtfs/29407,Bus Stop
+Khalat Zabda,32.501948,35.060795,gtfs/4090,Bus Stop
+Kibbutz Seminar/Namir Road,32.101886,34.792779,gtfs/13358,Bus Stop
+Kiriyat HaHinuch,32.637084,35.080366,gtfs/39086,Bus Stop
+Kiriyat HaLeom/Israel Galili,31.969901,34.781039,gtfs/15593,Bus Stop
+Kiryat Amal Junction,32.711515,35.130742,gtfs/3885,Bus Stop
+Kiryat Ata Center,32.805236,35.102941,gtfs/3921,Bus Stop
+Kiryat Ha'yim Police/HaHistadrut,32.815556,35.074795,gtfs/3899,Bus Stop
+Kiryat Shalom/Ben Zvi Road,32.041085,34.774263,gtfs/13163,Bus Stop
+Kiryat Tiv'on Junction,32.711854,35.125707,gtfs/3891,Bus Stop
+Kiryon/Akko Haifa Rd,32.842679,35.089138,gtfs/2360,Bus Stop
+Kneset Mordekhay/HaRav Abba Shaul,31.694539,35.104967,gtfs/7486,Bus Stop
+Komoly/Hankin,32.781472,35.013665,gtfs/2085,Bus Stop
+La Guardia Interchange,32.059454,34.786354,gtfs/12975,Bus Stop
+La Guardia/HaTayasim Road,32.059319,34.802950,gtfs/13173,Bus Stop
+Land of Israel Museum/Haim Levanon,32.103720,34.797126,gtfs/13096,Bus Stop
+Laniado Medical Center/Children,32.346270,34.855141,gtfs/14653,Bus Stop
+Lapid North Junction,31.917157,35.028134,gtfs/21800,Bus Stop
+Lavon/Shalom Alekhem,32.286557,34.855052,gtfs/250,Bus Stop
+Lev Beitar Commercial Center,31.703105,35.117263,gtfs/7384,Bus Stop
+Lev HaMifratz Mall,32.793427,35.038721,gtfs/3181,Bus Stop
+Lev Hadar,32.809726,34.999276,gtfs/17319,Bus Stop
+Levi Eshkol Blvd/Yehuda Ben Ze'ev Blvd,31.743353,34.996499,gtfs/10591,Bus Stop
+Levi Eshkol Boulevard/Carl Netter,31.800174,35.226734,gtfs/9645,Bus Stop
+Levi Eshkol Boulevard/HaGil'ad,31.747767,34.998841,gtfs/11071,Bus Stop
+Levi Eshkol Boulevard/Mishmar HaGvul,31.798999,35.223947,gtfs/9487,Bus Stop
+Levi Eshkol/Haside Umot Ha'Olam,31.977009,34.777995,gtfs/15683,Bus Stop
+Levi Eshkol/Israel Galili,31.971672,34.774825,gtfs/15606,Bus Stop
+Levinsky College/Namir Road,32.136707,34.798164,gtfs/29378,Bus Stop
+Licensing Bureau/HaLohamim,32.034209,34.770086,gtfs/24660,Bus Stop
+Lod Municipaliy/David HaMelekh Boulevard,31.948652,34.889558,gtfs/22075,Bus Stop
+London Ministore/Ibn Gabirol,32.074469,34.781836,gtfs/13595,Bus Stop
+Luna Park/Rokach Blvd,32.105513,34.812570,gtfs/13153,Bus Stop
+Ma'ale HaBanim/HaGoren,33.016660,35.284436,gtfs/6486,Bus Stop
+Ma'ale Kamon Junction/Road 85,32.929043,35.325213,gtfs/21286,Bus Stop
+Ma'ale Yitshak Boulevard/Karkum,32.731885,35.331906,gtfs/19427,Bus Stop
+Ma'ale Yitshak/En Mahel,32.720018,35.338667,gtfs/18452,Bus Stop
+Ma'apile Egoz/Rashi,31.740450,34.991023,gtfs/8990,Bus Stop
+Ma'on/Tapu'ah,31.261837,35.202178,gtfs/12771,Bus Stop
+Magdi'el Road/Eskhol,32.158828,34.901166,gtfs/24509,Bus Stop
+Magdi'el Road/HaParsa,32.156555,34.896141,gtfs/24534,Bus Stop
+Mak'r Intersection,32.915417,35.125862,gtfs/18821,Bus Stop
+Malchei Israel/Northern Exit,31.619029,34.767723,gtfs/27522,Bus Stop
+Malkhe Israel Blvd/Natan Elbaz,31.619176,34.761549,gtfs/27529,Bus Stop
+Malkhe Israel/Tahkemoni,31.789941,35.213136,gtfs/9697,Bus Stop
+Mall/HaGalil,32.971107,35.504439,gtfs/18547,Bus Stop
+Mamila/Karib,31.776697,35.225996,gtfs/10097,Bus Stop
+Manor/Neve Afikim,32.091330,34.975106,gtfs/16599,Bus Stop
+Manshiya Zabda Intersection,32.701877,35.193101,gtfs/19488,Bus Stop
+Me Ami Intersection,32.514875,35.120684,gtfs/4129,Bus Stop
+Menachem Ariav/HaPsagot,32.705264,35.318740,gtfs/18401,Bus Stop
+Menachem Ariav/Kishon,32.707881,35.331832,gtfs/4964,Bus Stop
+Menachem Ariav/Ma’ale Illit,32.702605,35.313988,gtfs/4532,Bus Stop
+Menachem Begin Boulevard,32.797267,35.522640,gtfs/5709,Bus Stop
+Menachem Begin Boulevard/Moshe Dayan Boulevard,32.029364,34.880740,gtfs/25130,Bus Stop
+Menachem Begin Boulevard/Sapir,32.790783,35.516611,gtfs/5706,Bus Stop
+Menachem Begin Road/Dan,32.096331,34.967836,gtfs/23291,Bus Stop
+Menachem Begin Road/HaPrahim,32.096958,34.965021,gtfs/16513,Bus Stop
+Menashe Junction Northward,32.471404,35.011467,gtfs/4123,Bus Stop
+Mental Health Center Tirat Carmel,32.750932,34.974635,gtfs/2816,Bus Stop
+Merhavim/HaBa'al Shem Tov,31.074893,35.036295,gtfs/25860,Bus Stop
+Merkaz Horev/Pica,32.785094,34.987340,gtfs/1860,Bus Stop
+Merkaz Oren/Yitzhack Rager,31.271125,34.797919,gtfs/26654,Bus Stop
+Merkaza/Cemetery Gate D,32.713092,35.337159,gtfs/5085,Bus Stop
+Mesilat Yosef/Merome Sade,31.927767,35.043144,gtfs/8491,Bus Stop
+Messubim Interchange,32.038296,34.831105,gtfs/21589,Bus Stop
+Mevo Modi'im Junction,31.937370,34.986635,gtfs/22063,Bus Stop
+Mezhirich/Haye Yitshak,31.702288,35.121916,gtfs/7382,Bus Stop
+Migdal Concord/Ben Gurion Road,32.093343,34.822094,gtfs/13247,Bus Stop
+Migdal Ha'Emek Junction,32.692541,35.227079,gtfs/4213,Bus Stop
+Migdal Hamayim,31.303731,34.622300,gtfs/27294,Bus Stop
+Migdal Shalom/Ahad Ha'Am,32.063639,34.770359,gtfs/13089,Bus Stop
+Mikve Yisrael School/Road 44,32.035196,34.785937,gtfs/21880,Bus Stop
+Military Cemetery/Moshe Sne,32.128115,34.828144,gtfs/12930,Bus Stop
+Mintz/Shif East,31.823242,35.192403,gtfs/8679,Bus Stop
+Mishmar HaShiva Junction,32.005820,34.817845,gtfs/21474,Bus Stop
+Mitkan Adam Junction,31.948218,34.963400,gtfs/22065,Bus Stop
+Mitspe Modi'in Junction,31.952138,34.954827,gtfs/22066,Bus Stop
+Mivtsa Kadesh/Raul Wallenberg,32.106557,34.827452,gtfs/12973,Bus Stop
+Mizra Intersection,32.648102,35.291474,gtfs/18845,Bus Stop
+Modi'in - East Junction,31.910515,35.017141,gtfs/22046,Bus Stop
+Morasha Interchange,32.123726,34.854708,gtfs/14355,Bus Stop
+Moriah Boulevard/HaBroshim,32.802285,34.984364,gtfs/1915,Bus Stop
+Moriya/Mapu,32.787737,34.986077,gtfs/1863,Bus Stop
+Moriya/Tsafririm,32.797583,34.984206,gtfs/1914,Bus Stop
+Moriya/Yerushalayim Blvd,32.102840,35.206225,gtfs/34495,Bus Stop
+Moshe Dayan Boulevard/Baskind,31.984956,34.766404,gtfs/25134,Bus Stop
+Moshe Dayan Boulevard/HaNahshol,31.979905,34.778700,gtfs/25135,Bus Stop
+Moshe Dayan/Gdole Israel,31.980484,34.775576,gtfs/15816,Bus Stop
+Moshe Sne,31.778838,34.662757,gtfs/28638,Bus Stop
+Moshe Sne/Bne Efrayim,32.124779,34.825126,gtfs/29460,Bus Stop
+Mount Scopus Terminal/Martin Buber,31.791037,35.247036,gtfs/43848,Bus Stop
+Mt. Schmuel Intersection,31.832023,35.173268,gtfs/8074,Bus Stop
+Nahal HaKishon Blvd/Nahal HaYarkon Blvd,31.709513,34.990875,gtfs/41234,Bus Stop
+Nahal HaKishon Blvd/Shacham Creek,31.711805,34.990483,gtfs/10848,Bus Stop
+Nahal Hakishon/Nahal Sorek,31.715411,34.989861,gtfs/8863,Bus Stop
+Nahal Kishon Blvd B,31.717912,34.990210,gtfs/8998,Bus Stop
+Nahalal Junction,32.699835,35.208447,gtfs/4205,Bus Stop
+Nahar HaDan Boulevard B,31.727708,34.986992,gtfs/44405,Bus Stop
+Nahar HaYarden Blvd/Rabbi Levitas,31.726951,34.994517,gtfs/8995,Bus Stop
+Nahar HaYarkon Boulevard/Nahal Luz,31.708245,34.996115,gtfs/41049,Bus Stop
+Nahum Sokolow/Camille Huysmans,32.341779,34.862198,gtfs/15228,Bus Stop
+Namir Road/Einstein,32.111697,34.792204,gtfs/29336,Bus Stop
+Namir Road/Jabotinsky,32.085267,34.795006,gtfs/29479,Bus Stop
+Namir Road/Menachem Begin Road,32.080207,34.794181,gtfs/38947,Bus Stop
+Namir Road/Pinkas,32.092013,34.795206,gtfs/13181,Bus Stop
+Namir Road/Yehuda HaMaccabi,32.095376,34.794137,gtfs/12910,Bus Stop
+Namsawi Roundabout,32.705104,35.305968,gtfs/4860,Bus Stop
+Nathan Alterman/Yigal Allon,32.084638,34.981434,gtfs/39169,Bus Stop
+Nehar HaDan Blvd,31.722396,34.986567,gtfs/44407,Bus Stop
+Nehar HaDan Blvd/Nahal Arugot,31.717722,34.986462,gtfs/44412,Bus Stop
+Nehar HaDan Blvd/Sitvanit,31.736103,34.986702,gtfs/44402,Bus Stop
+Nehar HaYarden Blvd/Kdushat Aharon,31.733992,34.991927,gtfs/8992,Bus Stop
+Neiberg/Bialik,32.796622,35.530435,gtfs/5712,Bus Stop
+Neisei Israel Boulevard/Yekev,32.908011,35.288494,gtfs/18066,Bus Stop
+Nesher Shopping Center,32.779203,35.037077,gtfs/48894,Bus Stop
+Nesi'e Israel/Bet HaKerem,32.908896,35.285332,gtfs/18041,Bus Stop
+Nesi'e Israel/Biranit,32.909071,35.295599,gtfs/20642,Bus Stop
+Nesi'e Israel/HaDekel,32.915970,35.302609,gtfs/18117,Bus Stop
+Nesi'e Israel/Morad HaGay,32.908082,35.292322,gtfs/18078,Bus Stop
+Nesi'e Israel/Ofira Park,32.913282,35.301922,gtfs/18108,Bus Stop
+Nesi'e Israel/Yodfat,32.910241,35.298973,gtfs/19471,Bus Stop
+Netanya Interchange,32.323729,34.867107,gtfs/15233,Bus Stop
+Netivot HaMishpat/Seminary,31.928842,35.038981,gtfs/8487,Bus Stop
+Neve Hayim Junction,32.450617,34.908796,gtfs/2580,Bus Stop
+Neve Herzog Junction,31.831106,34.692743,gtfs/15414,Bus Stop
+Neve Itamar Junction,32.324396,34.874173,gtfs/601,Bus Stop
+Neve Monoson Junction/Highway 461,32.033538,34.871280,gtfs/15787,Bus Stop
+Neve Neeman Junction//Ramatayim Road,32.138369,34.895773,gtfs/24500,Bus Stop
+Neve Simcha/Sorotzkin,31.794507,35.203503,gtfs/8658,Bus Stop
+Neve Yamin/East,32.176573,34.938396,gtfs/757,Bus Stop
+Nir Galim Junction,31.829161,34.687274,gtfs/15413,Bus Stop
+Nir Tsvi Junction,31.952128,34.856430,gtfs/21470,Bus Stop
+Nof HaGalil Market,32.693530,35.306105,gtfs/21083,Bus Stop
+Nof HaYarkon/Ramatayim Road,32.136210,34.897372,gtfs/48727,Bus Stop
+Nof Yam Interchange,32.186154,34.815190,gtfs/29581,Bus Stop
+Ofarit/Martin Buber,31.794180,35.249122,gtfs/43850,Bus Stop
+Ofer Camp/Road 443,31.871742,35.177482,gtfs/43297,Bus Stop
+Oil Institute/Haim Levanon,32.105457,34.800019,gtfs/13232,Bus Stop
+Old Cemetery/Ma'ale Yits'hak,32.710695,35.336253,gtfs/4596,Bus Stop
+Olga Junction,32.438329,34.890943,gtfs/1636,Bus Stop
+Omer West Junction,31.269234,34.841741,gtfs/26711,Bus Stop
+Ono Interchange/Road 471,32.069278,34.859124,gtfs/23316,Bus Stop
+Ort Yigal Allon/Ma'ale Yits'hak,32.708282,35.334618,gtfs/4671,Bus Stop
+Palyam/Kibbutz Galuyot,32.813492,35.003260,gtfs/3970,Bus Stop
+Paul VI/Abuna Ugo,32.698473,35.295194,gtfs/4857,Bus Stop
+Paul VI/Diana,32.697106,35.292188,gtfs/21009,Bus Stop
+Paul VI/Mary's Well,32.705914,35.301743,gtfs/4806,Bus Stop
+Paz Bridge,32.798759,35.018137,gtfs/35790,Bus Stop
+Pinhas Lavon Boulevard/Pinhas Rotenberg,32.280794,34.852967,gtfs/237,Bus Stop
+Pinhas Lavon/Golda Meir,32.278777,34.851223,gtfs/592,Bus Stop
+Pinhas Lavon/Israel Bar Yehuda,32.283161,34.854158,gtfs/244,Bus Stop
+Planet Area,31.980599,34.748230,gtfs/34217,Bus Stop
+Po'ale Tsedek,31.753290,35.215168,gtfs/9973,Bus Stop
+Police/HaBanim Boulevard,32.677467,35.246480,gtfs/4827,Bus Stop
+Police/Herzl,31.900340,34.809520,gtfs/15558,Bus Stop
+Police/Lakhish Boulevard,31.604991,34.774567,gtfs/27510,Bus Stop
+Police/Shimon Dahan,32.795598,35.525558,gtfs/5710,Bus Stop
+Police/Shmuel Meir,31.730285,35.219951,gtfs/11477,Bus Stop
+Premium Center/HaMelakha,32.015986,34.800970,gtfs/24177,Bus Stop
+Public Library/Yitzhak Shamir,31.526812,34.600979,gtfs/27583,Bus Stop
+Quarter A Commercial Center/Shave Tsiyon,31.808104,34.645763,gtfs/25543,Bus Stop
+Ra'anan/HaArava,31.250591,35.217259,gtfs/28243,Bus Stop
+Ra'anana Municipality/Achuza,32.179656,34.877987,gtfs/24426,Bus Stop
+Rabban Yohannan Ben Zakkai/Baalei HaTosafot,32.047111,34.958862,gtfs/25414,Bus Stop
+Rabbi Akiva/HaRav Kook,32.087547,34.828114,gtfs/13174,Bus Stop
+Rabbi Akiva/Shmu'el HaNavi,32.089797,34.825961,gtfs/13979,Bus Stop
+Rabbi Akiva/Slonim,31.698050,35.123033,gtfs/7397,Bus Stop
+Rabbi Akiva/Varsha Garden,32.086061,34.832095,gtfs/29432,Bus Stop
+Rabbi Israel Nejara/Yonathan Ben Uziel,31.790195,35.191514,gtfs/9352,Bus Stop
+Rabbi Shimon Ben Shetach/Rabbi Yohanan Ben Zakay,31.793978,34.663721,gtfs/25888,Bus Stop
+Rabbi Yehuda HaNasi/Honi Hame'agel,32.052767,34.945148,gtfs/25419,Bus Stop
+Rabbi Yehuda HaNasi/Ibn Gvirol,32.052174,34.956266,gtfs/23461,Bus Stop
+Rabbi Yehuda HaNasi/Rabbi Shimon Ben Shetach,32.052813,34.965556,gtfs/23491,Bus Stop
+Rabbi Yehuda HaNasi/Shamay,31.791596,34.666031,gtfs/25887,Bus Stop
+Rabi Akiva G,31.940661,35.041251,gtfs/7623,Bus Stop
+Rabi Akiva/Abaye and Rava Boulevard,31.940395,35.045031,gtfs/7571,Bus Stop
+Rabi Yehuda HaNasi B,31.938898,35.043018,gtfs/7576,Bus Stop
+Rabin Blvd/HaYarden,32.641767,35.090060,gtfs/6886,Bus Stop
+Rabin Square/Ibn Gvirol,32.079138,34.781405,gtfs/47406,Bus Stop
+Ramat HaGolan/Edom,32.105790,35.199835,gtfs/34493,Bus Stop
+Ramat Yishay Center,32.706668,35.172479,gtfs/18915,Bus Stop
+Ramat Yishay West Junction,32.705996,35.163129,gtfs/18914,Bus Stop
+Ramla Municipaliy/Herzl,31.931640,34.869155,gtfs/22082,Bus Stop
+Ramot Junction/Yadin,31.806286,35.204892,gtfs/10264,Bus Stop
+Ramot/Ma'oz,31.818485,35.202563,gtfs/8830,Bus Stop
+Rassco Center,32.708609,35.324780,gtfs/21145,Bus Stop
+Raul Wallenberg/Ha'Arad,32.112816,34.839688,gtfs/13244,Bus Stop
+Raul Wallenberg/HaBarzel,32.107031,34.833789,gtfs/13241,Bus Stop
+Raul Wallenberg/HaNehoshet,32.109700,34.837166,gtfs/13243,Bus Stop
+Raul Wallenberg/Mishmar HaYarden,32.106733,34.830514,gtfs/13030,Bus Stop
+Rd 38/Rd 3855,31.761270,34.989123,gtfs/41662,Bus Stop
+Re'em Junction-Masmiya Southbound,31.760191,34.784340,gtfs/26403,Bus Stop
+Reccanati/Ben Ze'ev,31.816994,35.192785,gtfs/8684,Bus Stop
+Reccanati/Idelzon,31.818019,35.189665,gtfs/8820,Bus Stop
+Reccanati/Zarhi,31.814170,35.193081,gtfs/9988,Bus Stop
+Remez/Eli Cohen Terminal,31.669413,34.583403,gtfs/49789,Bus Stop
+Rimon Shopping Center/Levi Eshkol Road,32.048070,34.865130,gtfs/15473,Bus Stop
+Rivyera Terminal,31.772632,34.618632,gtfs/35404,Bus Stop
+Road 3855/Yigal Allon Boulevard,31.751453,35.000784,gtfs/36797,Bus Stop
+Road 4/Bar Ilan Interchange,32.065048,34.838934,gtfs/24468,Bus Stop
+Road 4/HaHerut Boulevard,32.442749,34.911323,gtfs/1107,Bus Stop
+Road 40/Bilu Power Center,31.866471,34.814784,gtfs/15426,Bus Stop
+Road 436/Giv'at Ze'ev,31.858704,35.174347,gtfs/35846,Bus Stop
+Road 471/Jabotinsky,32.067455,34.848716,gtfs/23257,Bus Stop
+Road 500/A Sheikh Amin Tarif,32.811281,35.163418,gtfs/18804,Bus Stop
+Road 55/HaMovil Road,32.172529,34.930974,gtfs/24434,Bus Stop
+Road 57/Dganya Road,32.323617,34.882208,gtfs/24345,Bus Stop
+Road 65/Um al Fahm A,32.523316,35.132249,gtfs/1752,Bus Stop
+Road 65/Um al Fahm B,32.527412,35.141502,gtfs/1753,Bus Stop
+Road 65/Um al Fahm Junction,32.532844,35.147242,gtfs/4111,Bus Stop
+Rogozin/Ha'Almogim,31.803539,34.642044,gtfs/25926,Bus Stop
+Rojanski/Moshe Levi,31.986113,34.772754,gtfs/15860,Bus Stop
+Rokach Blvd/Behor Shitrit,32.107454,34.814433,gtfs/13219,Bus Stop
+Ron Nachman/Almog,32.101681,35.174414,gtfs/51619,Bus Stop
+Rosenthal,31.788610,35.178552,gtfs/11832,Bus Stop
+Rosh Ha'Ayin North Rail Junction,32.123156,34.937430,gtfs/750,Bus Stop
+Rothschild Blvd/Shenkin,32.068653,34.778387,gtfs/13228,Bus Stop
+Rothschild/Gordon,31.964260,34.796150,gtfs/23297,Bus Stop
+Rothschild/HaTikva,31.963927,34.799386,gtfs/15715,Bus Stop
+Rozmarin/Levona,31.732731,35.195877,gtfs/8751,Bus Stop
+Saharov,32.790898,34.958675,gtfs/3367,Bus Stop
+Sakhnin Town Hall,32.860591,35.303952,gtfs/21073,Bus Stop
+Sal'it/Agamit,31.266684,35.214817,gtfs/26907,Bus Stop
+Sal'it/Yas'ur,31.266409,35.211350,gtfs/26908,Bus Stop
+Sapir Blvd/HaGefen,32.781401,35.522178,gtfs/5702,Bus Stop
+Sapir Blvd/Hartsit,32.785869,35.519484,gtfs/5704,Bus Stop
+Sapir College,31.510728,34.594350,gtfs/11933,Bus Stop
+Sayeret Dukhifat Boulevard/Hel Ha'Avir,31.828575,35.246635,gtfs/11616,Bus Stop
+Science Park/Weizmann,31.910949,34.803289,gtfs/16850,Bus Stop
+Sd. Yehezkel/Rav VeShmu'el,31.939007,35.036676,gtfs/7557,Bus Stop
+Sderot Industrial Zone,31.524455,34.604409,gtfs/27581,Bus Stop
+Segula Junction North/40 highway,32.102663,34.898345,gtfs/25206,Bus Stop
+Sha'ar HaAmakim,32.721487,35.112411,gtfs/1479,Bus Stop
+Sha'ar HaNegev Junction,31.509108,34.586234,gtfs/27871,Bus Stop
+Sha'ar HaNegev Regional Council,31.515019,34.597700,gtfs/27663,Bus Stop
+Sha'ar Hefer Junction,32.323256,34.887917,gtfs/14765,Bus Stop
+Sha'are Ha'Ir Mall/Menachem Begin Boulevard,31.731651,34.752542,gtfs/25949,Bus Stop
+Sha'are Teshuva/Kolel Retsufot,31.923783,35.041776,gtfs/42125,Bus Stop
+Shabazi/Shilo,32.085811,34.958108,gtfs/41764,Bus Stop
+Shabtai Hizkiya/Va'ad Arba Ha'Aratsot,31.821135,35.198287,gtfs/8671,Bus Stop
+Shamgar/Ohel Yehoshua,31.795289,35.207757,gtfs/10742,Bus Stop
+Shapira/HaHistadrut,31.653120,34.555052,gtfs/27339,Bus Stop
+Sharon Junction Westwards,32.323644,34.902989,gtfs/14836,Bus Stop
+Sharona Complex/Eliezer Kaplan,32.073491,34.787018,gtfs/14549,Bus Stop
+Shatner Center/Kanfe Nesharim,31.787703,35.188761,gtfs/8756,Bus Stop
+Sha’arei Teshuva B,31.926568,35.039298,gtfs/35435,Bus Stop
+Shefa Hayyim/Doresh Tov,31.797310,35.212587,gtfs/11292,Bus Stop
+Sherbet Center/Emek HaHula,31.895586,35.019887,gtfs/22168,Bus Stop
+Shezor Intersection,32.935075,35.350856,gtfs/18236,Bus Stop
+Shilat Junction,31.913079,35.016672,gtfs/22062,Bus Stop
+Shiv'at HaKokhavim Mall,32.163327,34.824030,gtfs/29416,Bus Stop
+Shivat HaKokhavim Area,31.988070,34.764321,gtfs/15844,Bus Stop
+Shivte Israel/Heleni HaMalka,31.782023,35.224569,gtfs/10263,Bus Stop
+Shlomo Mantsura/HaRav Shalom Zekharya,32.101512,34.941065,gtfs/16592,Bus Stop
+Shlomo Shmeltzer Road/Granite,32.102633,34.864924,gtfs/48703,Bus Stop
+Shlomo Shmeltzer Road/Zevulun Hamer Road,32.103697,34.868040,gtfs/43593,Bus Stop
+Shmu'el HaNavi/Fishel,31.794348,35.221187,gtfs/9435,Bus Stop
+Shmuel HaNavi Tomb Junction,31.831015,35.181624,gtfs/7771,Bus Stop
+Shmuel HaNavi/Giv’at Moshe,31.797063,35.218335,gtfs/10644,Bus Stop
+Shmuel Meir/Yitshak Nissim,31.726916,35.224027,gtfs/11496,Bus Stop
+Shoam Medical Center/HaNadiv Road,32.486040,34.970400,gtfs/17225,Bus Stop
+Shoresh Interchange,31.800293,35.077409,gtfs/11161,Bus Stop
+Shprinzak/Keren HaYesod,32.958485,35.494245,gtfs/18420,Bus Stop
+Shuk/Mantsura,32.104628,34.941635,gtfs/16594,Bus Stop
+Silver Morgenthau,31.814641,35.205998,gtfs/9811,Bus Stop
+Silver/Shivat Zion,31.815914,35.201461,gtfs/9810,Bus Stop
+Sokolov/Aviv,32.163565,34.902216,gtfs/21951,Bus Stop
+Sokolov/Ibn Gvirol,32.089656,34.833838,gtfs/14052,Bus Stop
+Soroka Medical Center/Yitzhack Rager,31.257796,34.798151,gtfs/28915,Bus Stop
+Soroka Outpatient Clinics/Ben Gurion University,31.261086,34.800344,gtfs/26669,Bus Stop
+Sorotzkin/Schenirer,31.797433,35.205739,gtfs/8652,Bus Stop
+Southern Industrial Zone,32.446689,34.910224,gtfs/1099,Bus Stop
+Sportan/HaRav Moshe Malka,32.096808,34.870606,gtfs/43260,Bus Stop
+Sportek,32.777170,35.039832,gtfs/48917,Bus Stop
+Stampfer/Abarbanel,32.094107,34.891330,gtfs/16330,Bus Stop
+Stampfer/Bar Kokhba,32.090714,34.886712,gtfs/23376,Bus Stop
+Struma/Golda Meir,31.074869,35.032849,gtfs/29050,Bus Stop
+Sultan Suleiman Central Station/Sultan Suleiman St,31.782927,35.231325,gtfs/11394,Bus Stop
+Ta'as Tira,32.781207,34.962876,gtfs/1842,Bus Stop
+Tal School/Menachem Begin Road,32.097546,34.960232,gtfs/16509,Bus Stop
+Tawfiq Zayyad/Road 75,32.694207,35.300136,gtfs/4479,Bus Stop
+Tayasim Junction,32.024122,34.907870,gtfs/25097,Bus Stop
+Tchernichovsky School/Ben Tsvi,32.307958,34.854598,gtfs/291,Bus Stop
+Tchernichovsky/Menachem Begin boulevard,32.186513,34.903427,gtfs/873,Bus Stop
+Tchernichovsky/Smilansky,32.183660,34.900633,gtfs/871,Bus Stop
+Tchernichovsky/Weizmann,32.177906,34.894049,gtfs/24394,Bus Stop
+Tel Aviv City Hall/Ibn Gabirol,32.082914,34.781176,gtfs/13679,Bus Stop
+Tel Sheva Junction,31.261049,34.831723,gtfs/26705,Bus Stop
+Teva Factory,32.285635,34.862489,gtfs/264,Bus Stop
+The City  Square,32.677437,35.242220,gtfs/19468,Bus Stop
+The Hebrew University/Churchill Blvd,31.795702,35.241936,gtfs/9505,Bus Stop
+Timrat Junction,32.698457,35.215010,gtfs/18972,Bus Stop
+Tirat Carmel Fork/Herzl,32.773179,34.963410,gtfs/1784,Bus Stop
+Trumpeldor/David Square,32.784852,35.017412,gtfs/2092,Bus Stop
+Trumpeldor/Ziv Center,32.783433,35.015140,gtfs/2090,Bus Stop
+Tsfat Junction/HaGalil,32.975060,35.504200,gtfs/18544,Bus Stop
+Tsrifin Intersection/Northward,31.969932,34.843347,gtfs/24787,Bus Stop
+Tunnels Barrier,31.705539,35.168148,gtfs/43224,Bus Stop
+Udim Junction,32.269538,34.846971,gtfs/22234,Bus Stop
+Ulpanit/Menachem Begin Road,32.799179,35.520149,gtfs/5318,Bus Stop
+Um al Fahm Terminal,32.531744,35.149737,gtfs/42840,Bus Stop
+Umm Wassef Intersection/ Haifa Road,32.693275,35.290653,gtfs/18239,Bus Stop
+University/Eshkol Tower,32.761548,35.018812,gtfs/3858,Bus Stop
+University/Haim Levanon,32.113879,34.801548,gtfs/14349,Bus Stop
+University/Multi-Purpose,32.758624,35.021966,gtfs/3975,Bus Stop
+Urban Market,32.966217,35.496988,gtfs/18459,Bus Stop
+Urban Market,32.330186,34.858976,gtfs/355,Bus Stop
+Urban Market/Baron Hirsch,32.089899,34.882979,gtfs/24296,Bus Stop
+Urban Market/Bet Eshel,31.240599,34.795095,gtfs/25709,Bus Stop
+Valenstein/Kehilat Ungvar,31.820185,35.195267,gtfs/8675,Bus Stop
+Volkani Institute/HaMaccabim Road,31.993680,34.814509,gtfs/22309,Bus Stop
+Weizman/HaGalil,32.173208,34.917286,gtfs/14602,Bus Stop
+Weizman/Nordau,32.172511,34.920316,gtfs/14603,Bus Stop
+Weizmann HaNassi/Miftan,32.779193,35.506064,gtfs/5695,Bus Stop
+Weizmann Institute/Herzl,31.902461,34.808411,gtfs/15557,Bus Stop
+Weizmann/Elkalay,32.171518,34.923847,gtfs/46420,Bus Stop
+Weizmann/Giv'at Sha'ul,31.790348,35.197526,gtfs/9046,Bus Stop
+Weizmann/Gordon,32.177199,34.899708,gtfs/24397,Bus Stop
+Weizmann/HaMe'a Ve'Ehad,31.936025,34.799704,gtfs/16189,Bus Stop
+Weizmann/Hamassor,32.780177,35.502852,gtfs/5307,Bus Stop
+Weizmann/Rothschild,32.174907,34.909611,gtfs/24403,Bus Stop
+Weizmann/Shidlovski,32.505493,34.920004,gtfs/17272,Bus Stop
+Weizmann/Yerushalayim,32.175585,34.906570,gtfs/24402,Bus Stop
+Weizmann/Ze'ev Geller,32.177977,34.897175,gtfs/24395,Bus Stop
+Wholesale Market,31.960287,34.851386,gtfs/21471,Bus Stop
+Wingate Institute,32.253791,34.835574,gtfs/14607,Bus Stop
+Wingate Institute/Road 2 South,32.261481,34.838143,gtfs/50485,Bus Stop
+Wolfson/En Ganim,32.088085,34.893269,gtfs/16278,Bus Stop
+Yaar Odem/Meiron,32.637175,35.087105,gtfs/20640,Bus Stop
+Yacobson/Ezrat Torah,31.795080,35.211684,gtfs/8645,Bus Stop
+Yad LaBanim A,32.798101,35.009336,gtfs/2140,Bus Stop
+Yad LaBanim/Dov Gruner,32.796224,35.016269,gtfs/2116,Bus Stop
+Yad LaBanim/HaGiborim,32.800280,35.011843,gtfs/2151,Bus Stop
+Yad LaBanim/Neve Yosef,32.794395,35.018374,gtfs/2144,Bus Stop
+Yad LaBanim/Razi'el,32.798222,35.014265,gtfs/2117,Bus Stop
+Yaffat a-Nasere/Center,32.684157,35.276298,gtfs/19372,Bus Stop
+Yaffat a-Nasere/Haifa Road,32.690810,35.282627,gtfs/20954,Bus Stop
+Yaffat a-Nasere/al-Almaneye,32.680886,35.269732,gtfs/19369,Bus Stop
+Yaffat a-Nasere/al-Wadi al-Khareji,32.687057,35.277546,gtfs/21288,Bus Stop
+Yagur Interchange,32.752167,35.071543,gtfs/1296,Bus Stop
+Yagur/Kfar Hasidim,32.746751,35.078483,gtfs/3999,Bus Stop
+Yakinton/Alumah,32.726236,35.338230,gtfs/18435,Bus Stop
+Yakum Junction,32.248956,34.835342,gtfs/14605,Bus Stop
+Yam Blvd/Hay Tayeb,31.420002,34.588302,gtfs/28589,Bus Stop
+Yanai Interchange Northwards,32.386814,34.868269,gtfs/14710,Bus Stop
+Yarkon Interchange,32.119907,34.903229,gtfs/741,Bus Stop
+Yarkon Interchange,32.122810,34.903897,gtfs/743,Bus Stop
+Yarkona Junction//Ramatayim Road,32.147574,34.894497,gtfs/24537,Bus Stop
+Yarkonim Shopping Center/40 highway,32.116460,34.903217,gtfs/24497,Bus Stop
+Yasif Junction,32.912549,35.156570,gtfs/18823,Bus Stop
+Yehezkel/Rabenu Gershom,31.792065,35.220651,gtfs/9434,Bus Stop
+Yehoshua Stampfer/Yehoshua Hankin,32.096339,34.894520,gtfs/16324,Bus Stop
+Yehuda Burla/Kdoshe Ca'ir,32.928529,35.089269,gtfs/6716,Bus Stop
+Yehuda HaLevi-Danilof Center,32.790851,35.532908,gtfs/5717,Bus Stop
+Yehuda HaNassi D,31.938543,35.039673,gtfs/7578,Bus Stop
+Yehuda Halevi/HaRav Kalaf,32.095966,34.954400,gtfs/24133,Bus Stop
+Yehuda/HaMaccabim,31.258208,35.214208,gtfs/26821,Bus Stop
+Yehuda/Yitshak Rabin Boulevard,31.890305,35.005284,gtfs/23055,Bus Stop
+Yeruka Quarter Terminal,32.200307,34.891094,gtfs/42035,Bus Stop
+Yerushalayim Blvd/Bayit VaGan,31.418018,34.585128,gtfs/28863,Bus Stop
+Yerushalayim Blvd/HaTkuma,31.792495,34.646307,gtfs/25554,Bus Stop
+Yerushalayim Blvd/Sheshet HaYamim,32.103784,35.186330,gtfs/34470,Bus Stop
+Yerushalayim Blvd/Yosef Samlo,31.423804,34.597810,gtfs/27220,Bus Stop
+Yerushalayim Road/Berl Katznelson,32.168618,34.852774,gtfs/14293,Bus Stop
+Yerushalayim/HaBrigada,32.175058,34.851705,gtfs/14296,Bus Stop
+Yerushalayim/Mt.-Sinai,32.172463,34.851892,gtfs/14295,Bus Stop
+Yeshayahu HaNavi/Dvora HaNevia,31.702444,34.990037,gtfs/41163,Bus Stop
+Yeshayahu HaNavi/Shmuel HaNavi,31.704789,34.990063,gtfs/41171,Bus Stop
+Yigael Yadin/Druck,31.806598,35.216384,gtfs/10226,Bus Stop
+Yigal Allon Boulevard/HaTseva,31.753943,34.994399,gtfs/37273,Bus Stop
+Yigal Allon Boulevard/Shaar HaIr Mall,31.756197,34.985749,gtfs/11028,Bus Stop
+Yigal Allon/Aluf HaRav Goren,32.088011,34.976723,gtfs/39174,Bus Stop
+Yigal Allon/Commercial Center,31.063300,35.033397,gtfs/12084,Bus Stop
+Yirmiyahu/HaTsvi,31.790922,35.201995,gtfs/44960,Bus Stop
+Yirmiyahu/Shamgar Ben Anat,31.792377,35.207749,gtfs/9445,Bus Stop
+Yishay Junction,32.707505,35.157884,gtfs/18913,Bus Stop
+Yitshak HaNassi/HaRav Levin,31.795593,34.661664,gtfs/25889,Bus Stop
+Yitshak Rabin Road/Ha'Atsma'ut,32.074321,34.860024,gtfs/825,Bus Stop
+Yitshak Rabin Road/Haika Grossman,32.077718,34.860374,gtfs/23357,Bus Stop
+Yitshak Rabin/Tzalmon Creek,31.891004,35.008091,gtfs/22197,Bus Stop
+Yosef Sapir/HaYarkonim,32.099140,34.895905,gtfs/16336,Bus Stop
+Yoseftal/Afriat,31.941812,34.871923,gtfs/16892,Bus Stop
+Yoseftal/HaTsanhanim,31.944989,34.877755,gtfs/16894,Bus Stop
+Ze'ev Jabotinsky Road/HaSivim,32.092059,34.858206,gtfs/16203,Bus Stop
+Zekharya HaNavi/Neriya HaNavi,31.705501,34.976725,gtfs/43697,Bus Stop
+Zevin/Eli'akh,31.841043,35.249404,gtfs/10221,Bus Stop
+Zevulum Hamer Road/Avshalom Gissin,32.100399,34.870843,gtfs/24281,Bus Stop
+Zevulun/Hate'ala,32.804671,35.098670,gtfs/1435,Bus Stop
+Zevulun/Kiriat Frustig,32.804253,35.095325,gtfs/1436,Bus Stop
+Zevulun/Kiryat Stand,32.802917,35.086555,gtfs/3909,Bus Stop
+Zevulun/Moshe Sharett,32.803595,35.089934,gtfs/3910,Bus Stop
+Zevulun/Shivat Zion,32.803920,35.092606,gtfs/1437,Bus Stop
+Ziv Hospital,32.955824,35.491871,gtfs/18386,Bus Stop
+al-Jalil Road/a-Rum,32.707686,35.307216,gtfs/18199,Bus Stop
+al-Khanuq,32.710389,35.305780,gtfs/4160,Bus Stop
+אוניברסיטת ת''א/מוזיאון הטבע,32.114014,34.807461,gtfs/29399,Bus Stop
+בי''ח מאיר/טשרניחובסקי,32.181197,34.897648,gtfs/867,Bus Stop
+בי''ח שיב''א/שדרות אהרון קציר,32.051129,34.849018,gtfs/15878,Bus Stop
+בי''ח שערי צדק/בייט,31.774226,35.186019,gtfs/10444,Bus Stop
+בי''ס ויז'ניץ/שדרות אביי ורבא,31.937881,35.047403,gtfs/42126,Bus Stop
+בי''ס חב''ד ב' לבנים/יוספטל,31.944085,34.875031,gtfs/23115,Bus Stop
+בי''ס כרמים/עמק חרוד,31.920514,35.003706,gtfs/35973,Bus Stop
+בי''ס מקיף דתי,32.966401,35.500444,gtfs/18507,Bus Stop
+בי''ס נזירות סנט ג'וזף,32.705785,35.310518,gtfs/21097,Bus Stop
+בי''ס עצמון/מנחם אריאב,32.708044,35.328013,gtfs/4963,Bus Stop
+בי''ס צמח דוד/דוד אלעזר,32.958719,35.490877,gtfs/5621,Bus Stop
+בי''ס תיכון בגין/יהודה הלוי,32.090292,34.954004,gtfs/16574,Bus Stop
+ביה''ח אסותא,31.781120,34.657394,gtfs/28671,Bus Stop
+בית כנסת חב''ד/זלמן שז''ר,32.964715,35.505682,gtfs/18550,Bus Stop
+דוד וולפסון/רמב''ם,32.087019,34.890642,gtfs/16181,Bus Stop
+דרך האר''י/ כביש 375,31.704533,35.126243,gtfs/7444,Bus Stop
+דרך המכבים/פיק''א,31.973994,34.807102,gtfs/15625,Bus Stop
+דרך ז'בוטינסקי/רש''י,32.089296,34.818138,gtfs/13140,Bus Stop
+דרך נמיר/שד' קק''ל,32.122120,34.794165,gtfs/29349,Bus Stop
+דרך תא''ל אורי בראון/ההגנה,32.105995,35.181274,gtfs/34468,Bus Stop
+דרך תא''ל אורי בראון/הפסגה,32.104722,35.176422,gtfs/34463,Bus Stop
+האר''י/ישראל ב''ק,32.971863,35.493324,gtfs/37179,Bus Stop
+המ''ג/זכרון יעקב,31.794802,35.199621,gtfs/8835,Bus Stop
+המ''ג/פנים מאירות,31.796941,35.200510,gtfs/8661,Bus Stop
+המלך ג'ורג'/קק''ל,31.777730,35.216156,gtfs/10710,Bus Stop
+העלייה / רמב''ם,31.753505,34.986261,gtfs/11027,Bus Stop
+הפלמ''ח/גשר עד הלום,31.801664,34.662622,gtfs/26330,Bus Stop
+הצנחנים/אח''י דקר,32.118462,34.839229,gtfs/14202,Bus Stop
+הר''ן/קדושת לוי,31.705527,35.117018,gtfs/7417,Bus Stop
+הרב ש''י זווין/הרב וינוגרד,31.838040,35.247107,gtfs/44444,Bus Stop
+הרב שלום שבזי/ש''י עגנון,32.084630,34.968828,gtfs/39179,Bus Stop
+זבולון/קק''ל,32.802761,35.083430,gtfs/1448,Bus Stop
+חזון אי''ש/האדמו''ר מגור,32.082352,34.835187,gtfs/14043,Bus Stop
+חזון אי''ש/האדמור מנדבורנא,32.076786,34.833392,gtfs/14497,Bus Stop
+חזון אי''ש/הרב יעקב לנדא,32.079131,34.833959,gtfs/13338,Bus Stop
+יהודה הלוי/רש''י,32.099797,34.954973,gtfs/16572,Bus Stop
+יהושע שטמפפר/רמב''ם,32.092530,34.889127,gtfs/16328,Bus Stop
+יחזקאל/כיכר השבת ,31.788783,35.218466,gtfs/10237,Bus Stop
+ישיבת הר''ן/רבי יהודה הנשיא,32.052133,34.948273,gtfs/25424,Bus Stop
+מ''ד מעפילים/דאר,31.066705,35.034661,gtfs/12299,Bus Stop
+מגדלי רמב''ם/טוביהו,31.246145,34.783544,gtfs/11969,Bus Stop
+מחלף הראל/מבשרת ציון ,31.798621,35.145723,gtfs/11234,Bus Stop
+מחלף מיתר לב''ש,31.306942,34.900322,gtfs/28230,Bus Stop
+מעזריטש/מהרי''ץ,31.699740,35.108879,gtfs/7387,Bus Stop
+מת''מ,32.790385,34.961340,gtfs/3521,Bus Stop
+מתחם מיקס/צה''ל,32.440952,34.931872,gtfs/1228,Bus Stop
+נתיבות המשפט כ''א,31.932529,35.047188,gtfs/7527,Bus Stop
+צבר/פלמ''ח,31.253979,35.215610,gtfs/26826,Bus Stop
+צה''ל,32.443329,34.937861,gtfs/48297,Bus Stop
+צה''ל 1,32.964929,35.487497,gtfs/18357,Bus Stop
+צה''ל 10,32.963026,35.491850,gtfs/18395,Bus Stop
+צה''ל 7,32.965028,35.490563,gtfs/18371,Bus Stop
+צה''ל/האקליפטוס,32.439274,34.929769,gtfs/1222,Bus Stop
+צומת חב''ד,31.979433,34.836540,gtfs/21594,Bus Stop
+רבי עקיבא/רש''י,32.085724,34.835008,gtfs/13286,Bus Stop
+רבן יוחנן בן זכאי/רשב''י,32.048181,34.961919,gtfs/15491,Bus Stop
+רמב''ן/רשב''א,31.933158,35.053047,gtfs/43882,Bus Stop
+רקאנטי/המשורר אצ''ג,31.820413,35.187514,gtfs/8682,Bus Stop
+רש''י / בן זאב,31.742170,34.992920,gtfs/10999,Bus Stop
+רש''י/סאן דייגו,31.729559,34.748849,gtfs/25950,Bus Stop
+רש''י/ת''ת תורת חיים,31.930227,35.049548,gtfs/39523,Bus Stop
+רשב''י/רבי טרפון,31.788881,34.665176,gtfs/25885,Bus Stop
+רשב''י/רבי יהודה הנשיא,32.052239,34.961390,gtfs/33905,Bus Stop
+רשב''י/שדרות הרב לוין,31.790253,34.659761,gtfs/25883,Bus Stop
+שבי ציון/אח''י אילת,31.807396,34.649236,gtfs/25923,Bus Stop
+שד. בן אב''י/שד. בנימין,32.318437,34.855357,gtfs/319,Bus Stop
+שד. מלכי ישראל/שד. צה''ל,31.605519,34.758780,gtfs/27499,Bus Stop
+שד.נהר הירדן/ריב''ל,31.723924,34.994140,gtfs/8997,Bus Stop
+שד.צה''ל/שד.העצמאות,31.607077,34.763291,gtfs/11990,Bus Stop
+שדרות גולדה מאיר/המשורר אצ''ג,31.825302,35.188624,gtfs/8614,Bus Stop
+שדרות האדמו''ר מפיטסבורג/חפץ חיים,31.797620,34.658701,gtfs/25593,Bus Stop
+שדרות ירושלים/הרמב''ם,31.423027,34.593147,gtfs/28588,Bus Stop
+שדרות לוי אשכול/חזון אי''ש,31.737256,34.996723,gtfs/10996,Bus Stop
+שדרות נהר הירדן/האדמו''ר מבעלז,31.731931,34.993077,gtfs/8993,Bus Stop
+ת''ת החינוך/שערי תשובה,31.924119,35.044401,gtfs/35592,Bus Stop
+ת''ת קרלין,31.927585,35.045988,gtfs/7582,Bus Stop
+ת.רק''ל אבא הלל/דרך ז'בוטינסקי,32.083114,34.805050,gtfs/13198,Bus Stop
+תיכון חדרה/רמב''ם,32.439226,34.914206,gtfs/1124,Bus Stop
 Aluf Sade Terminus,32.055089,34.833717,node/707368736,Bus Terminal
 Avi HaAsirim Terminal,31.954406,34.803939,node/4199409965,Bus Terminal
 Ayalon Mall Bus Terminal,32.098848,34.825462,node/4541919909,Bus Terminal

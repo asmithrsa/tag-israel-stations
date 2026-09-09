@@ -90,6 +90,20 @@ it is not needed if translation coverage is good.
   before anything is added to `stations.csv`.
 - `validate.py` must pass on the final file.
 
-## Open decision
+## Outcome
 
-How many stops to add. Deferred until the stage counts are known.
+Measured funnel: 30,455 stops in the feed → 14,893 with all-day service → 4,505
+after the 250 m rule → 1,000 kept (`BUS_STOP_CAP`), cutting off at 15 lines.
+
+Two corrections found while implementing, both of which would have gone unnoticed:
+
+1. **Advance booking is not detectable by name.** No route in the feed is named
+   הזמנה מראש and nothing uses `pickup_type=2`; both original checks matched zero.
+   The real marker is `route_type=715`, "Demand and Response Bus Service" (14
+   routes).
+2. **The feed carries more than buses.** Rail, tram, funicular and shared taxis
+   share `routes.txt`, so the first run let train stations qualify on *train*
+   frequency. Restricted to `route_type=3`.
+
+Service day used: 2026-10-04 (Sunday), the in-coverage weekday with the most active
+services (13,850) — chosen from 21 candidate dates.

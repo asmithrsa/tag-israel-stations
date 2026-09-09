@@ -79,30 +79,55 @@ def hav(a, b):
 
 FAMILY = {"Israel Railways": "train", "Carmelit": "funicular",
           "Central Bus Station": "bus", "Haifa Rakavlit": "bus",
-          "Metronit": "bus"}
+          "Metronit": "bus", "Bus Stop": "busstop"}
+BUS_STOP_SPACING_M = 250
 by_id = {r["id"]: r for r in rows}
 pts = [(s["name"], (s["lat"], s["lng"]),
         FAMILY.get(by_id[s["id"]]["system"], "light_rail")) for s in loaded]
-close, interchange, bus_near_rail = [], [], []
+
+# Grid index: an O(n^2) scan does not scale to thousands of stops. Cell size is
+# larger than every radius checked below, so a 3x3 neighbourhood is sufficient.
+CELL = 0.005
+grid = {}
+for i, (_, (la, lo), _) in enumerate(pts):
+    grid.setdefault((int(la / CELL), int(lo / CELL)), []).append(i)
+
+def neighbours(i):
+    _, (la, lo), _ = pts[i]
+    cy, cx = int(la / CELL), int(lo / CELL)
+    for dy in (-1, 0, 1):
+        for dx in (-1, 0, 1):
+            for j in grid.get((cy + dy, cx + dx), ()):
+                if j > i:
+                    yield j
+
+close, interchange, bus_near_rail, bus_too_close = [], [], [], []
 for i in range(len(pts)):
-    for j in range(i + 1, len(pts)):
+    for j in neighbours(i):
         d = hav(pts[i][1], pts[j][1])
+        fi, fj = pts[i][2], pts[j][2]
+        if "busstop" in (fi, fj):
+            if d < BUS_STOP_SPACING_M:
+                bus_too_close.append((d, pts[i][0], pts[j][0]))
+            continue
         if d >= 150:
             continue
-        if "bus" in (pts[i][2], pts[j][2]) and pts[i][2] != pts[j][2]:
+        if "bus" in (fi, fj) and fi != fj:
             bus_near_rail.append((d, pts[i][0], pts[j][0]))
             continue
-        if pts[i][2] == pts[j][2]:
+        if fi == fj:
             if d < 60:
                 close.append((d, pts[i][0], pts[j][0]))
         else:
             interchange.append((d, pts[i][0], pts[j][0]))
+
 check(not close, f"no unmerged same-mode duplicates within 60 m ({len(close)} found)")
 check(not bus_near_rail,
       f"no bus or cable car station within 150 m of a rail station ({len(bus_near_rail)} found)")
-for d, a, b in bus_near_rail[:5]:
-    print(f"    {d:.0f}m  {a} <-> {b}")
-for d, a, b in close[:5]:
+check(not bus_too_close,
+      f"every bus stop is >={BUS_STOP_SPACING_M} m from all other stations "
+      f"({len(bus_too_close)} violations)")
+for d, a, b in (close + bus_near_rail + bus_too_close)[:5]:
     print(f"    {d:.0f}m  {a} <-> {b}")
 if interchange:
     print(f"  [note] {len(interchange)} cross-system interchange pair(s) under 150 m, "

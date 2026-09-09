@@ -99,6 +99,13 @@ CROSS_MERGE_M = 150
 # into two groups with a clean gap: collisions run up to 391 m (Lod's temporary
 # terminal), and the next nearest is Tel Aviv New Central Bus Station at 523 m.
 BUS_RAIL_M = 400
+# Nationwide bus stops from bus_stops.py. Each must be this far from every station
+# already placed, including bus stops added earlier in the same pass.
+BUS_STOP_SPACING_M = 250
+# None = no cap; otherwise keep only this many, the busiest first. At 1000 the
+# cutoff falls at 15 lines, so every added stop is a real interchange; uncapped
+# would add 4505, of which 823 are served by only one or two lines.
+BUS_STOP_CAP = 1000
 
 # Israel's intercity bus terminals are "תחנה מרכזית" (merkazit). Matched on name
 # fields only: matching the whole tag set pulls in the individual platforms inside a
@@ -825,6 +832,59 @@ def main():
             "id": osm_id,
             "system": system_of(t, srv_open + srv_closed),
         })
+
+    # Nationwide bus stops, added last so they are tested against the finished map.
+    # Taken in descending order of line count, so that where two candidates compete
+    # for the same 250 m of space the busier one wins. A plain scan would be ~75M
+    # distance calls, so placed points go in a grid keyed at a cell size larger than
+    # the spacing rule - that makes the 3x3 neighbourhood of a cell sufficient.
+    bus_path = HERE / "bus-candidates.csv"
+    if bus_path.exists():
+        CELL = 0.003          # ~334 m of latitude, ~283 m of longitude at 32 N
+        grid = {}
+
+        def cell_of(lat, lng):
+            return (int(lat / CELL), int(lng / CELL))
+
+        def add_point(lat, lng):
+            grid.setdefault(cell_of(lat, lng), []).append((lat, lng))
+
+        def too_close(lat, lng):
+            cy, cx = cell_of(lat, lng)
+            for dy in (-1, 0, 1):
+                for dx in (-1, 0, 1):
+                    for q in grid.get((cy + dy, cx + dx), ()):
+                        if haversine((lat, lng), q) < BUS_STOP_SPACING_M:
+                            return True
+            return False
+
+        for r in rows:
+            add_point(float(r["lat"]), float(r["lng"]))
+
+        with bus_path.open(encoding="utf-8") as f:
+            cands = list(csv.DictReader(f))
+        cands.sort(key=lambda c: (-int(c["n_lines"]), -int(c["n_allday_lines"]),
+                                  c["name"]))
+        added = 0
+        for c in cands:
+            if BUS_STOP_CAP is not None and added >= BUS_STOP_CAP:
+                break
+            lat, lng = float(c["lat"]), float(c["lng"])
+            if too_close(lat, lng):
+                continue
+            add_point(lat, lng)
+            rows.append({
+                "name": c["name"],
+                "lat": f"{lat:.6f}",
+                "lng": f"{lng:.6f}",
+                "id": f"gtfs/{c['stop_id']}",
+                "system": "Bus Stop",
+            })
+            added += 1
+        print(f"  bus stops: {added:,} added from {len(cands):,} candidates "
+              f"(>={BUS_STOP_SPACING_M} m apart"
+              + (f", capped at {BUS_STOP_CAP:,}" if BUS_STOP_CAP else ", no cap")
+              + ")")
 
     # Hand-maintained additions (bus stops, corrections). Kept in a separate file
     # so that re-running this script never destroys them.
