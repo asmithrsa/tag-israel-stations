@@ -56,6 +56,14 @@ nwr["aerialway"="station"](32.75,34.95,32.82,35.06);
 out center tags;
 """
 
+QUERY_METRONIT = """[out:json][timeout:180];
+(
+  node["highway"="bus_stop"]["name"](32.74,34.92,32.92,35.14);
+  node["public_transport"="platform"]["name"](32.74,34.92,32.92,35.14);
+);
+out body;
+"""
+
 QUERY_ROUTE_NODES = f"""[out:json][timeout:600];
 {AREA}
 rel["type"="route"]["route"~"^(train|light_rail|tram|funicular|subway|monorail)$"](area.searchArea)->.r;
@@ -128,7 +136,32 @@ RAKAVLIT = {
 }
 # Modes that ride on top of the rail network rather than extending it. One of these
 # sitting on a rail station's site is the same hiding zone, so it is dropped.
-SUPPRESS_NEAR_RAIL = {"bus", "aerialway"}
+SUPPRESS_NEAR_RAIL = {"bus", "aerialway", "metronit"}
+
+# Metronit BRT transfer stations, pinned by OSM node id. Nothing in the data selects
+# them: only 5 of 94 confirmed stops carry network=Metronit, the lines share the
+# numbers 1-5 with ordinary Haifa buses, and the route relations are incomplete
+# (line 3 has no stop members at all, line 4 has one). 11 of these 13 were verified
+# as members of the Metronit route relations; Hallisa and Tsahal are matched on an
+# exact, unqualified name on a Metronit line.
+#
+# Grouped by the name below rather than by distance: the two direction platforms of
+# one station run up to 135 m apart here (Police Headquarters), well beyond MERGE_M.
+METRONIT = {
+    "node/1803062999": "Matam",              "node/1803063002": "Matam",
+    "node/1803062171": "Lin",                "node/1803062172": "Lin",
+    "node/1803045703": "Police Headquarters", "node/5210715207": "Police Headquarters",
+    "node/1803016988": "Hallisa",            "node/1803016991": "Hallisa",
+    "node/5210715246": "Kiryat Ata Junction", "node/5210715247": "Kiryat Ata Junction",
+    "node/5210715274": "Ha'Atsma'ut",
+    "node/5210715226": "Einstein",
+    "node/5210715230": "Kiryat Ata",
+    "node/5210715250": "Kiryat Haim",        "node/5210715251": "Kiryat Haim",
+    "node/5210715272": "Goshen",             "node/5210715273": "Goshen",
+    "node/5210715268": "Ha'Asor",            "node/5210715269": "Ha'Asor",
+    "node/5210715263": "Tsur Shalom",        "node/5210715264": "Tsur Shalom",
+    "node/5210715256": "Tsahal",             "node/5210715257": "Tsahal",
+}
 
 # Lines that exist in OSM but are not (fully) open to passengers.
 YELLOW = ("Jerusalem Light Rail Yellow Line - only the HaTurim to Manahat (Malha) "
@@ -236,9 +269,12 @@ def fetch(refresh: bool):
     cable = HERE / "cable.json"
     if refresh or not cable.exists():
         overpass(QUERY_CABLE, cable)
+    mstops = HERE / "mstops.json"
+    if refresh or not mstops.exists():
+        overpass(QUERY_METRONIT, mstops)
     return (json.loads(raw.read_text()), json.loads(nodes.read_text()),
             json.loads(bus.read_text()), json.loads(named.read_text()),
-            json.loads(cable.read_text()))
+            json.loads(cable.read_text()), json.loads(mstops.read_text()))
 
 
 def coords(e):
@@ -372,6 +408,30 @@ def rakavlit_stations(cabledata):
     return out
 
 
+def metronit_stations(mstops):
+    """Metronit transfer stations, grouped by the pinned name (see METRONIT)."""
+    groups = {}
+    for e in mstops["elements"]:
+        oid = f"{e['type']}/{e['id']}"
+        if oid not in METRONIT or coords(e) is None:
+            continue
+        groups.setdefault(METRONIT[oid], []).append((e, coords(e)))
+    out = []
+    for name, items in groups.items():
+        pts = [p for _, p in items]
+        lat = sum(p[0] for p in pts) / len(pts)
+        lng = sum(p[1] for p in pts) / len(pts)
+        out.append((items[0][0], {"metronit": "yes", "name:en": name}, (lat, lng)))
+    missing = set(METRONIT) - {f"{e['type']}/{e['id']}"
+                               for e in mstops["elements"]
+                               if f"{e['type']}/{e['id']}" in METRONIT}
+    if missing:
+        print(f"    WARNING: Metronit ids no longer in OSM: {sorted(missing)}")
+    print(f"  Metronit transfer stations: {len(out)} "
+          f"from {len(METRONIT)} pinned platforms")
+    return out
+
+
 def is_train(tags):
     return (tags.get("train") == "yes"
             or tags.get("station") == "train"
@@ -385,6 +445,8 @@ def family(tags):
         return "bus"
     if tags.get("aerialway") == "station":
         return "aerialway"
+    if tags.get("metronit") == "yes":
+        return "metronit"
     if tags.get("funicular") == "yes" or tags.get("station") == "funicular":
         return "funicular"
     if is_train(tags):
@@ -427,6 +489,8 @@ def system_of(tags, open_routes):
         return "Central Bus Station"
     if tags.get("aerialway") == "station":
         return "Haifa Rakavlit"
+    if tags.get("metronit") == "yes":
+        return "Metronit"
     if tags.get("station") == "funicular" or tags.get("funicular") == "yes":
         return "Carmelit"
     op = (tags.get("operator") or "").strip().lower()
@@ -446,7 +510,7 @@ def system_of(tags, open_routes):
 def main():
     refresh = "--refresh" in sys.argv
     print("Building Israeli station list from OpenStreetMap")
-    data, routenodes, busdata, busnamed, cabledata = fetch(refresh)
+    data, routenodes, busdata, busnamed, cabledata, mstops = fetch(refresh)
 
     elements = data["elements"]
     stations = [e for e in elements if e["type"] != "relation"]
@@ -503,6 +567,7 @@ def main():
 
     kept.extend(central_bus_stations(busdata, busnamed))
     kept.extend(rakavlit_stations(cabledata))
+    kept.extend(metronit_stations(mstops))
 
     # --- Which lines serve each element -------------------------------------
     for i, (e, t, pos) in enumerate(kept):

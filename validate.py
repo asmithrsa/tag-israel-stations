@@ -78,7 +78,8 @@ def hav(a, b):
     return 2 * r * math.asin(math.sqrt(h))
 
 FAMILY = {"Israel Railways": "train", "Carmelit": "funicular",
-          "Central Bus Station": "bus", "Haifa Rakavlit": "bus"}
+          "Central Bus Station": "bus", "Haifa Rakavlit": "bus",
+          "Metronit": "bus"}
 by_id = {r["id"]: r for r in rows}
 pts = [(s["name"], (s["lat"], s["lng"]),
         FAMILY.get(by_id[s["id"]]["system"], "light_rail")) for s in loaded]

@@ -3,5 +3,10 @@ routenodes.json
 bus.json
 busname.json
 cable.json
+mstops.json
+metronit.json
+m*.json
+ids.txt
+mnodes.txt
 *.ql
 __pycache__/
