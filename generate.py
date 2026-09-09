@@ -150,7 +150,6 @@ SUPPRESS_NEAR_RAIL = {"bus", "aerialway", "metronit"}
 METRONIT = {
     "node/1803062999": "Matam",              "node/1803063002": "Matam",
     "node/1803062171": "Lin",                "node/1803062172": "Lin",
-    "node/1803045703": "Police Headquarters", "node/5210715207": "Police Headquarters",
     "node/1803016988": "Hallisa",            "node/1803016991": "Hallisa",
     # OSM calls this צומת קרית אתא/מחלף מוטה גור; the Metronit calls it Mota Gur,
     # after the interchange. Not to be confused with the Kiryat Ata stop below.
@@ -173,6 +172,10 @@ METRONIT = {
     "node/1803050903": "Neve David",         "node/1803086106": "Neve David",
     "node/1803070849": "Ha'Etsel",           "node/5210715234": "Ha'Etsel",
     "node/5210715235": "Shprinzak",          "node/10899338439": "Shprinzak",
+    "node/1803021630": "Talpiyot Market",    "node/1803088998": "Talpiyot Market",
+    "node/5210715205": "Talpiyot Market",
+    "node/5210715187": "Halutzei HaTa'asiya",
+    "node/5210715210": "Halutzei HaTa'asiya",
 }
 
 # Lines that exist in OSM but are not (fully) open to passengers.
