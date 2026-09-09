@@ -1,7 +1,7 @@
 # Israeli station list for Jet Lag: Hide and Seek
 
 A custom station list for the [JetLagHideAndSeek map generator](https://taibeled.github.io/JetLagHideAndSeek/),
-covering **206 open stations** in Israel:
+covering **205 open stations** in Israel:
 
 | System | Stations |
 |---|---:|
@@ -11,7 +11,7 @@ covering **206 open stations** in Israel:
 | Carmelit (Haifa funicular) | 6 |
 | Central bus stations | 27 |
 | Haifa Rakavlit (cable car) | 2 |
-| Metronit (Haifa BRT, transfer stations) | 24 |
+| Metronit (Haifa BRT, transfer stations) | 23 |
 
 ### Metronit
 
@@ -21,7 +21,7 @@ Nothing in the data selects them: just 5 of 94 confirmed stops carry
 filtering on `route_ref` yields 165 names, most of them city stops), and the route
 relations are incomplete — line 3 has no stop members at all and line 4 has one.
 
-18 of the 24 were verified as members of the Metronit route relations. `Hallisa`,
+17 of the 23 were verified as members of the Metronit route relations. `Hallisa`,
 `Tsahal`, `Savyone Yam` and `HaPalmach` sit on line 3 and `Grand Canyon` on line 4,
 neither of which has usable stop members, so
 they are matched instead on an exact unqualified name served by a Metronit line —
@@ -94,15 +94,24 @@ the next nearest is Tel Aviv New Central Bus Station at 523 m.
 ### After updating the list
 
 `raw.githubusercontent.com` serves this file with `cache-control: max-age=300`, and
-the site imports it with a plain `fetch()` that does no cache-busting. So for about
-five minutes after a push, re-importing gives you the **previous** version — new
-stations appear to be missing even though the file is correct.
+the site imports it with a plain `fetch()` that does no cache-busting. So shortly
+after a push, re-importing gives you the **previous** version — new stations appear
+to be missing even though the file is correct.
 
-Force a fresh copy by appending any dummy query parameter, bumping the number each
-time you push:
+**A query parameter alone does not fix this.** It defeats the *browser* cache, but
+GitHub's CDN keys on the path and keeps serving stale content regardless: measured
+against a fresh random parameter on every request, a push took **210 seconds** to
+appear. So after pushing, wait ~4 minutes, then import with a bumped parameter to
+clear your own browser too:
 
 ```
 https://raw.githubusercontent.com/asmithrsa/tag-israel-stations/main/stations.csv?v=2
+```
+
+To check whether the CDN has caught up before importing:
+
+```bash
+curl -s "https://raw.githubusercontent.com/asmithrsa/tag-israel-stations/main/stations.csv" | wc -l
 ```
 
 The link must be a **raw** file URL. A normal GitHub page URL returns HTML, and the

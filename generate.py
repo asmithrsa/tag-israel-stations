@@ -148,7 +148,6 @@ SUPPRESS_NEAR_RAIL = {"bus", "aerialway", "metronit"}
 # Grouped by the name below rather than by distance: the two direction platforms of
 # one station run up to 135 m apart here (Police Headquarters), well beyond MERGE_M.
 METRONIT = {
-    "node/1803062999": "Matam",              "node/1803063002": "Matam",
     "node/1803062171": "Lin",                "node/1803062172": "Lin",
     "node/1803016988": "Hallisa",            "node/1803016991": "Hallisa",
     # OSM calls this צומת קרית אתא/מחלף מוטה גור; the Metronit calls it Mota Gur,
