@@ -1,7 +1,7 @@
 # Israeli station list for Jet Lag: Hide and Seek
 
 A custom station list for the [JetLagHideAndSeek map generator](https://taibeled.github.io/JetLagHideAndSeek/),
-covering **204 open stations** in Israel:
+covering **228 open stations** in Israel:
 
 | System | Stations |
 |---|---:|
@@ -12,6 +12,7 @@ covering **204 open stations** in Israel:
 | Central bus stations | 27 |
 | Haifa Rakavlit (cable car) | 2 |
 | Metronit (Haifa BRT, transfer stations) | 22 |
+| Bus terminals | 24 |
 
 ### Metronit
 
@@ -32,6 +33,22 @@ the likeliest to need correcting.
 Platforms are grouped by their pinned name rather than by distance: the two
 direction platforms of one station run up to 135 m apart (Police Headquarters), well
 beyond the 60 m merge radius used elsewhere.
+
+### Bus terminals
+
+Every `amenity=bus_station` in the country whose name carries *terminal*, *terminus*
+or *מסוף*, pinned by id in `TERMINALS` with English names supplied for the
+Hebrew-only ones. Two judgement calls: `מסוף אוטובוסים` (way/690004094) is left out
+because the name means simply "bus terminal" and identifies no place, and
+`Carmelit Terminal` is included despite OSM naming it just `כרמלית` — it is Tel
+Aviv's Carmel Market terminal, not anything in Haifa.
+
+Unlike the other sources, terminals are suppressed near **any** station already in
+the list, not just rail — a terminal beside a light rail stop or a central bus
+station is equally redundant. That drops 6 of the 30, among them
+`HaHagana Railway Terminal` (99 m from Tel Aviv - HaHagana) and `Terminal 2000`
+(155 m from Arlozoroff). The 400 m cut again lands in a clean gap: the closest kept
+terminal is 422 m out, the furthest dropped one 360 m.
 
 ### Haifa Rakavlit
 

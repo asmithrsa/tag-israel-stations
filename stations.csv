@@ -1,4 +1,28 @@
 name,lat,lng,id,system
+Aluf Sade Terminus,32.055089,34.833717,node/707368736,Bus Terminal
+Avi HaAsirim Terminal,31.954406,34.803939,node/4199409965,Bus Terminal
+Ayalon Mall Bus Terminal,32.098848,34.825462,node/4541919909,Bus Terminal
+Azorei Chen Terminal,32.128698,34.792353,node/6504856511,Bus Terminal
+Carmelit Terminal,32.067419,34.765689,node/2680568017,Bus Terminal
+HaTavor Terminal,32.694412,35.384755,node/429882252,Bus Terminal
+HaTayasim Terminal,32.047685,34.813778,node/1539205767,Bus Terminal
+Har Hotzvim Terminal,31.800351,35.212740,node/6618730211,Bus Terminal
+Hazor Haglilit bus terminal,32.980558,35.556530,node/3116080944,Bus Terminal
+HeHarash Terminal,32.097088,34.852900,node/7244347281,Bus Terminal
+Kastina terminal,31.731560,34.756161,node/799247428,Bus Terminal
+Kedma bus terminal,32.126947,34.857159,node/1803055994,Bus Terminal
+Kiryat Ono Terminal,32.037343,34.865830,way/1447332825,Bus Terminal
+Kiryat Sharet Terminal,32.003428,34.800809,way/377028713,Bus Terminal
+Masu'a Terminal,31.751786,35.168123,way/923375447,Bus Terminal
+Or Yehuda bus terminal,32.021141,34.853735,way/1161770204,Bus Terminal
+Ra'anana Junction Terminal,32.175355,34.890441,way/154657948,Bus Terminal
+Reading bus terminal,32.099158,34.779311,way/95435248,Bus Terminal
+Schneider Terminal,32.088072,34.868769,node/6618747687,Bus Terminal
+Sharonim Terminal,32.133919,34.901839,node/3729247724,Bus Terminal
+Shoham Terminal,32.016870,34.957272,way/1021867529,Bus Terminal
+Tel Aviv University Bus Terminal,32.116838,34.803706,way/98994607,Bus Terminal
+Terminal City Hall - Modiin,31.908953,35.007404,way/385077738,Bus Terminal
+Yokne'am Terminal,32.659639,35.105626,node/1430463499,Bus Terminal
 Bney Zion Hospital,32.807572,34.990500,node/616484913,Carmelit
 Carmel Center,32.804678,34.987909,node/615947115,Carmelit
 Downtown,32.817490,34.999731,node/616484210,Carmelit

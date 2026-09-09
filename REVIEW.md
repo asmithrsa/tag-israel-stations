@@ -9,7 +9,7 @@ These are in `stations.csv`. Delete any that are not actually open.
 | Station | OSM | Coords | Why flagged |
 |---|---|---|---|
 
-## Bus and cable car stations suppressed as duplicates (15)
+## Suppressed as duplicates (21)
 
 Within 400 m of a station already in the list, so omitted to avoid two hiding zones on one site.
 
@@ -20,15 +20,21 @@ Within 400 m of a station already in the list, so omitted to avoid two hiding zo
 | Bat-Galim Central Bus Station | `way/96386795` | 147 m from Haifa Bat Galim, which is already in the list - same hiding zone |
 | Be'er Sheva Central Bus Station | `way/363031602` | 150 m from Be'er Sheva Merkaz, which is already in the list - same hiding zone |
 | Central Bus Station Modiin Maccabim Reut | `way/536664515` | 156 m from Modi'in Center, which is already in the list - same hiding zone |
+| HaHagana Railway Terminal | `way/1321875394` | 99 m from Tel Aviv - HaHagana, which is already in the list - same hiding zone |
 | HaMifrats Central Station - HaEmek Line | `way/603848032` | 46 m from HaMifrats Central Station, which is already in the list - same hiding zone |
+| HaNevi'im Terminal | `way/126906342` | 109 m from Damascus Gate, which is already in the list - same hiding zone |
 | Jerusalem Central Bus Station | `way/119441769` | 120 m from Jerusalem - Yitzhak Navon, which is already in the list - same hiding zone |
 | Karmi'el Central Bus Station | `node/3738656026` | 247 m from Karmiel, which is already in the list - same hiding zone |
 | Merkazit HaMifrats | `node/2645430236` | 199 m from HaMifrats Central Station, which is already in the list - same hiding zone |
+| Moshe Arens Terminal | `way/700233643` | 360 m from Petah Tikva CBS, which is already in the list - same hiding zone |
 | Nahariya Central Bus Station | `way/96171292` | 144 m from Nahariya, which is already in the list - same hiding zone |
 | New temporary central bus station | `way/418128838` | 391 m from Lod, which is already in the list - same hiding zone |
+| Ovnat Bus Terminal | `node/4351534803` | 141 m from Beilinson, which is already in the list - same hiding zone |
 | Petach Tikva Central Bus Station | `node/528857680` | 26 m from Petah Tikva CBS, which is already in the list - same hiding zone |
 | Ramla central bus station | `node/1803026728` | 297 m from Ramla, which is already in the list - same hiding zone |
 | Sultan Suleiman Central Station | `node/1802987960` | 333 m from Damascus Gate, which is already in the list - same hiding zone |
+| Terminal 2000 | `way/30797420` | 155 m from Arlozoroff, which is already in the list - same hiding zone |
+| University Train Station Bus Terminus (West) | `node/4528859844` | 137 m from Tel Aviv University, which is already in the list - same hiding zone |
 | Yavne Central Bus Station | `way/96006064` | 120 m from Yavne - West, which is already in the list - same hiding zone |
 
 ## Excluded as not in service (5)

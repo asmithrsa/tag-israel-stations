@@ -136,7 +136,46 @@ RAKAVLIT = {
 }
 # Modes that ride on top of the rail network rather than extending it. One of these
 # sitting on a rail station's site is the same hiding zone, so it is dropped.
-SUPPRESS_NEAR_RAIL = {"bus", "aerialway", "metronit"}
+SUPPRESS_NEAR_RAIL = {"bus", "aerialway", "metronit", "terminal"}
+
+# Bus terminals (מסוף). Unlike the other sources these are suppressed near *any*
+# station already in the list, not just rail: a terminal beside a light rail stop or
+# a central bus station is equally redundant. English names are supplied for the
+# Hebrew-only ones. "מסוף אוטובוסים" (way/690004094) is left out as it means simply
+# "bus terminal" and names no place. Carmelit Terminal is Tel Aviv's Carmel Market
+# terminal; OSM names it just כרמלית, with no "terminal" in the name.
+TERMINALS = {
+    "node/707368736": "Aluf Sade Terminus",
+    "node/4199409965": "Avi HaAsirim Terminal",
+    "node/4541919909": "Ayalon Mall Bus Terminal",
+    "node/6504856511": "Azorei Chen Terminal",
+    "node/2680568017": "Carmelit Terminal",
+    "way/1321875394": "HaHagana Railway Terminal",
+    "way/126906342": "HaNevi'im Terminal",
+    "node/429882252": "HaTavor Terminal",
+    "node/1539205767": "HaTayasim Terminal",
+    "node/6618730211": "Har Hotzvim Terminal",
+    "node/3116080944": "Hazor Haglilit bus terminal",
+    "node/7244347281": "HeHarash Terminal",
+    "node/799247428": "Kastina terminal",
+    "node/1803055994": "Kedma bus terminal",
+    "way/1447332825": "Kiryat Ono Terminal",
+    "way/377028713": "Kiryat Sharet Terminal",
+    "way/923375447": "Masu'a Terminal",
+    "way/700233643": "Moshe Arens Terminal",
+    "way/1161770204": "Or Yehuda bus terminal",
+    "node/4351534803": "Ovnat Bus Terminal",
+    "way/154657948": "Ra'anana Junction Terminal",
+    "way/95435248": "Reading bus terminal",
+    "node/6618747687": "Schneider Terminal",
+    "node/3729247724": "Sharonim Terminal",
+    "way/1021867529": "Shoham Terminal",
+    "way/98994607": "Tel Aviv University Bus Terminal",
+    "way/30797420": "Terminal 2000",
+    "way/385077738": "Terminal City Hall - Modiin",
+    "node/4528859844": "University Train Station Bus Terminus (West)",
+    "node/1430463499": "Yokne'am Terminal",
+}
 
 # Metronit BRT transfer stations, pinned by OSM node id. Nothing in the data selects
 # them: only 5 of 94 confirmed stops carry network=Metronit, the lines share the
@@ -445,6 +484,21 @@ def metronit_stations(mstops):
     return out
 
 
+def terminal_stations(busdata):
+    """Bus terminals, matched against the pinned ids above."""
+    out = []
+    for e in busdata["elements"]:
+        oid = f"{e['type']}/{e['id']}"
+        if oid not in TERMINALS or coords(e) is None:
+            continue
+        out.append((e, {"terminal": "yes", "name:en": TERMINALS[oid]}, coords(e)))
+    missing = set(TERMINALS) - {f"{e['type']}/{e['id']}" for e, _, _ in out}
+    if missing:
+        print(f"    WARNING: terminal ids no longer in OSM: {sorted(missing)}")
+    print(f"  bus terminals: {len(out)} of {len(TERMINALS)} found")
+    return out
+
+
 def is_train(tags):
     return (tags.get("train") == "yes"
             or tags.get("station") == "train"
@@ -460,6 +514,8 @@ def family(tags):
         return "aerialway"
     if tags.get("metronit") == "yes":
         return "metronit"
+    if tags.get("terminal") == "yes":
+        return "terminal"
     if tags.get("funicular") == "yes" or tags.get("station") == "funicular":
         return "funicular"
     if is_train(tags):
@@ -504,6 +560,8 @@ def system_of(tags, open_routes):
         return "Haifa Rakavlit"
     if tags.get("metronit") == "yes":
         return "Metronit"
+    if tags.get("terminal") == "yes":
+        return "Bus Terminal"
     if tags.get("station") == "funicular" or tags.get("funicular") == "yes":
         return "Carmelit"
     op = (tags.get("operator") or "").strip().lower()
@@ -581,6 +639,7 @@ def main():
     kept.extend(central_bus_stations(busdata, busnamed))
     kept.extend(rakavlit_stations(cabledata))
     kept.extend(metronit_stations(mstops))
+    kept.extend(terminal_stations(busdata))
 
     # --- Which lines serve each element -------------------------------------
     for i, (e, t, pos) in enumerate(kept):
@@ -691,26 +750,44 @@ def main():
     fam = {r: family(kept[rep[r]][1]) for r in clusters}
     rail_clusters = [r for r in clusters if fam[r] not in SUPPRESS_NEAR_RAIL]
 
+    # Suppression runs in two phases. Bus, cable car and Metronit stops are dropped
+    # when they sit on a rail station's site. Terminals are then dropped when they
+    # sit near *anything* that survived, rail or not: a terminal beside a light rail
+    # stop or a central bus station is just as redundant as one beside a railway.
+    def nearest(root, pool):
+        return min(((r, haversine(mid[root], mid[r])) for r in pool),
+                   key=lambda x: x[1]) if pool else (None, float("inf"))
+
+    suppressed = {}
+    for root in clusters:
+        if fam[root] in SUPPRESS_NEAR_RAIL - {"terminal"}:
+            near, d = nearest(root, rail_clusters)
+            if d <= BUS_RAIL_M:
+                suppressed[root] = (near, d)
+    survivors = [r for r in clusters
+                 if fam[r] != "terminal" and r not in suppressed]
+    for root in clusters:
+        if fam[root] == "terminal":
+            near, d = nearest(root, survivors)
+            if d <= BUS_RAIL_M:
+                suppressed[root] = (near, d)
+
     rows, review = [], []
     for root, members in clusters.items():
         best = rep[root]
         e, t, _, _, _ = kept[best]
         lat, lng = mid[root]
 
-        # A bus or cable car station on a rail station's doorstep is the same
-        # hiding zone, so drop it instead of adding a near-duplicate point.
-        if fam[root] in SUPPRESS_NEAR_RAIL and rail_clusters:
-            near, d = min(((r, haversine(mid[root], mid[r])) for r in rail_clusters),
-                          key=lambda x: x[1])
-            if d <= BUS_RAIL_M:
-                review.append({
-                    "name": label(t), "id": f"{e['type']}/{e['id']}",
-                    "lat": lat, "lng": lng,
-                    "issue": f"{d:.0f} m from {label(kept[rep[near]][1])}, which is "
-                             "already in the list - same hiding zone",
-                    "action": "suppressed",
-                })
-                continue
+        if root in suppressed:
+            near, d = suppressed[root]
+            review.append({
+                "name": label(t), "id": f"{e['type']}/{e['id']}",
+                "lat": lat, "lng": lng,
+                "issue": f"{d:.0f} m from {label(kept[rep[near]][1])}, which is "
+                         "already in the list - same hiding zone",
+                "action": "suppressed",
+            })
+            continue
 
         srv_open, srv_closed = [], []
         for i in members:
@@ -781,7 +858,7 @@ def main():
     for r in sorted(incl, key=lambda x: x["name"]):
         lines.append(f"| {r['name']} | `{r['id']}` | {r['lat']:.5f}, {r['lng']:.5f} | {r['issue']} |")
     supp = [r for r in review if r["action"] == "suppressed"]
-    lines += ["", f"## Bus and cable car stations suppressed as duplicates ({len(supp)})", "",
+    lines += ["", f"## Suppressed as duplicates ({len(supp)})", "",
               f"Within {BUS_RAIL_M} m of a station already in the list, so omitted "
               "to avoid two hiding zones on one site.", ""]
     lines += ["| Station | OSM | Why |", "|---|---|---|"]
@@ -804,7 +881,7 @@ def main():
     lines.append("")
     (HERE / "REVIEW.md").write_text("\n".join(lines), encoding="utf-8")
     print(f"  wrote REVIEW.md: {len(incl)} to verify, {len(excl)} not-yet-open, "
-          f"{len(supp)} suppressed as duplicates of a rail station")
+          f"{len(supp)} suppressed as duplicates")
 
 
 if __name__ == "__main__":
