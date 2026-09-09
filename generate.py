@@ -161,6 +161,7 @@ METRONIT = {
     "node/5210715268": "Ha'Asor",            "node/5210715269": "Ha'Asor",
     "node/5210715263": "Tsur Shalom",        "node/5210715264": "Tsur Shalom",
     "node/5210715256": "Tsahal",             "node/5210715257": "Tsahal",
+    "node/1803086107": "HaToren",            "node/5210715236": "HaToren",
 }
 
 # Lines that exist in OSM but are not (fully) open to passengers.

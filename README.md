@@ -1,7 +1,7 @@
 # Israeli station list for Jet Lag: Hide and Seek
 
 A custom station list for the [JetLagHideAndSeek map generator](https://taibeled.github.io/JetLagHideAndSeek/),
-covering **195 open stations** in Israel:
+covering **196 open stations** in Israel:
 
 | System | Stations |
 |---|---:|
@@ -11,7 +11,7 @@ covering **195 open stations** in Israel:
 | Carmelit (Haifa funicular) | 6 |
 | Central bus stations | 27 |
 | Haifa Rakavlit (cable car) | 2 |
-| Metronit (Haifa BRT, transfer stations) | 13 |
+| Metronit (Haifa BRT, transfer stations) | 14 |
 
 ### Metronit
 
@@ -21,7 +21,7 @@ Nothing in the data selects them: just 5 of 94 confirmed stops carry
 filtering on `route_ref` yields 165 names, most of them city stops), and the route
 relations are incomplete — line 3 has no stop members at all and line 4 has one.
 
-11 of the 13 were verified as members of the Metronit route relations. `Hallisa` and
+12 of the 14 were verified as members of the Metronit route relations. `Hallisa` and
 `Tsahal` are on line 3, which has no members, so they are matched on an exact
 unqualified name served by a Metronit line — `Tsahal` in particular has six
 namesakes on Tsahal Street in Haifa, all with a cross-street suffix, against the one
