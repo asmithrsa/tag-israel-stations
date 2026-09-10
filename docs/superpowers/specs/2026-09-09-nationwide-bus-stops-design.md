@@ -53,7 +53,7 @@ The edge conditions are the point: without them a route beginning at 09:00 would
 qualify on a technicality. A stop qualifies if **any single route** meets this — the
 requirement is not on the stop's combined service.
 
-**Spacing.** Each added stop must be at least 250 m from every station already on the
+**Spacing.** Each added stop must be at least 1000 m from every station already on the
 map, *including bus stops added earlier in the same pass*. Candidates are therefore
 processed greedily in descending order of `n_lines` (all distinct routes serving the
 stop, not only qualifying ones), so that where two candidates compete for the same
@@ -92,8 +92,12 @@ it is not needed if translation coverage is good.
 
 ## Outcome
 
-Measured funnel: 30,455 stops in the feed → 14,893 with all-day service → 4,505
-after the 250 m rule → 1,000 kept (`BUS_STOP_CAP`), cutting off at 15 lines.
+Measured funnel: 30,455 stops in the feed → 14,893 with all-day service → **663**
+after the 1000 m spacing rule. Spacing was raised from 250 m to 1000 m because the
+game's hiding radius is 0.5 km: circles only become disjoint at 1 km separation, so
+anything less leaves zones overlapping. At 1000 m the geometry binds before
+`BUS_STOP_CAP`, so no line-count floor applies — every candidate that fits is taken,
+and all of them satisfy the frequency rule regardless of how few lines serve them.
 
 Two corrections found while implementing, both of which would have gone unnoticed:
 
@@ -101,7 +105,13 @@ Two corrections found while implementing, both of which would have gone unnotice
    הזמנה מראש and nothing uses `pickup_type=2`; both original checks matched zero.
    The real marker is `route_type=715`, "Demand and Response Bus Service" (14
    routes).
-2. **The feed carries more than buses.** Rail, tram, funicular and shared taxis
+2. **Grid cell size must be derived from the search radius.** Both the placement
+   and the validator index points in a grid and check a 3x3 neighbourhood, which is
+   only sound when one cell spans the radius in *both* axes. The cell was hardcoded
+   for 250 m; at 1000 m it silently under-reported, placing 1000 stops where only
+   663 fit. `validate.py` caught it because it re-checks independently — worth
+   keeping that duplication.
+3. **The feed carries more than buses.** Rail, tram, funicular and shared taxis
    share `routes.txt`, so the first run let train stations qualify on *train*
    frequency. Restricted to `route_type=3`.
 

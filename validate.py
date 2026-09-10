@@ -80,14 +80,16 @@ def hav(a, b):
 FAMILY = {"Israel Railways": "train", "Carmelit": "funicular",
           "Central Bus Station": "bus", "Haifa Rakavlit": "bus",
           "Metronit": "bus", "Bus Stop": "busstop"}
-BUS_STOP_SPACING_M = 250
+BUS_STOP_SPACING_M = 1000
 by_id = {r["id"]: r for r in rows}
 pts = [(s["name"], (s["lat"], s["lng"]),
         FAMILY.get(by_id[s["id"]]["system"], "light_rail")) for s in loaded]
 
-# Grid index: an O(n^2) scan does not scale to thousands of stops. Cell size is
-# larger than every radius checked below, so a 3x3 neighbourhood is sufficient.
-CELL = 0.005
+# Grid index: an O(n^2) scan does not scale to thousands of stops. One cell must
+# span at least the largest radius checked below in both axes, or the 3x3
+# neighbourhood misses pairs; longitude is the narrower axis (~92 km/degree at
+# 33.4 N). Deriving it rather than hardcoding keeps it correct if the radius moves.
+CELL = max(BUS_STOP_SPACING_M, 150) / 92_000
 grid = {}
 for i, (_, (la, lo), _) in enumerate(pts):
     grid.setdefault((int(la / CELL), int(lo / CELL)), []).append(i)

@@ -101,10 +101,13 @@ CROSS_MERGE_M = 150
 BUS_RAIL_M = 400
 # Nationwide bus stops from bus_stops.py. Each must be this far from every station
 # already placed, including bus stops added earlier in the same pass.
-BUS_STOP_SPACING_M = 250
-# None = no cap; otherwise keep only this many, the busiest first. At 1000 the
-# cutoff falls at 15 lines, so every added stop is a real interchange; uncapped
-# would add 4505, of which 823 are served by only one or two lines.
+# 1000 m: two 0.5 km hiding zones only stop overlapping once their centres are a
+# full kilometre apart, so this is the spacing at which every added bus stop is its
+# own distinct zone. It is the binding constraint - only 663 candidates fit, so
+# BUS_STOP_CAP below never comes into play at this spacing.
+BUS_STOP_SPACING_M = 1000
+# None = no cap; otherwise keep only this many, the busiest first. Retained for when
+# BUS_STOP_SPACING_M is loosened; at 1000 m spacing it does not bind.
 BUS_STOP_CAP = 1000
 
 # Israel's intercity bus terminals are "תחנה מרכזית" (merkazit). Matched on name
@@ -840,7 +843,12 @@ def main():
     # the spacing rule - that makes the 3x3 neighbourhood of a cell sufficient.
     bus_path = HERE / "bus-candidates.csv"
     if bus_path.exists():
-        CELL = 0.003          # ~334 m of latitude, ~283 m of longitude at 32 N
+        # The 3x3 neighbourhood of a cell is only sufficient if one cell spans at
+        # least the spacing distance in BOTH axes. Longitude degrees are the
+        # shorter of the two and shrink going north, so size the cell off the
+        # narrowest case in Israel (~92 km per degree of longitude at 33.4 N).
+        # Hardcoding this for one spacing silently breaks the check at another.
+        CELL = BUS_STOP_SPACING_M / 92_000
         grid = {}
 
         def cell_of(lat, lng):

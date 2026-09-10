@@ -1,7 +1,7 @@
 # Israeli station list for Jet Lag: Hide and Seek
 
 A custom station list for the [JetLagHideAndSeek map generator](https://taibeled.github.io/JetLagHideAndSeek/),
-covering **1,227 open stations** in Israel:
+covering **890 open stations** in Israel:
 
 | System | Stations |
 |---|---:|
@@ -13,7 +13,7 @@ covering **1,227 open stations** in Israel:
 | Haifa Rakavlit (cable car) | 2 |
 | Metronit (Haifa BRT, transfer stations) | 22 |
 | Bus terminals | 24 |
-| Bus stops (nationwide, all-day service) | 1,000 |
+| Bus stops (nationwide, all-day service) | 663 |
 
 ### Metronit
 
@@ -54,12 +54,20 @@ identifiable by name: no route in the feed is called הזמנה מראש, and no
 `pickup_type=2`. Route type is the only working signal. Leaving the other modes in
 also let train stations qualify on *train* frequency.
 
-Each stop is placed only if it is at least 250 m from every station already on the
-map, bus stops included, taken busiest-first so the better-served stop wins any
-contest for the same space. The funnel: **30,455** stops in the feed → **14,893**
-with all-day service → **4,505** after spacing → **1,000** kept by `BUS_STOP_CAP`,
-where the cutoff falls at 15 lines. Raise that constant and re-run `generate.py` to
-add more; `bus-candidates.csv` is committed so this needs no re-download.
+Each stop is placed only if it is at least **1000 m** from every station already on
+the map, bus stops included, taken busiest-first so the better-served stop wins any
+contest for the same space. 1000 m is deliberate: the hiding radius is 0.5 km, and
+two such circles only stop overlapping once their centres are a full kilometre
+apart — so every added bus stop is its own distinct zone.
+
+The funnel: **30,455** stops in the feed → **14,893** with all-day service →
+**663** after spacing. At this spacing the geometry binds long before
+`BUS_STOP_CAP`, so there is no line-count cutoff: placed stops range from 1 line to
+125, and the low-line ones are the rural coverage, admitted precisely because
+nothing busier competed for that space. Every one of them still passes the all-day
+frequency rule. Loosening `BUS_STOP_SPACING_M` admits far more (4,505 at 250 m,
+1,858 at 500 m), at which point `BUS_STOP_CAP` starts to matter again;
+`bus-candidates.csv` is committed so either change needs no re-download.
 
 English names come from the feed's own `translations.txt` (13,339 of 14,893
 candidates); the rest keep their Hebrew names.
